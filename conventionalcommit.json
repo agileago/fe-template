@@ -1,16 +1,16 @@
 {
   "types": {
-    "重构": {
+    "refactor": {
       "description": "重构:    代码重构，注意和特性、修复区分开"
     },
     "fix": {
-      "description": "Changes which patch a bug"
+      "description": "修复:    修复一个Bug"
     },
     "feat": {
-      "description": "Changes which introduce a new feature"
+      "description": "特性:    一个新的特性"
     },
     "build": {
-      "description": "Changes which affect the build system or external dependencies.<br/>Example scopes: gulp, broccoli, npm",
+      "description": "构建:   开发环境构建",
       "scopes": {
         "npm": {},
         "gulp": {},
@@ -21,22 +21,27 @@
       "description": "Changes which aren't user-facing"
     },
     "style": {
-      "description": "Changes which don't affect code logic, such as white-spaces, formatting, missing semi-colons"
+      "description": "格式:    空格, 分号等格式修复"
     },
     "test": {
-      "description": "Changes which add missing tests or correct existing tests"
+      "description": "测试:    添加一个测试"
     },
     "docs": {
-      "description": "Changes which affect documentation"
+      "description": "文档:    变更的只有文档"
     },
     "perf": {
-      "description": "Changes which improve performance"
+      "description": "性能:    提升性能"
     },
     "ci": {
-      "description": "Changes which affect CI configuration files and scripts.<br/>Example scopes: travis, circle, browser-stack, sauce-labs"
+      "description": "工具:    开发工具变动(构建、脚手架工具等)"
     },
     "revert": {
-      "description": "Changes which revert a previous commit"
+      "description": "回滚:    代码回退"
+    }
+  },
+  "commonScopes": {
+    "module1": {
+      "description": "My first common scope"
     }
   },
   "footerTypes": [

@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vuedx-typecheck . && vite build",
-    "commit": "git-cz  "
+    "commit": "git-cz"
   },
   "dependencies": {
     "vue": "^3.0.5"
@@ -42,7 +42,7 @@
     ],
     "rules": {
       "type-empty": [2, "never"],
-      "type-subject": [2, "never"]
+      "subject-empty": [2, "never"]
     }
   },
   "husky": {
