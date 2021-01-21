@@ -3,11 +3,11 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
-    "strict": true,
     "jsx": "preserve",
     "sourceMap": true,
+    "resolveJsonModule": true,
     "lib": ["esnext", "dom"],
-    "types": ["vite/client"],
+    "types": ["vite/client", "@types/swagger-schema-official"],
     "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }]
   },
   "include": [
