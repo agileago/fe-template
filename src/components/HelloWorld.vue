@@ -53,7 +53,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style>
 a {
   color: #42b983;
 }
