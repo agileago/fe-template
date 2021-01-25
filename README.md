@@ -6,8 +6,8 @@
 - [x] typescript支持，提供类型提示
 - [x] prettier+eslint规范代码风格
 - [x] commitlint规范提交格式信息
-- [ ] swagger自动生成接口代码
-- [ ] mock模拟接口数据 等待[vite-plugin-mockit](https://github.com/xuxihai123/vite-plugin-mockit) 支持vite2
+- [x] swagger自动生成接口代码
+- [x] mock模拟接口数据
 - [ ] amis低代码集成
 
 
