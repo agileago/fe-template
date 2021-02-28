@@ -1,6 +1,7 @@
 .editorconfig
 .gitignore
 .prettierignore
-.prettierrc
-yarn.lock
 .idea
+node_modules
+dist
+pnpm-lock.yaml

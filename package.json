@@ -6,8 +6,8 @@
     "build": "vite build",
     "serve": "vite preview",
     "commit": "git-cz",
-    "lint": "eslint . --max-warnings 0 --fix",
-    "prettier": "prettier --write .",
+    "lint": "eslint --fix .",
+    "format": "prettier --write '**/*.{ts,tsx,js,vue,css,scss,html,json}'",
     "chrome": "open -n /Applications/Google\\ Chrome.app/ --args --disable-web-security  --user-data-dir=$HOME/MyChromeDevUserData/",
     "api": "tsg-tgjz -c ./src/apis/tsg.config.ts"
   },
@@ -23,13 +23,20 @@
     "@commitlint/cli": "^12.0.1",
     "@types/node": "^14.14.22",
     "@types/prettier": "^2.2.1",
+    "@typescript-eslint/eslint-plugin": "^4.15.2",
+    "@typescript-eslint/parser": "^4.15.2",
     "@vitejs/plugin-vue": "^1.1.2",
     "@vitejs/plugin-vue-jsx": "^1.0.2",
     "@vue/compiler-sfc": "^3.0.5",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
     "commitizen": "^4.2.3",
     "commitlint-config-cz": "^0.13.2",
     "cz-customizable": "^6.3.0",
-    "husky": "^5.1.1",
+    "eslint": "^7.21.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.6.0",
+    "husky": "4",
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
     "tsg-tgjz": "^3.1.0",
@@ -49,11 +56,11 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
+    "*.{ts,tsx,vue,js}": [
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{css,scss}": [
+    "*.{css,scss,html,json}": [
       "prettier --write"
     ]
   }

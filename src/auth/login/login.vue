@@ -2,7 +2,7 @@
   import { defineComponent } from 'vue'
   import LoginService from './login.service'
   export default defineComponent({
-    name: 'login',
+    name: 'Login',
     setup() {
       return new LoginService()
     },
@@ -21,7 +21,7 @@
           <a-input v-model:value="model.pwd"></a-input>
         </a-form-item>
         <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
-          <a-button type="primary" @click="submit" block>登录</a-button>
+          <a-button type="primary" block @click="submit">登录</a-button>
         </a-form-item>
       </a-form>
     </a-col>
