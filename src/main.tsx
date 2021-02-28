@@ -1,5 +1,5 @@
 import { createApp, defineComponent } from 'vue'
-import router from './router'
+import router from './router/router'
 import 'ant-design-vue/dist/antd.css'
 import Antd from 'ant-design-vue'
 

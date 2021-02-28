@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosInstance } from 'axios'
 import * as pathToRegexp from 'path-to-regexp'
 import type { RequestParameter } from 'tsg-tgjz'
+
 interface ReturnMessageArg {
   /**
    * 状态值  1为正常  0为失败  -1未经过验证

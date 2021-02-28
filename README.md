@@ -23,6 +23,19 @@ type: 提交类型
 scope：影响到的模块
 body: 提交信息简写
 
+### 安装
+
+使用pnpm安装依赖
+
+```
+npm i pnpm -g
+```
+
+```
+pnpm i
+pnpm run dev
+```
+
 
 
 
