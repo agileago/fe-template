@@ -7,3 +7,4 @@ jest.config.js
 coverage
 *.d.ts
 public
+.prettierrc.js

@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vuedx-typecheck . && vite build",
+    "build": "vite build",
+    "serve": "vite preview",
     "commit": "git-cz",
     "lint": "eslint . --max-warnings 0 --fix",
     "prettier": "prettier --write .",
@@ -19,57 +20,26 @@
     "vue-router": "4"
   },
   "devDependencies": {
-    "@commitlint/cli": "^11.0.0",
+    "@commitlint/cli": "^12.0.1",
     "@types/node": "^14.14.22",
-    "@types/swagger-schema-official": "^2.0.21",
-    "@typescript-eslint/eslint-plugin": "^4.14.0",
-    "@typescript-eslint/parser": "^4.14.0",
+    "@types/prettier": "^2.2.1",
     "@vitejs/plugin-vue": "^1.1.2",
     "@vitejs/plugin-vue-jsx": "^1.0.2",
     "@vue/compiler-sfc": "^3.0.5",
-    "@vuedx/typecheck": "^0.6.0",
-    "@vuedx/typescript-plugin-vue": "^0.6.0",
     "commitizen": "^4.2.3",
     "commitlint-config-cz": "^0.13.2",
     "cz-customizable": "^6.3.0",
-    "eslint": "^7.18.0",
-    "eslint-config-prettier": "^7.2.0",
-    "express-mock-restful": "^1.1.3",
-    "husky": "^4.3.8",
+    "husky": "^5.1.1",
     "lint-staged": "^10.5.3",
-    "pont-engine": "1.0.13",
     "prettier": "^2.2.1",
     "tsg-tgjz": "^3.1.0",
     "typescript": "^4.1.3",
-    "vite": "^2.0.0-beta.47",
-    "vite-plugin-mockit": "^1.0.1"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "printWidth": 100,
-    "arrowParens": "always",
-    "trailingComma": "all",
-    "vueIndentScriptAndStyle": true
+    "vite": "^2.0.4",
+    "vite-plugin-mockit": "^1.0.2"
   },
   "config": {
     "commitizen": {
       "path": "node_modules/cz-customizable"
-    }
-  },
-  "commitlint": {
-    "extends": [
-      "cz"
-    ],
-    "rules": {
-      "type-empty": [
-        2,
-        "never"
-      ],
-      "subject-empty": [
-        2,
-        "never"
-      ]
     }
   },
   "husky": {
@@ -80,7 +50,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "eslint",
+      "eslint --fix",
       "prettier --write"
     ],
     "*.{css,scss}": [

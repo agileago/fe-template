@@ -1,12 +1,27 @@
-const idecommit = require('./conventionalcommit.json')
+const commitConf = require('./conventionalcommit.json')
+
+const types = []
+const scopes = Object.keys(commitConf.commonScopes).map((k) => ({ name: k }))
+const scopeOverrides = {}
+
+for (const type of Object.keys(commitConf.types)) {
+  const itemType = commitConf.types[type]
+  types.push({ value: type, name: itemType.description })
+  if (itemType.scopes) {
+    scopeOverrides[type] = Object.keys(itemType.scopes).map((k) => ({
+      name: k,
+    }))
+  }
+}
 
 module.exports = {
-  types: Object.keys(idecommit.types).map(k => ({ value: k, name: idecommit.types[k].description })),
-  scopes: Object.keys(idecommit.commonScopes).map(k => ({ name: k })),
+  types,
+  scopes,
+  scopeOverrides,
   messages: {
     type: '选择一种你的提交类型:',
     scope: '选择一个模块 (可选):',
-    customScope: 'Denote the SCOPE of this change:',
+    customScope: '自定义模块:',
     subject: '短说明:\n',
     body: '长说明，使用"|"换行(可选)：\n',
     breaking: '非兼容性说明 (可选):\n',
@@ -15,6 +30,7 @@ module.exports = {
   },
 
   allowCustomScopes: true,
-  allowBreakingChanges: idecommit.footerTypes.map(k => k.name),
+  allowBreakingChanges: ['特性', '修复'],
   subjectLimit: 100,
+  skipQuestions: ['body', 'footer'],
 }

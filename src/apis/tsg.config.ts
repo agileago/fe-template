@@ -3,7 +3,8 @@
  * so this file would be included into your source file when compile
  * */
 import type { Project } from 'tsg-tgjz'
-import { prettier } from '../../package.json'
+// @ts-ignore
+import prettier from '../../.prettierrc'
 import type { Options } from 'prettier'
 
 const projects: Project[] = [
@@ -20,7 +21,7 @@ const projects: Project[] = [
     template({ doc, httpMethod, parameterTypeName, requestFunctionName, responseType, urlPath }) {
       return `
         /**
-        ${doc[0]
+        ${doc![0]
           .split(/\n/)
           .map((k) => `* ${k}`)
           .join('\n')}
