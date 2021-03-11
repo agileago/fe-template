@@ -3,7 +3,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: () => import('../auth/login/login.vue'),
+    component: () => import('../auth/login/login'),
   },
 ]
 

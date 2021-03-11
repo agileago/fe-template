@@ -1,8 +1,8 @@
 module.exports = {
   parserPreset: {
     parserOpts: {
-      headerPattern: /^([\w\W]*)(?:\((.*)\))?: (.*)$/
-    }
+      headerPattern: /^([^()]*)(?:\((.*)\))?: (.*)$/,
+    },
   },
   extends: ['cz'],
   rules: {

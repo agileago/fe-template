@@ -1,10 +1,10 @@
-import { createApp, defineComponent } from 'vue'
+import { createApp, h } from 'vue'
 import router from './router/router'
 import 'ant-design-vue/dist/antd.css'
 import Antd from 'ant-design-vue'
+import Layout from './layout/layout'
 
-const App = defineComponent(() => () => <router-view></router-view>)
-const app = createApp(App)
+const app = createApp(Layout)
 
 app.use(router)
 app.use(Antd)
