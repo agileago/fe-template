@@ -31,6 +31,11 @@ body: 提交信息简写
 yarn
 yarn run dev
 ```
+更新依赖
+
+```
+yarn upgrade-interactive --latest
+```
 
 ### swagger生成api
 
