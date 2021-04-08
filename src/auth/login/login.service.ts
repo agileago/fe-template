@@ -1,15 +1,6 @@
 import { reactive, InjectionKey, inject } from 'vue'
 import { useForm } from '@ant-design-vue/use'
 import { message } from 'ant-design-vue'
-import * as api from '../../api/define'
-
-api.postSeriesSortId({
-  path: { id: 1 },
-  body: { sort: [{ seriesId: 1, ptypeId: 1, showOrder: 1 }] },
-  query: {
-    name: 'aaa',
-  },
-})
 
 export default class LoginService {
   static token: InjectionKey<LoginService> = Symbol()
