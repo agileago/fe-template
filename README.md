@@ -47,5 +47,5 @@ yarn run api
 - 推荐全局服务使用依赖注入在顶层组件上
 - 推荐样式写在单独文件里，样式隔离请使用`css module`
 
-
+推荐阅读`Angular风格指南` [Angular风格指南](https://angular.cn/guide/styleguide)
 
