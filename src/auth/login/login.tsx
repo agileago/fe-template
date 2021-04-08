@@ -1,7 +1,48 @@
 import { Button, Col, Form, Input, Row } from 'ant-design-vue'
-import { defineComponent, reactive } from 'vue'
+import { computed, defineComponent, PropType, reactive, Ref, ref } from 'vue'
 import LoginService from './login.service'
 import { Column, Table } from 'vxe-table'
+
+interface DataType {
+  name: string
+  age: number
+}
+
+class FooService {
+  name = ref('')
+  doublename = computed(() => this.name + this.props.name!)
+  constructor(private props: GetComponentPropType<typeof Foo>) {}
+}
+
+export const Foo = defineComponent({
+  props: {
+    name: {
+      type: String,
+      default: 'aaa',
+    },
+    data: {
+      type: Array as PropType<DataType[]>,
+      required: true,
+    },
+    itemSlot: {
+      type: Function as PropType<(item: DataType) => JSX.Element>,
+      required: true,
+    },
+  },
+  setup(props, ctx) {
+    return () => {
+      const itemSlot = props.itemSlot || ctx.slots.item
+      return (
+        <>
+          <ul>{props.data.map((k) => props.itemSlot(k))}</ul>
+          {ctx.slots.default?.()}
+        </>
+      )
+    }
+  },
+})
+
+type GetComponentPropType<T extends { new (...args: any[]): any }> = InstanceType<T>['$props']
 
 export default defineComponent({
   name: 'Login',

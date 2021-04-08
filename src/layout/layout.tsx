@@ -2,5 +2,9 @@ import { defineComponent } from 'vue'
 import { RouterView } from 'vue-router'
 
 export default defineComponent(() => {
-  return () => <RouterView></RouterView>
+  return () => (
+    <div>
+      <RouterView></RouterView>
+    </div>
+  )
 })
