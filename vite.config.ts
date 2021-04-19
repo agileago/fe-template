@@ -30,4 +30,10 @@ export default defineConfig({
       },
     },
   },
+  optimizeDeps: {
+    exclude: ['ant-design-vue', 'vxe-table'],
+  },
+  resolve: {
+    alias: [{ find: /^~/, replacement: '' }],
+  },
 })

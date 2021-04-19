@@ -56,7 +56,11 @@ export function interceptRequest(url: string, option?: RequestParameter): [strin
     requestOption.data = option.body
   }
   if (option.formData) {
-    requestOption.data = option.formData
+    const formData = new FormData()
+    Object.keys(option.formData).forEach((k) => {
+      formData.append(k, option?.formData[k])
+    })
+    requestOption.data = formData
   }
   if (option.query) {
     requestOption.params = option.query
@@ -76,7 +80,19 @@ export const createRequester = (ax: AxiosInstance) => {
   }
 }
 // endregion
+declare module 'axios' {
+  interface AxiosRequestConfig {
+    /**
+     * 签名
+     */
+    nosign?: boolean
 
+    /**
+     * 身份校验
+     */
+    notoken?: boolean
+  }
+}
 // 创建request 对request进行拦截各种操作
 const request = axios.create({
   baseURL: 'http://localhost:8080',
