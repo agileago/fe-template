@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import { registerGlobalService } from './service'
 import 'ant-design-vue/dist/antd.css'
+import { postAuditCreate } from './api/define'
 
 const app = createApp({
   setup() {
@@ -12,5 +13,7 @@ const app = createApp({
     )
   },
 })
+
+postAuditCreate({ body: { where: '数据定义', content: 'aa', contentUrl: 'aaa', seriesId: 1 } })
 
 app.mount('#app')

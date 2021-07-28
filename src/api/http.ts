@@ -95,7 +95,7 @@ declare module 'axios' {
 }
 // 创建request 对request进行拦截各种操作
 const request = axios.create({
-  baseURL: 'http://localhost:8080',
+  baseURL: '/api',
 })
 request.interceptors.response.use((res) => {
   const data = res.data

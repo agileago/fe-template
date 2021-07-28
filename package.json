@@ -38,6 +38,7 @@
     "tsg-tgjz": "^3.3.0",
     "typescript": "^4.3.5",
     "vite": "^2.4.3",
+    "vite-plugin-mockit": "^1.0.2",
     "yorkie": "^2.0.0"
   },
   "config": {
