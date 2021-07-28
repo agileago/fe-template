@@ -1,19 +1,16 @@
 import { createApp } from 'vue'
-import router from './router/router'
-import Entry from './layout/entry'
-import { VXETable, Header, Column, Table } from 'vxe-table'
-import zhCN from 'vxe-table/es/locale/lang/zh-CN'
-import { toFormatString, get } from 'xe-utils'
+import { registerGlobalService } from './service'
+import 'ant-design-vue/dist/antd.css'
 
-const app = createApp(Entry)
-
-VXETable.setup({
-  i18n: (key, args) => toFormatString(get(zhCN, key), args),
+const app = createApp({
+  setup() {
+    registerGlobalService() // 注册全局单例服务
+    return () => (
+      <>
+        <div>1111</div>
+      </>
+    )
+  },
 })
-app.use(Header)
-app.use(Column)
-app.use(Table)
-
-app.use(router)
 
 app.mount('#app')

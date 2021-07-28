@@ -10,7 +10,7 @@ const projects: Project[] = [
   {
     name: 'define',
     dest: '../api',
-    source: 'http://localhost:8080/swagger-json',
+    source: 'http://test-pim-define.titanmatrix.cn/define/swagger-json',
     keepGeneric: false,
     importRequesterStatement: `import { http, AxiosRequestConfig } from "../http"`,
     prettierConfig: prettier,

@@ -8,6 +8,9 @@
 - [x] commitlint规范提交格式信息
 - [x] swagger自动生成接口代码
 - [x] mock模拟接口数据
+- [ ] 自动依赖注入
+- [ ] 表单验证
+- [ ] 低代码接入
 
 
 ### 提交信息规范
@@ -53,4 +56,3 @@ yarn run api
 - 推荐样式写在单独文件里，样式隔离请使用`css module`
 
 推荐阅读`Angular风格指南` [Angular风格指南](https://angular.cn/guide/styleguide)
-
