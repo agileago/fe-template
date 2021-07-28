@@ -8,6 +8,7 @@
 - [x] commitlint规范提交格式信息
 - [x] swagger自动生成接口代码
 - [x] mock模拟接口数据
+- [x] css使用css modules
 - [ ] 自动依赖注入
 - [ ] 表单验证
 - [ ] 低代码接入
