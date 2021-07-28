@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "uat": "vite build --mode uat",
     "serve": "vite preview",
     "type:check": "tsc --noEmit --skipLibCheck",
     "commit": "git-cz",
@@ -16,6 +17,7 @@
     "ant-design-vue": "^2.2.2",
     "axios": "^0.21.1",
     "path-to-regexp": "^6.2.0",
+    "ts-deepmerge": "^1.0.8",
     "vue": "^3.1.5",
     "vue-router": "^4.0.10"
   },

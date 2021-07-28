@@ -4409,6 +4409,11 @@ trim-off-newlines@^1.0.0:
   resolved "https://registry.npm.taobao.org/trim-off-newlines/download/trim-off-newlines-1.0.1.tgz"
   integrity sha1-n5up2e+odkw4dpi8v+sshI8RrbM=
 
+ts-deepmerge@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.nlark.com/ts-deepmerge/download/ts-deepmerge-1.0.8.tgz#927ebb0db106bdc4a15011c288a2024496638900"
+  integrity sha1-kn67DbEGvcShUBHCiKICRJZjiQA=
+
 ts-morph@^7.0.3:
   version "7.3.0"
   resolved "https://registry.nlark.com/ts-morph/download/ts-morph-7.3.0.tgz#1777b893d9573b3522108b43159b5ba2515ffde7"

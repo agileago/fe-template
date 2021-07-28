@@ -80,6 +80,8 @@ export const createRequester = (ax: AxiosInstance) => {
   }
 }
 // endregion
+
+// 扩展axios配置里面的自定义字段
 declare module 'axios' {
   interface AxiosRequestConfig {
     /**
@@ -93,6 +95,7 @@ declare module 'axios' {
     notoken?: boolean
   }
 }
+
 // 创建request 对request进行拦截各种操作
 const request = axios.create({
   baseURL: '/api',
