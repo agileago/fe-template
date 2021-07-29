@@ -21,7 +21,10 @@ export default defineConfig(({ command, mode }) => {
       },
     },
     resolve: {
-      alias: [{ find: /^~/, replacement: '' }],
+      alias: [
+        { find: /^~/, replacement: '' },
+        { find: '@/', replacement: '/src/' },
+      ],
     },
   }
 })

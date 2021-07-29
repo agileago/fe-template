@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import { registerGlobalService } from './service'
 import 'ant-design-vue/dist/antd.css'
 import 'virtual:svg-icons-register'
-import SvgIcon from './common/components/svg-icon'
+import SvgIcon from '@/common/components/svg-icon'
 import { Button } from 'ant-design-vue'
 
 const app = createApp({
