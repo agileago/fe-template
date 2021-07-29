@@ -1,6 +1,4 @@
-import { defineComponent, ref, watch, watchEffect } from 'vue'
-import { Column, Table } from 'vxe-table'
-import { NButton } from 'naive-ui'
+import { defineComponent, ref } from 'vue'
 import { Select } from 'ant-design-vue'
 
 export default defineComponent({
@@ -20,6 +18,7 @@ export default defineComponent({
             aaaaa
           </Select.Option>
         </Select>
+        <h1>我是子页面1111</h1>
       </>
     )
   },

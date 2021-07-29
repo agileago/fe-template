@@ -1,21 +1,28 @@
-import { createApp } from 'vue'
+import { App, createApp } from 'vue'
 import { registerGlobalService } from './service'
 import 'ant-design-vue/dist/antd.css'
 import 'virtual:svg-icons-register'
-import SvgIcon from '@/common/components/svg-icon'
-import { Button } from 'ant-design-vue'
+import { RouterView } from 'vue-router'
+import router from '@/router/router'
 
-const app = createApp({
-  setup() {
-    registerGlobalService() // 注册全局单例服务
-    return () => (
-      <>
-        <Button danger type={'primary'}>
-          我是按钮<SvgIcon name={'dir1-color'}></SvgIcon>
-        </Button>
-      </>
-    )
-  },
-})
+let app: App<Element>
 
-app.mount('#app')
+export async function bootstrap() {
+  app = createApp({
+    setup() {
+      registerGlobalService() // 注册全局单例服务
+      return () => <RouterView></RouterView>
+    },
+  })
+  app.use(router)
+}
+export function mount(container: Element) {
+  app.mount(container)
+}
+export function unmount() {
+  app.unmount()
+}
+
+if (!window.MASTER) {
+  bootstrap().then(() => mount(document.getElementById('app')!))
+}
