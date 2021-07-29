@@ -1,20 +1,21 @@
-import { FunctionalComponent } from 'vue'
+import { FunctionalComponent, HTMLAttributes } from 'vue'
 import { IconTypes } from './icon.interface'
+import './icon.style.scss'
 
 interface IconProps {
   name: IconTypes
-  color?: string
 }
 
-const SvgIcon: FunctionalComponent<IconProps> = (props, ctx) => {
+const SvgIcon: FunctionalComponent<IconProps & HTMLAttributes> = (props, ctx) => {
   // eslint-disable-next-line prefer-const
-  let { name, color, ...args } = props
-  const symbolId = '#icon-' + name
-  color = color || 'currentColor'
+  let { name, ...args } = props
+  const symbolId = 'icon-' + name
   return (
-    <svg aria-hidden="true" {...args}>
-      <use xlinkHref={symbolId} fill={color} />
-    </svg>
+    <span role="img" aria-label={symbolId} class={['anticon', 'anticon-' + symbolId]} {...args}>
+      <svg aria-hidden="true" fill="currentColor" width="1em" height="1em">
+        <use xlinkHref={'#' + symbolId} />
+      </svg>
+    </span>
   )
 }
 

@@ -9,6 +9,7 @@
 - [x] swagger自动生成接口代码
 - [x] mock模拟接口数据
 - [x] css使用css modules
+- [x] svg图标支持
 - [ ] 自动依赖注入
 - [ ] 表单验证
 - [ ] 低代码接入
