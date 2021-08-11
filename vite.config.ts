@@ -26,5 +26,8 @@ export default defineConfig(({ command, mode }) => {
         { find: '@/', replacement: '/src/' },
       ],
     },
+    server: {
+      port: 3001,
+    },
   }
 })
