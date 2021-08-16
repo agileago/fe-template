@@ -1,4 +1,6 @@
 declare module 'vite-plugin-mockit'
 interface Window {
-  MASTER: boolean
+  __MASTER: {
+    router: import('vue-router').Router
+  }
 }

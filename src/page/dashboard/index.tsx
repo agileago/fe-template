@@ -1,5 +1,5 @@
 import { defineComponent, ref } from 'vue'
-import { Select } from 'ant-design-vue'
+import { Card, Select } from 'ant-design-vue'
 
 export default defineComponent({
   name: 'Dashboard',
@@ -14,20 +14,20 @@ export default defineComponent({
     const name = ref('name')
     const name1 = ref('name2')
     return () => (
-      <>
+      <Card style={{ margin: '12px' }}>
         <Select v-model={[select.value, 'value']} allowClear style={{ width: '200px' }}>
           <Select.Option title={'aaa'} value={111}>
             aaaaa
           </Select.Option>
         </Select>
-        <h1>我是子页面1111</h1>
+        <h1>我是子页面2222</h1>
         <Abc
           v-models={[
             [name.value, 'name'],
             [name1.value, 'name1'],
           ]}
         ></Abc>
-      </>
+      </Card>
     )
   },
 })

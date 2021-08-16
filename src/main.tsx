@@ -3,33 +3,26 @@ import { registerGlobalService } from './service'
 import 'ant-design-vue/dist/antd.css'
 import 'virtual:svg-icons-register'
 import { RouterView, RouterLink } from 'vue-router'
-import router from '@/router/router'
+import * as routing from './router/router'
 
 let app: App<Element>
 
-export async function bootstrap() {
+export function bootstrap(container: Element) {
+  const router = routing.create()
   app = createApp({
     setup() {
       registerGlobalService() // 注册全局单例服务
-      return () => (
-        <div>
-          <h3>导航</h3>
-          <RouterLink to={'/login'}>登录</RouterLink>
-          <RouterLink to={'/index'}>首页</RouterLink>
-          <RouterView></RouterView>
-        </div>
-      )
+      return () => <RouterView></RouterView>
     },
   })
   app.use(router)
-}
-export function mount(container: Element) {
   app.mount(container)
 }
 export function unmount() {
+  routing.destroy()
   app.unmount()
 }
 
-if (!window.MASTER) {
-  bootstrap().then(() => mount(document.getElementById('app')!))
+if (!window.__MASTER) {
+  bootstrap(document.getElementById('app')!)
 }

@@ -1,0 +1,114 @@
+diff --git a/node_modules/vue-router/dist/vue-router.esm-bundler.js b/node_modules/vue-router/dist/vue-router.esm-bundler.js
+index c8d88cd..7bddf72 100644
+--- a/node_modules/vue-router/dist/vue-router.esm-bundler.js
++++ b/node_modules/vue-router/dist/vue-router.esm-bundler.js
+@@ -407,7 +407,7 @@ function createCurrentLocation(base, location) {
+     const path = stripBase(pathname, base);
+     return path + search + hash;
+ }
+-function useHistoryListeners(base, historyState, currentLocation, replace) {
++function useHistoryListeners(base, historyState, currentLocation, replace, token) {
+     let listeners = [];
+     let teardowns = [];
+     // TODO: should it be a stack? a Dict. Check if the popstate listener
+@@ -418,7 +418,7 @@ function useHistoryListeners(base, historyState, currentLocation, replace) {
+         const from = currentLocation.value;
+         const fromState = historyState.value;
+         let delta = 0;
+-        if (state) {
++        if (state?.token === token) {
+             currentLocation.value = to;
+             historyState.value = state;
+             // ignore the popstate and reset the pauseState
+@@ -488,7 +488,7 @@ function useHistoryListeners(base, historyState, currentLocation, replace) {
+ /**
+  * Creates a state object
+  */
+-function buildState(back, current, forward, replaced = false, computeScroll = false) {
++function buildState(token, back, current, forward, replaced = false, computeScroll = false) {
+     return {
+         back,
+         current,
+@@ -496,15 +496,23 @@ function buildState(back, current, forward, replaced = false, computeScroll = fa
+         replaced,
+         position: window.history.length,
+         scroll: computeScroll ? computeScrollPosition() : null,
++        token,
+     };
+ }
+-function useHistoryStateNavigation(base) {
++function getHistoryState(token) {
++    return window.history.state?.token === token
++        ? window.history.state
++        : undefined;
++}
++function useHistoryStateNavigation(base, token) {
+     const { history, location } = window;
+     // private variables
+     const currentLocation = {
+         value: createCurrentLocation(base, location),
+     };
+-    const historyState = { value: history.state };
++    const historyState = {
++        value: getHistoryState(token),
++    };
+     // build current history entry as this is a fresh navigation
+     if (!historyState.value) {
+         changeLocation(currentLocation.value, {
+@@ -517,6 +525,7 @@ function useHistoryStateNavigation(base) {
+             // don't add a scroll as the user may have an anchor and we want
+             // scrollBehavior to be triggered without a saved position
+             scroll: null,
++            token,
+         }, true);
+     }
+     function changeLocation(to, state, replace) {
+@@ -553,7 +562,7 @@ function useHistoryStateNavigation(base) {
+         }
+     }
+     function replace(to, data) {
+-        const state = assign({}, history.state, buildState(historyState.value.back, 
++        const state = assign({ token }, getHistoryState(token), buildState(token, historyState.value.back, 
+         // keep back and forward entries but override current position
+         to, historyState.value.forward, true), data, { position: historyState.value.position });
+         changeLocation(to, state, true);
+@@ -562,11 +571,11 @@ function useHistoryStateNavigation(base) {
+     function push(to, data) {
+         // Add to current entry the information of where we are going
+         // as well as saving the current position
+-        const currentState = assign({}, 
++        const currentState = assign({ token }, 
+         // use current history state to gracefully handle a wrong call to
+         // history.replaceState
+         // https://github.com/vuejs/vue-router-next/issues/366
+-        historyState.value, history.state, {
++        historyState.value, getHistoryState(token), {
+             forward: to,
+             scroll: computeScrollPosition(),
+         });
+@@ -575,8 +584,10 @@ function useHistoryStateNavigation(base) {
+                 `history.replaceState(history.state, '', url)\n\n` +
+                 `You can find more information at https://next.router.vuejs.org/guide/migration/#usage-of-history-state.`);
+         }
+-        changeLocation(currentState.current, currentState, true);
+-        const state = assign({}, buildState(currentLocation.value, to, null), { position: currentState.position + 1 }, data);
++        if (!history.state || history.state.token === token) {
++            changeLocation(currentState.current, currentState, true);
++        }
++        const state = assign({ token }, buildState(token, currentLocation.value, to, null), { position: currentState.position + 1 }, data);
+         changeLocation(to, state, false);
+         currentLocation.value = to;
+     }
+@@ -594,8 +605,10 @@ function useHistoryStateNavigation(base) {
+  */
+ function createWebHistory(base) {
+     base = normalizeBase(base);
+-    const historyNavigation = useHistoryStateNavigation(base);
+-    const historyListeners = useHistoryListeners(base, historyNavigation.state, historyNavigation.location, historyNavigation.replace);
++    // identity whose history state
++    const stateToken = Math.random();
++    const historyNavigation = useHistoryStateNavigation(base, stateToken);
++    const historyListeners = useHistoryListeners(base, historyNavigation.state, historyNavigation.location, historyNavigation.replace, stateToken);
+     function go(delta, triggerListeners = true) {
+         if (!triggerListeners)
+             historyListeners.pauseListeners();

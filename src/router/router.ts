@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory, Router, RouteRecordRaw, RouterHistory } from 'vue-router'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -18,9 +18,17 @@ const routes: RouteRecordRaw[] = [
   },
 ]
 
-const router = createRouter({
-  routes,
-  history: createWebHistory('/child/'),
-})
+let router: Router
+let history: RouterHistory
 
-export default router
+export function create() {
+  ;(history = createWebHistory('/c1/')),
+    (router = createRouter({
+      routes,
+      history,
+    }))
+  return router
+}
+export function destroy() {
+  history.destroy()
+}
