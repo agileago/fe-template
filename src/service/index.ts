@@ -1,6 +1,10 @@
-import { provide } from 'vue'
-import { UserService } from './user.service'
+import { VueComponent } from '@titanmatrix/vue3-class-component'
+import { UserService } from '@/service/user.service'
 
-export function registerGlobalService() {
-  provide(UserService.TOKEN, new UserService())
+// 全局服务初始化容器
+export default class GlobalServiceProvider extends VueComponent {
+  userService = new UserService()
+  render() {
+    return this.context.slots.default?.()
+  }
 }

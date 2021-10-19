@@ -9,16 +9,15 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "types": ["vite/client"],
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
+    "useDefineForClassFields": false,
     "allowSyntheticDefaultImports": true,
-    "strictPropertyInitialization": false,
+    "strictPropertyInitialization": true,
     "importHelpers": true,
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.ts"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.ts", "global.d.ts"]
 }

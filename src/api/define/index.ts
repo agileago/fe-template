@@ -1,6 +1,6 @@
 /* eslint-disable */
 /* tslint:disable */
-/** Do not modify this file manually.
-its content will be overwriten next time execute the `tsg` command. */
+/** Do not modify manually.
+content is generated automatically by `ts-gear`. */
 export * from './request'
 export * from './definition'

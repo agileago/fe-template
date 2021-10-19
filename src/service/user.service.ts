@@ -1,13 +1,13 @@
-import { InjectionKey, ref } from 'vue'
+import { InjectionKey } from 'vue'
+import { Ref, VueService } from '@titanmatrix/vue3-class-component'
 
-export class UserService {
-  static TOKEN: InjectionKey<UserService> = Symbol()
-  user = ref<User | null>(null)
-  constructor() {}
+export class UserService extends VueService {
+  static ProviderKey: InjectionKey<UserService> = Symbol('UserService')
+  @Ref() user?: User
 
   async getUser() {
     await new Promise((resolve) => setTimeout(resolve, 3000))
-    this.user.value = {
+    this.user = {
       name: 'rjh',
     }
   }

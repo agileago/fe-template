@@ -18,28 +18,20 @@ const projects: Project[] = [
     apiFilter(req) {
       return !req.pathname.startsWith('/hgy')
     },
-    template({ doc, httpMethod, parameterTypeName, requestFunctionName, responseType, urlPath }) {
-      // 方法注释
-      const docWords = doc?.[0]
-        ?.split(/\n/)
-        .map((k) => `* ${k}`)
-        .join('\n')
-      // 方法名称
-      const fn = requestFunctionName
-      // 参数类型
-      const ptype = parameterTypeName
-      // axios配置类型
-      const aConf = 'AxiosRequestConfig'
-      // 返回类型
-      const rType = responseType.successTypeName
-      return `
-        /**
-         ${docWords}
-         */
-        export function ${fn}(${ptype ? `option: ${ptype}, ` : ''}config?: ${aConf}) {
-          return requester<${rType}>('${urlPath}', { method: '${httpMethod}' ${ptype ? ', ...option' : ''}}, config)
-        }
-      `
+    /**
+     * 自定义代码样例:
+     * (option?: RequestType, config?: AxiosRequestConfig) => requester<ResponseType>('getdata', {method: 'post', ...option}, config)
+     * @param arg
+     */
+    generateRequestFunction(arg) {
+      let parameter = arg.parameterTypeName
+        ? `option${!arg.parameterRequired ? '?' : ''}: ${arg.parameterTypeName}, `
+        : ''
+      parameter += 'config?: AxiosRequestConfig'
+      const body = `requester<${arg.responseSuccessTypeName}>('${arg.pathname}', { method: '${arg.httpMethod}' ${
+        arg.parameterTypeName ? ', ...option' : ''
+      }}, config)`
+      return `(${parameter}) => ${body}`
     },
   },
 ]

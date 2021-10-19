@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, AxiosInstance } from 'axios'
+import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import * as pathToRegexp from 'path-to-regexp'
 import type { RequestParameter } from 'tsg-tgjz'
 
@@ -42,7 +42,7 @@ export const parseUrl = (url: string, option?: RequestParameter): string => {
 export function interceptRequest(url: string, option?: RequestParameter): [string, AxiosRequestConfig] {
   try {
     url = parseUrl(url, option)
-  } catch (e) {
+  } catch (e: any) {
     throw new Error(e.message)
   }
   option = option || {}
