@@ -18,7 +18,6 @@ const SvgIcon: FunctionalComponent<IconProps & HTMLAttributes> = (props, ctx) =>
     </span>
   )
 }
-
 SvgIcon.inheritAttrs = false
 SvgIcon.displayName = 'SvgIcon'
 

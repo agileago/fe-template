@@ -16,7 +16,7 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
-    "@titanmatrix/vue3-class-component": "^0.2.13",
+    "@titanmatrix/vue3-class-component": "^0.2.14",
     "ant-design-vue": "^2.2.8",
     "axios": "^0.21.1",
     "mitt": "^3.0.0",

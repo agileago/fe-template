@@ -1,60 +1,124 @@
-# vite前端模板
+# vite前端基础模板
 
-功能
+### 工具
 
-- [x] vite+vue3+setup+ddd提供前端最佳实践
-- [x] typescript支持，提供类型提示
-- [x] prettier+eslint规范代码风格
-- [x] commitlint规范提交格式信息
-- [x] swagger自动生成接口代码
-- [x] mock模拟接口数据
-- [x] css使用css modules
-- [x] svg图标支持
-- [ ] 自动依赖注入
-- [ ] 表单验证
-- [` ] 低代码接入
+建议使用 `webstorm`IDE,并且安装以下插件：
 
-`
-### 提交信息规范
+- [中文语言包](https://plugins.jetbrains.com/plugin/13710-chinese-simplified-language-pack----)
+- [Visual Studio Code Dark Plus Theme—主题](https://plugins.jetbrains.com/plugin/12255-visual-studio-code-dark-plus-theme)
+- [Atom Material Icons—图标](https://plugins.jetbrains.com/plugin/10044-atom-material-icons)
+- [Conventional Commit—标准提交信息](https://plugins.jetbrains.com/plugin/13389-conventional-commit)
+- [Awesome Console—控制台链接到代码](https://plugins.jetbrains.com/plugin/7677-awesome-console)
+- [Rainbow Brackets—彩虹大括号](https://plugins.jetbrains.com/plugin/10080-rainbow-brackets)
 
-#### 提交格式
-`type(scope): body`
+### 安装
 
-type: 提交类型
-scope：影响到的模块
-body: 提交信息简写
-
-#### webstorm集成
-
-安装插件https://plugins.jetbrains.com/plugin/13389-conventional-commit
-
-插件设置中设置基于模板
-
-### 启动
-
-```
+```shell
 yarn
-yarn run dev
-```
-更新依赖
-
-```
-yarn upgrade-interactive --latest
 ```
 
-### swagger生成api
+### 命令
 
+所有命令使用 `yarn run` 执行
+
+- `dev` : 启动开发
+- `uat` : 测试环境构建
+- `build` : 生产环境构建
+- `serve` : 本地构建完成预览
+- `lint` : eslint修复代码
+- `format` : prettier代码
+- `api` : swagger生成请求代码，在 `src/api` 下进行配置
+- `gen:icon-types` ： 生成图标类型文件(新增图标了，就执行一下，图标组件会有提示)
+
+### 开发规范
+
+全面面向对象开发 **OOP**, 使用类定义服务和组件
+
+#### 服务
+
+服务是指可复用的业务逻辑，类似 `hooks`, 和 `hooks`的区别是，一个使用类，一个使用函数定义， 实用类天生自带类型，可使用装饰器
+
+1. 定义服务
+
+```typescript
+import { VueService, Ref } from '@titanmatrix/vue3-class-component'
+import { User } from './user.service'
+
+export class UserService extends VueService {
+  @Ref() user?: User
+  @Ref() count = 1
+
+  constructor() {
+    super()
+    //  watch, watchEffect 等需写在构造函数中
+    watch(() => this.count, this.countChange)
+  }
+
+  countChange = (n: number, o: number) => {
+    console.log('change', n, o)
+  }
+  
+  add() {
+    this.count++
+  }
+}
 ```
-yarn run api
+
+全局服务请在 `service`文件夹定义，并且在 `index.ts` 中初始化
+
+#### 组件
+
+统一使用类进行组件的声明，组件是指可复用的UI组件
+
+1. 定义组件
+
+```typescript
+import { ComponentProps, VueComponent } from '@titanmatrix/vue3-class-component'
+import { watchEffect } from 'vue'
+
+export interface LoginForm_Props {
+  /**
+   * 大小
+   */
+  size?: 'small' | 'large'
+  /**
+   * 提交事件
+   * @param data
+   */
+  onSubmit: (data: any) => any
+}
+
+export class LoginForm extends VueComponent<LoginForm_Props> {
+  // 如果组件有属性必须定义此属性
+  static defaultProps: ComponentProps<LoginForm_Props> = {
+    size: String,
+    onSubmit: Function
+  }
+
+  @Ref() model = {
+    username: '',
+    password: ''
+  }
+
+  @Hook('Mounted')
+  mounted() {
+    console.log('mounted')
+  }
+
+  constructor() {
+    super()
+    watchEffect(this.usernameChange)
+  }
+
+  usernameChange = () => {
+    console.log(this.model.username)
+  }
+
+  render() {
+    return <div>{this.props.size}{this.model.username}</div>
+  }
+}
 ```
 
-### 代码规范
 
-- 坚持使用`tsx`开发组件
-- 坚持使用`ref`定义响应式变量
-- 坚持逻辑写在服务中 `xxx.service.ts`
-- 坚持组件里面只有单纯的表现 `xxx.component.ts`
-- 推荐全局服务使用依赖注入在顶层组件上
-- 推荐样式写在单独文件里，样式隔离请使用`css module`
 
-推荐阅读`Angular风格指南` [Angular风格指南](https://angular.cn/guide/styleguide)

@@ -834,10 +834,10 @@
     core-js "^3.8.0"
     nanopop "^2.1.0"
 
-"@titanmatrix/vue3-class-component@^0.2.13":
-  version "0.2.13"
-  resolved "https://registry.npmjs.org/@titanmatrix/vue3-class-component/-/vue3-class-component-0.2.13.tgz#4b90b57f49e107e8c43b82073b4af7873a729702"
-  integrity sha512-kRWDsS5IpBvhC7AL5Y+z7BuJNGb1WHy2N/YpuA+EO5wXz7G1++TrYuTI+6KER6QCH+8tkuinj2v3y4QNu/X8fw==
+"@titanmatrix/vue3-class-component@^0.2.14":
+  version "0.2.14"
+  resolved "https://registry.npmjs.org/@titanmatrix/vue3-class-component/-/vue3-class-component-0.2.14.tgz#7fc499992093d5e9796db06cbc5909c0e9b474c6"
+  integrity sha512-65uYKk56dheMZNxGmY+xXfNQbQCA1ef8YOQ8+pDSw0oT6MTAPSXtzAqWIVH0EOcb7JBQ5J9yRjEOG9dsHnQFmQ==
 
 "@tootallnate/once@1":
   version "1.1.2"
