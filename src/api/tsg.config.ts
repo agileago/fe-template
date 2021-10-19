@@ -2,7 +2,7 @@
  * each project will use the "requester" function when request remote api
  * so this file would be included into your source file when compile
  * */
-import type { Project } from 'tsg-tgjz'
+import type { Project } from 'ts-gear'
 // @ts-ignore
 import prettier from '../../.prettierrc'
 
@@ -12,6 +12,7 @@ const projects: Project[] = [
     dest: '../api',
     source: 'http://test-pim-define.titanmatrix.cn/define/swagger-json',
     keepGeneric: false,
+    shouldExportResponseType: false,
     importRequesterStatement: `import { http, AxiosRequestConfig } from "../http"`,
     prettierConfig: prettier,
     // 过滤掉某些不想生成的api

@@ -45,7 +45,7 @@
     "patch-package": "^6.4.7",
     "prettier": "^2.4.1",
     "sass": "^1.43.2",
-    "tsg-tgjz": "^4.1.0",
+    "ts-gear": "^4.1.0",
     "typescript": "^4.4.4",
     "vite": "^2.6.10",
     "vite-plugin-aliyun-oss": "^1.0.1",

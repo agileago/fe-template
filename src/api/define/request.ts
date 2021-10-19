@@ -129,7 +129,7 @@ export const postOpenGetFactList = (config?: AxiosRequestConfig) =>
   requester<PostOpenGetFactListResponseSuccess>('/open/getFactList', { method: 'post' }, config)
 
 /** @description request parameter type for postOpenGetFactCategory */
-interface PostOpenGetFactCategoryOption {
+export interface PostOpenGetFactCategoryOption {
   body: GetFactCategoryOpenDto
 }
 
@@ -152,7 +152,7 @@ export const postOpenGetFactCategory = (option: PostOpenGetFactCategoryOption, c
   requester<PostOpenGetFactCategoryResponseSuccess>('/open/getFactCategory', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOpenGetSeriesComps */
-interface PostOpenGetSeriesCompsOption {
+export interface PostOpenGetSeriesCompsOption {
   body: SeriesIdOpenDto
 }
 
@@ -175,7 +175,7 @@ export const postOpenGetSeriesComps = (option: PostOpenGetSeriesCompsOption, con
   requester<PostOpenGetSeriesCompsResponseSuccess>('/open/getSeriesComps', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOpenGetSeriesCompsTree */
-interface PostOpenGetSeriesCompsTreeOption {
+export interface PostOpenGetSeriesCompsTreeOption {
   body: SeriesIdOpenDto
 }
 
@@ -202,7 +202,7 @@ export const postOpenGetSeriesCompsTree = (option: PostOpenGetSeriesCompsTreeOpt
   )
 
 /** @description request parameter type for postOpenProdGetSeriesComps */
-interface PostOpenProdGetSeriesCompsOption {
+export interface PostOpenProdGetSeriesCompsOption {
   body: SeriesIdOpenDto
 }
 
@@ -229,7 +229,7 @@ export const postOpenProdGetSeriesComps = (option: PostOpenProdGetSeriesCompsOpt
   )
 
 /** @description request parameter type for postOpenProdGetSeriesCompsTreeProd */
-interface PostOpenProdGetSeriesCompsTreeProdOption {
+export interface PostOpenProdGetSeriesCompsTreeProdOption {
   body: SeriesIdOpenDto
 }
 
@@ -259,7 +259,7 @@ export const postOpenProdGetSeriesCompsTreeProd = (
   )
 
 /** @description request parameter type for postOpenGetEffectMcodes */
-interface PostOpenGetEffectMcodesOption {
+export interface PostOpenGetEffectMcodesOption {
   body: OpenGetEffectMcodesReqDto
 }
 
@@ -300,7 +300,7 @@ export const postOpenProdGetFactList = (config?: AxiosRequestConfig) =>
   requester<PostOpenProdGetFactListResponseSuccess>('/open/prod/getFactList', { method: 'post' }, config)
 
 /** @description request parameter type for postOpenProdGetFactCategory */
-interface PostOpenProdGetFactCategoryOption {
+export interface PostOpenProdGetFactCategoryOption {
   body: GetFactCategoryOpenDto
 }
 
@@ -327,7 +327,7 @@ export const postOpenProdGetFactCategory = (option: PostOpenProdGetFactCategoryO
   )
 
 /** @description request parameter type for postOpenProdGetPcodeOne */
-interface PostOpenProdGetPcodeOneOption {
+export interface PostOpenProdGetPcodeOneOption {
   body: GetPcodeOneReqDto
 }
 
@@ -350,7 +350,7 @@ export const postOpenProdGetPcodeOne = (option: PostOpenProdGetPcodeOneOption, c
   requester<PostOpenProdGetPcodeOneResponseSuccess>('/open/prod/getPcodeOne', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOpenProdGetPcodeList */
-interface PostOpenProdGetPcodeListOption {
+export interface PostOpenProdGetPcodeListOption {
   body: GetPcodeListReqDto
 }
 
@@ -373,7 +373,7 @@ export const postOpenProdGetPcodeList = (option: PostOpenProdGetPcodeListOption,
   requester<PostOpenProdGetPcodeListResponseSuccess>('/open/prod/getPcodeList', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOpenProdGetComponentList */
-interface PostOpenProdGetComponentListOption {
+export interface PostOpenProdGetComponentListOption {
   body: SeriesIdOpenDto
 }
 
@@ -400,7 +400,7 @@ export const postOpenProdGetComponentList = (option: PostOpenProdGetComponentLis
   )
 
 /** @description request parameter type for postOpenProdGetDefineData */
-interface PostOpenProdGetDefineDataOption {
+export interface PostOpenProdGetDefineDataOption {
   body: SeriesIdOpenDto
 }
 
@@ -423,7 +423,7 @@ export const postOpenProdGetDefineData = (option: PostOpenProdGetDefineDataOptio
   requester<PostOpenProdGetDefineDataResponseSuccess>('/open/prod/getDefineData', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOpenProdGetCombList */
-interface PostOpenProdGetCombListOption {
+export interface PostOpenProdGetCombListOption {
   body: GetCombBulkReqDto
 }
 
@@ -446,7 +446,7 @@ export const postOpenProdGetCombList = (option: PostOpenProdGetCombListOption, c
   requester<PostOpenProdGetCombListResponseSuccess>('/open/prod/getCombList', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOpenProdGetCombBulkByCompId */
-interface PostOpenProdGetCombBulkByCompIdOption {
+export interface PostOpenProdGetCombBulkByCompIdOption {
   body: CompIdReqDto
 }
 
@@ -476,7 +476,7 @@ export const postOpenProdGetCombBulkByCompId = (
   )
 
 /** @description request parameter type for postOpenProdGetCombPriceList */
-interface PostOpenProdGetCombPriceListOption {
+export interface PostOpenProdGetCombPriceListOption {
   body: GetCombBulkReqDto
 }
 
@@ -503,7 +503,7 @@ export const postOpenProdGetCombPriceList = (option: PostOpenProdGetCombPriceLis
   )
 
 /** @description request parameter type for postOpenProdGetCompInfoByCkey */
-interface PostOpenProdGetCompInfoByCkeyOption {
+export interface PostOpenProdGetCompInfoByCkeyOption {
   body: GetCombBulkReqDto
 }
 
@@ -533,7 +533,7 @@ export const postOpenProdGetCompInfoByCkey = (
   )
 
 /** @description request parameter type for postOpenProdGetState */
-interface PostOpenProdGetStateOption {
+export interface PostOpenProdGetStateOption {
   body: MacafeRequestDto
 }
 
@@ -592,7 +592,7 @@ export const postCommonGetCountryList = (config?: AxiosRequestConfig) =>
   requester<PostCommonGetCountryListResponseSuccess>('/common/getCountryList', { method: 'post' }, config)
 
 /** @description request parameter type for postFactGetByPage */
-interface PostFactGetByPageOption {
+export interface PostFactGetByPageOption {
   body: FactGetByPageReqDto
 }
 
@@ -615,7 +615,7 @@ export const postFactGetByPage = (option: PostFactGetByPageOption, config?: Axio
   requester<PostFactGetByPageResponseSuccess>('/fact/getByPage', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postFactGetAll */
-interface PostFactGetAllOption {
+export interface PostFactGetAllOption {
   body: FactGetAllReqDto
 }
 
@@ -638,7 +638,7 @@ export const postFactGetAll = (option: PostFactGetAllOption, config?: AxiosReque
   requester<PostFactGetAllResponseSuccess>('/fact/getAll', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postFactGetById */
-interface PostFactGetByIdOption {
+export interface PostFactGetByIdOption {
   body: FactIdReqDto
 }
 
@@ -661,7 +661,7 @@ export const postFactGetById = (option: PostFactGetByIdOption, config?: AxiosReq
   requester<PostFactGetByIdResponseSuccess>('/fact/getById', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postFactCreate */
-interface PostFactCreateOption {
+export interface PostFactCreateOption {
   body: FactCreateReqDto
 }
 
@@ -684,7 +684,7 @@ export const postFactCreate = (option: PostFactCreateOption, config?: AxiosReque
   requester<PostFactCreateResponseSuccess>('/fact/create', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postFactUpdate */
-interface PostFactUpdateOption {
+export interface PostFactUpdateOption {
   body: FactUpdateReqDto
 }
 
@@ -707,7 +707,7 @@ export const postFactUpdate = (option: PostFactUpdateOption, config?: AxiosReque
   requester<PostFactUpdateResponseSuccess>('/fact/update', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postFactRemove */
-interface PostFactRemoveOption {
+export interface PostFactRemoveOption {
   body: FactRemoveIdsReqDto
 }
 
@@ -730,7 +730,7 @@ export const postFactRemove = (option: PostFactRemoveOption, config?: AxiosReque
   requester<PostFactRemoveResponseSuccess>('/fact/remove', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postFactExistName */
-interface PostFactExistNameOption {
+export interface PostFactExistNameOption {
   body: ExistNameReqDto
 }
 
@@ -753,7 +753,7 @@ export const postFactExistName = (option: PostFactExistNameOption, config?: Axio
   requester<PostFactExistNameResponseSuccess>('/fact/existName', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postFactExistCategory */
-interface PostFactExistCategoryOption {
+export interface PostFactExistCategoryOption {
   body: FactIdReqDto
 }
 
@@ -776,7 +776,7 @@ export const postFactExistCategory = (option: PostFactExistCategoryOption, confi
   requester<PostFactExistCategoryResponseSuccess>('/fact/existCategory', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postFactProdTypeGetTree */
-interface PostFactProdTypeGetTreeOption {
+export interface PostFactProdTypeGetTreeOption {
   body: FactProdTypeFactIdReqDto
 }
 
@@ -799,7 +799,7 @@ export const postFactProdTypeGetTree = (option: PostFactProdTypeGetTreeOption, c
   requester<PostFactProdTypeGetTreeResponseSuccess>('/factProdType/getTree', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postFactProdTypeGetByFactoryId */
-interface PostFactProdTypeGetByFactoryIdOption {
+export interface PostFactProdTypeGetByFactoryIdOption {
   body: FactProdTypeFactIdReqDto
 }
 
@@ -829,7 +829,7 @@ export const postFactProdTypeGetByFactoryId = (
   )
 
 /** @description request parameter type for postFactProdTypeCreate */
-interface PostFactProdTypeCreateOption {
+export interface PostFactProdTypeCreateOption {
   body: FactProdTypeCreateReqDto
 }
 
@@ -852,7 +852,7 @@ export const postFactProdTypeCreate = (option: PostFactProdTypeCreateOption, con
   requester<PostFactProdTypeCreateResponseSuccess>('/factProdType/create', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postFactProdTypeUpdate */
-interface PostFactProdTypeUpdateOption {
+export interface PostFactProdTypeUpdateOption {
   body: FactProdTypeUpdateReqDto
 }
 
@@ -875,7 +875,7 @@ export const postFactProdTypeUpdate = (option: PostFactProdTypeUpdateOption, con
   requester<PostFactProdTypeUpdateResponseSuccess>('/factProdType/update', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postFactProdTypeRemove */
-interface PostFactProdTypeRemoveOption {
+export interface PostFactProdTypeRemoveOption {
   body: IdsReqDto
 }
 
@@ -898,7 +898,7 @@ export const postFactProdTypeRemove = (option: PostFactProdTypeRemoveOption, con
   requester<PostFactProdTypeRemoveResponseSuccess>('/factProdType/remove', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postFactProdTypeUpdateBatch */
-interface PostFactProdTypeUpdateBatchOption {
+export interface PostFactProdTypeUpdateBatchOption {
   body: FactProdTypeUpdateBatchReqDto
 }
 
@@ -925,7 +925,7 @@ export const postFactProdTypeUpdateBatch = (option: PostFactProdTypeUpdateBatchO
   )
 
 /** @description request parameter type for postFactProdTypeExistName */
-interface PostFactProdTypeExistNameOption {
+export interface PostFactProdTypeExistNameOption {
   body: FactProdTypeExistNameReqDto
 }
 
@@ -984,7 +984,7 @@ export const postIndustryGetList = (config?: AxiosRequestConfig) =>
   requester<PostIndustryGetListResponseSuccess>('/industry/getList', { method: 'post' }, config)
 
 /** @description request parameter type for postSeriesGetAll */
-interface PostSeriesGetAllOption {
+export interface PostSeriesGetAllOption {
   body: SeriesFidReqDto
 }
 
@@ -1007,7 +1007,7 @@ export const postSeriesGetAll = (option: PostSeriesGetAllOption, config?: AxiosR
   requester<PostSeriesGetAllResponseSuccess>('/series/getAll', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postSeriesGetById */
-interface PostSeriesGetByIdOption {
+export interface PostSeriesGetByIdOption {
   body: SeriesIdReqDto
 }
 
@@ -1030,7 +1030,7 @@ export const postSeriesGetById = (option: PostSeriesGetByIdOption, config?: Axio
   requester<PostSeriesGetByIdResponseSuccess>('/series/getById', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postSeriesCreate */
-interface PostSeriesCreateOption {
+export interface PostSeriesCreateOption {
   /**
    * @description
    *   系列ID
@@ -1063,7 +1063,7 @@ export const postSeriesCreate = (option: PostSeriesCreateOption, config?: AxiosR
   requester<PostSeriesCreateResponseSuccess>('/series/create', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postSeriesUpdateSeriesStatus */
-interface PostSeriesUpdateSeriesStatusOption {
+export interface PostSeriesUpdateSeriesStatusOption {
   body: SeriesUpdateStatusReqDto
 }
 
@@ -1090,7 +1090,7 @@ export const postSeriesUpdateSeriesStatus = (option: PostSeriesUpdateSeriesStatu
   )
 
 /** @description request parameter type for postSeriesUpdate */
-interface PostSeriesUpdateOption {
+export interface PostSeriesUpdateOption {
   /**
    * @description
    *   系列ID
@@ -1123,7 +1123,7 @@ export const postSeriesUpdate = (option: PostSeriesUpdateOption, config?: AxiosR
   requester<PostSeriesUpdateResponseSuccess>('/series/update', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postSeriesUpdateBatch */
-interface PostSeriesUpdateBatchOption {
+export interface PostSeriesUpdateBatchOption {
   body: SeriesUpdateBatchReqDto
 }
 
@@ -1146,7 +1146,7 @@ export const postSeriesUpdateBatch = (option: PostSeriesUpdateBatchOption, confi
   requester<PostSeriesUpdateBatchResponseSuccess>('/series/updateBatch', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postSeriesRemove */
-interface PostSeriesRemoveOption {
+export interface PostSeriesRemoveOption {
   body: IdsReqDto
 }
 
@@ -1169,7 +1169,7 @@ export const postSeriesRemove = (option: PostSeriesRemoveOption, config?: AxiosR
   requester<PostSeriesRemoveResponseSuccess>('/series/remove', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postSeriesRemoveById */
-interface PostSeriesRemoveByIdOption {
+export interface PostSeriesRemoveByIdOption {
   body: SeriesIdReqDto
 }
 
@@ -1192,7 +1192,7 @@ export const postSeriesRemoveById = (option: PostSeriesRemoveByIdOption, config?
   requester<PostSeriesRemoveByIdResponseSuccess>('/series/removeById', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postSeriesIsAuditBeforeDelete */
-interface PostSeriesIsAuditBeforeDeleteOption {
+export interface PostSeriesIsAuditBeforeDeleteOption {
   body: SeriesIdReqDto
 }
 
@@ -1222,7 +1222,7 @@ export const postSeriesIsAuditBeforeDelete = (
   )
 
 /** @description request parameter type for postSeriesGetSeriesIndustry */
-interface PostSeriesGetSeriesIndustryOption {
+export interface PostSeriesGetSeriesIndustryOption {
   body: GetSeriesIndustryReqDto
 }
 
@@ -1249,7 +1249,7 @@ export const postSeriesGetSeriesIndustry = (option: PostSeriesGetSeriesIndustryO
   )
 
 /** @description request parameter type for postSeriesSaveSeriesIndustry */
-interface PostSeriesSaveSeriesIndustryOption {
+export interface PostSeriesSaveSeriesIndustryOption {
   /**
    * @description
    *   系列ID
@@ -1286,7 +1286,7 @@ export const postSeriesSaveSeriesIndustry = (option: PostSeriesSaveSeriesIndustr
   )
 
 /** @description request parameter type for postSeriesGetNameProps */
-interface PostSeriesGetNamePropsOption {
+export interface PostSeriesGetNamePropsOption {
   body: GetSeriesIndustryReqDto
 }
 
@@ -1309,7 +1309,7 @@ export const postSeriesGetNameProps = (option: PostSeriesGetNamePropsOption, con
   requester<PostSeriesGetNamePropsResponseSuccess>('/series/getNameProps', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postSeriesGetAllProps */
-interface PostSeriesGetAllPropsOption {
+export interface PostSeriesGetAllPropsOption {
   body: GetSeriesIndustryReqDto
 }
 
@@ -1332,7 +1332,7 @@ export const postSeriesGetAllProps = (option: PostSeriesGetAllPropsOption, confi
   requester<PostSeriesGetAllPropsResponseSuccess>('/series/getAllProps', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postSeriesExistSameName */
-interface PostSeriesExistSameNameOption {
+export interface PostSeriesExistSameNameOption {
   body: SeriesExistNameReqDto
 }
 
@@ -1355,7 +1355,7 @@ export const postSeriesExistSameName = (option: PostSeriesExistSameNameOption, c
   requester<PostSeriesExistSameNameResponseSuccess>('/series/existSameName', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postSeriesGetSeriesStatus */
-interface PostSeriesGetSeriesStatusOption {
+export interface PostSeriesGetSeriesStatusOption {
   body: SeriesIdReqDto
 }
 
@@ -1378,7 +1378,7 @@ export const postSeriesGetSeriesStatus = (option: PostSeriesGetSeriesStatusOptio
   requester<PostSeriesGetSeriesStatusResponseSuccess>('/series/getSeriesStatus', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postSeriesChangeSeriesStatus */
-interface PostSeriesChangeSeriesStatusOption {
+export interface PostSeriesChangeSeriesStatusOption {
   body: SeriesChangeSatusReqDto
 }
 
@@ -1405,7 +1405,7 @@ export const postSeriesChangeSeriesStatus = (option: PostSeriesChangeSeriesStatu
   )
 
 /** @description request parameter type for postSeriesGetSeriesCompTree */
-interface PostSeriesGetSeriesCompTreeOption {
+export interface PostSeriesGetSeriesCompTreeOption {
   body: SeriesIdReqDto
 }
 
@@ -1432,7 +1432,7 @@ export const postSeriesGetSeriesCompTree = (option: PostSeriesGetSeriesCompTreeO
   )
 
 /** @description request parameter type for postSeriesCopySeries */
-interface PostSeriesCopySeriesOption {
+export interface PostSeriesCopySeriesOption {
   body: SeriesCopyReqDto
 }
 
@@ -1455,7 +1455,7 @@ export const postSeriesCopySeries = (option: PostSeriesCopySeriesOption, config?
   requester<PostSeriesCopySeriesResponseSuccess>('/series/copySeries', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postCompGetAllGroupBySid */
-interface PostCompGetAllGroupBySidOption {
+export interface PostCompGetAllGroupBySidOption {
   body: SeriesIdReqCompDto
 }
 
@@ -1478,7 +1478,7 @@ export const postCompGetAllGroupBySid = (option: PostCompGetAllGroupBySidOption,
   requester<PostCompGetAllGroupBySidResponseSuccess>('/comp/getAllGroupBySid', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postCompGetGroup */
-interface PostCompGetGroupOption {
+export interface PostCompGetGroupOption {
   body: CompGroupIdReqDto
 }
 
@@ -1501,7 +1501,7 @@ export const postCompGetGroup = (option: PostCompGetGroupOption, config?: AxiosR
   requester<PostCompGetGroupResponseSuccess>('/comp/getGroup', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postCompGetGroupBatch */
-interface PostCompGetGroupBatchOption {
+export interface PostCompGetGroupBatchOption {
   body: IdsReqDto
 }
 
@@ -1524,7 +1524,7 @@ export const postCompGetGroupBatch = (option: PostCompGetGroupBatchOption, confi
   requester<PostCompGetGroupBatchResponseSuccess>('/comp/getGroupBatch', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postCompCreateGroup */
-interface PostCompCreateGroupOption {
+export interface PostCompCreateGroupOption {
   /**
    * @description
    *   系列ID
@@ -1557,7 +1557,7 @@ export const postCompCreateGroup = (option: PostCompCreateGroupOption, config?: 
   requester<PostCompCreateGroupResponseSuccess>('/comp/createGroup', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postCompUpdateGroup */
-interface PostCompUpdateGroupOption {
+export interface PostCompUpdateGroupOption {
   /**
    * @description
    *   系列ID
@@ -1590,7 +1590,7 @@ export const postCompUpdateGroup = (option: PostCompUpdateGroupOption, config?: 
   requester<PostCompUpdateGroupResponseSuccess>('/comp/updateGroup', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postCompRemoveGroup */
-interface PostCompRemoveGroupOption {
+export interface PostCompRemoveGroupOption {
   /**
    * @description
    *   系列ID
@@ -1623,7 +1623,7 @@ export const postCompRemoveGroup = (option: PostCompRemoveGroupOption, config?: 
   requester<PostCompRemoveGroupResponseSuccess>('/comp/removeGroup', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postCompSaveBatchGroup */
-interface PostCompSaveBatchGroupOption {
+export interface PostCompSaveBatchGroupOption {
   /**
    * @description
    *   系列ID
@@ -1656,7 +1656,7 @@ export const postCompSaveBatchGroup = (option: PostCompSaveBatchGroupOption, con
   requester<PostCompSaveBatchGroupResponseSuccess>('/comp/saveBatchGroup', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postCompGetAll */
-interface PostCompGetAllOption {
+export interface PostCompGetAllOption {
   body: SeriesIdReqCompDto
 }
 
@@ -1679,7 +1679,7 @@ export const postCompGetAll = (option: PostCompGetAllOption, config?: AxiosReque
   requester<PostCompGetAllResponseSuccess>('/comp/getAll', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postCompGetById */
-interface PostCompGetByIdOption {
+export interface PostCompGetByIdOption {
   body: CompIdReqDto
 }
 
@@ -1702,7 +1702,7 @@ export const postCompGetById = (option: PostCompGetByIdOption, config?: AxiosReq
   requester<PostCompGetByIdResponseSuccess>('/comp/getById', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postCompCreate */
-interface PostCompCreateOption {
+export interface PostCompCreateOption {
   /**
    * @description
    *   系列ID
@@ -1735,7 +1735,7 @@ export const postCompCreate = (option: PostCompCreateOption, config?: AxiosReque
   requester<PostCompCreateResponseSuccess>('/comp/create', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postCompUpdate */
-interface PostCompUpdateOption {
+export interface PostCompUpdateOption {
   /**
    * @description
    *   系列ID
@@ -1768,7 +1768,7 @@ export const postCompUpdate = (option: PostCompUpdateOption, config?: AxiosReque
   requester<PostCompUpdateResponseSuccess>('/comp/update', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postCompRemove */
-interface PostCompRemoveOption {
+export interface PostCompRemoveOption {
   /**
    * @description
    *   系列ID
@@ -1801,7 +1801,7 @@ export const postCompRemove = (option: PostCompRemoveOption, config?: AxiosReque
   requester<PostCompRemoveResponseSuccess>('/comp/remove', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postCompUpdateBatch */
-interface PostCompUpdateBatchOption {
+export interface PostCompUpdateBatchOption {
   /**
    * @description
    *   系列ID
@@ -1834,7 +1834,7 @@ export const postCompUpdateBatch = (option: PostCompUpdateBatchOption, config?: 
   requester<PostCompUpdateBatchResponseSuccess>('/comp/updateBatch', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postPropsGetByCombId */
-interface PostPropsGetByCombIdOption {
+export interface PostPropsGetByCombIdOption {
   body: PropsCompIdReqDto
 }
 
@@ -1857,7 +1857,7 @@ export const postPropsGetByCombId = (option: PostPropsGetByCombIdOption, config?
   requester<PostPropsGetByCombIdResponseSuccess>('/props/getByCombId', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postPropsGetById */
-interface PostPropsGetByIdOption {
+export interface PostPropsGetByIdOption {
   body: PropsIdReqDto
 }
 
@@ -1880,7 +1880,7 @@ export const postPropsGetById = (option: PostPropsGetByIdOption, config?: AxiosR
   requester<PostPropsGetByIdResponseSuccess>('/props/getById', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postPropsGetByIds */
-interface PostPropsGetByIdsOption {
+export interface PostPropsGetByIdsOption {
   body: IdsReqDto
 }
 
@@ -1903,7 +1903,7 @@ export const postPropsGetByIds = (option: PostPropsGetByIdsOption, config?: Axio
   requester<PostPropsGetByIdsResponseSuccess>('/props/getByIds', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postPropsCreate */
-interface PostPropsCreateOption {
+export interface PostPropsCreateOption {
   /**
    * @description
    *   系列ID
@@ -1936,7 +1936,7 @@ export const postPropsCreate = (option: PostPropsCreateOption, config?: AxiosReq
   requester<PostPropsCreateResponseSuccess>('/props/create', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postPropsCreateBatch */
-interface PostPropsCreateBatchOption {
+export interface PostPropsCreateBatchOption {
   /**
    * @description
    *   系列ID
@@ -1969,7 +1969,7 @@ export const postPropsCreateBatch = (option: PostPropsCreateBatchOption, config?
   requester<PostPropsCreateBatchResponseSuccess>('/props/createBatch', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postPropsUpdate */
-interface PostPropsUpdateOption {
+export interface PostPropsUpdateOption {
   /**
    * @description
    *   系列ID
@@ -2002,7 +2002,7 @@ export const postPropsUpdate = (option: PostPropsUpdateOption, config?: AxiosReq
   requester<PostPropsUpdateResponseSuccess>('/props/update', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postPropsUpdateBatch */
-interface PostPropsUpdateBatchOption {
+export interface PostPropsUpdateBatchOption {
   /**
    * @description
    *   系列ID
@@ -2035,7 +2035,7 @@ export const postPropsUpdateBatch = (option: PostPropsUpdateBatchOption, config?
   requester<PostPropsUpdateBatchResponseSuccess>('/props/updateBatch', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postPropsRemove */
-interface PostPropsRemoveOption {
+export interface PostPropsRemoveOption {
   /**
    * @description
    *   系列ID
@@ -2068,7 +2068,7 @@ export const postPropsRemove = (option: PostPropsRemoveOption, config?: AxiosReq
   requester<PostPropsRemoveResponseSuccess>('/props/remove', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postPropsCreateRefProps */
-interface PostPropsCreateRefPropsOption {
+export interface PostPropsCreateRefPropsOption {
   /**
    * @description
    *   系列ID
@@ -2101,7 +2101,7 @@ export const postPropsCreateRefProps = (option: PostPropsCreateRefPropsOption, c
   requester<PostPropsCreateRefPropsResponseSuccess>('/props/createRefProps', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postPropsExistPropName */
-interface PostPropsExistPropNameOption {
+export interface PostPropsExistPropNameOption {
   /**
    * @description
    *   系列ID
@@ -2134,7 +2134,7 @@ export const postPropsExistPropName = (option: PostPropsExistPropNameOption, con
   requester<PostPropsExistPropNameResponseSuccess>('/props/existPropName', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postPropsRelGetListById */
-interface PostPropsRelGetListByIdOption {
+export interface PostPropsRelGetListByIdOption {
   body: PropsRelFPropIdReqDto
 }
 
@@ -2157,7 +2157,7 @@ export const postPropsRelGetListById = (option: PostPropsRelGetListByIdOption, c
   requester<PostPropsRelGetListByIdResponseSuccess>('/propsRel/getListById', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postPropsRelGetListByCombId */
-interface PostPropsRelGetListByCombIdOption {
+export interface PostPropsRelGetListByCombIdOption {
   body: SharedCompIdReqDto
 }
 
@@ -2186,7 +2186,7 @@ export const postPropsRelGetListByCombId = (option: PostPropsRelGetListByCombIdO
   )
 
 /** @description request parameter type for postPropsRelCreateBatch */
-interface PostPropsRelCreateBatchOption {
+export interface PostPropsRelCreateBatchOption {
   /**
    * @description
    *   系列ID
@@ -2219,7 +2219,7 @@ export const postPropsRelCreateBatch = (option: PostPropsRelCreateBatchOption, c
   requester<PostPropsRelCreateBatchResponseSuccess>('/propsRel/createBatch', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postPropsRelExistOptRel */
-interface PostPropsRelExistOptRelOption {
+export interface PostPropsRelExistOptRelOption {
   body: PropsRelFPropIdReqDto
 }
 
@@ -2242,7 +2242,7 @@ export const postPropsRelExistOptRel = (option: PostPropsRelExistOptRelOption, c
   requester<PostPropsRelExistOptRelResponseSuccess>('/propsRel/existOptRel', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOptGetByPropsId */
-interface PostOptGetByPropsIdOption {
+export interface PostOptGetByPropsIdOption {
   body: OptPropsIdReqDto
 }
 
@@ -2265,7 +2265,7 @@ export const postOptGetByPropsId = (option: PostOptGetByPropsIdOption, config?: 
   requester<PostOptGetByPropsIdResponseSuccess>('/opt/getByPropsId', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOptGetById */
-interface PostOptGetByIdOption {
+export interface PostOptGetByIdOption {
   body: OptIdReqDto
 }
 
@@ -2288,7 +2288,7 @@ export const postOptGetById = (option: PostOptGetByIdOption, config?: AxiosReque
   requester<PostOptGetByIdResponseSuccess>('/opt/getById', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOptGetByIds */
-interface PostOptGetByIdsOption {
+export interface PostOptGetByIdsOption {
   body: IdsReqDto
 }
 
@@ -2311,7 +2311,7 @@ export const postOptGetByIds = (option: PostOptGetByIdsOption, config?: AxiosReq
   requester<PostOptGetByIdsResponseSuccess>('/opt/getByIds', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOptCreate */
-interface PostOptCreateOption {
+export interface PostOptCreateOption {
   /**
    * @description
    *   系列ID
@@ -2344,7 +2344,7 @@ export const postOptCreate = (option: PostOptCreateOption, config?: AxiosRequest
   requester<PostOptCreateResponseSuccess>('/opt/create', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOptCreateBatch */
-interface PostOptCreateBatchOption {
+export interface PostOptCreateBatchOption {
   /**
    * @description
    *   系列ID
@@ -2377,7 +2377,7 @@ export const postOptCreateBatch = (option: PostOptCreateBatchOption, config?: Ax
   requester<PostOptCreateBatchResponseSuccess>('/opt/createBatch', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOptUpdate */
-interface PostOptUpdateOption {
+export interface PostOptUpdateOption {
   /**
    * @description
    *   系列ID
@@ -2410,7 +2410,7 @@ export const postOptUpdate = (option: PostOptUpdateOption, config?: AxiosRequest
   requester<PostOptUpdateResponseSuccess>('/opt/update', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOptUpdateBatch */
-interface PostOptUpdateBatchOption {
+export interface PostOptUpdateBatchOption {
   /**
    * @description
    *   系列ID
@@ -2443,7 +2443,7 @@ export const postOptUpdateBatch = (option: PostOptUpdateBatchOption, config?: Ax
   requester<PostOptUpdateBatchResponseSuccess>('/opt/updateBatch', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOptRemove */
-interface PostOptRemoveOption {
+export interface PostOptRemoveOption {
   /**
    * @description
    *   系列ID
@@ -2476,7 +2476,7 @@ export const postOptRemove = (option: PostOptRemoveOption, config?: AxiosRequest
   requester<PostOptRemoveResponseSuccess>('/opt/remove', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOptRelGetListById */
-interface PostOptRelGetListByIdOption {
+export interface PostOptRelGetListByIdOption {
   body: OptRelFpropIdReqDto
 }
 
@@ -2499,7 +2499,7 @@ export const postOptRelGetListById = (option: PostOptRelGetListByIdOption, confi
   requester<PostOptRelGetListByIdResponseSuccess>('/optRel/getListById', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOptRelGetListByCompId */
-interface PostOptRelGetListByCompIdOption {
+export interface PostOptRelGetListByCompIdOption {
   body: SharedCompIdReqDto
 }
 
@@ -2522,7 +2522,7 @@ export const postOptRelGetListByCompId = (option: PostOptRelGetListByCompIdOptio
   requester<PostOptRelGetListByCompIdResponseSuccess>('/optRel/getListByCompId', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOptRelCreate */
-interface PostOptRelCreateOption {
+export interface PostOptRelCreateOption {
   /**
    * @description
    *   系列ID
@@ -2555,7 +2555,7 @@ export const postOptRelCreate = (option: PostOptRelCreateOption, config?: AxiosR
   requester<PostOptRelCreateResponseSuccess>('/optRel/create', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOptRelCreateBatch */
-interface PostOptRelCreateBatchOption {
+export interface PostOptRelCreateBatchOption {
   /**
    * @description
    *   系列ID
@@ -2588,7 +2588,7 @@ export const postOptRelCreateBatch = (option: PostOptRelCreateBatchOption, confi
   requester<PostOptRelCreateBatchResponseSuccess>('/optRel/createBatch', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOptRelUpdate */
-interface PostOptRelUpdateOption {
+export interface PostOptRelUpdateOption {
   /**
    * @description
    *   系列ID
@@ -2621,7 +2621,7 @@ export const postOptRelUpdate = (option: PostOptRelUpdateOption, config?: AxiosR
   requester<PostOptRelUpdateResponseSuccess>('/optRel/update', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postOptRelRemove */
-interface PostOptRelRemoveOption {
+export interface PostOptRelRemoveOption {
   /**
    * @description
    *   系列ID
@@ -2672,7 +2672,7 @@ export const postPubGetPubData = (config?: AxiosRequestConfig) =>
   requester<PostPubGetPubDataResponseSuccess>('/pub/getPubData', { method: 'post' }, config)
 
 /** @description request parameter type for postPubSavePubData */
-interface PostPubSavePubDataOption {
+export interface PostPubSavePubDataOption {
   body: PubSaveDataReqDto
 }
 
@@ -2695,7 +2695,7 @@ export const postPubSavePubData = (option: PostPubSavePubDataOption, config?: Ax
   requester<PostPubSavePubDataResponseSuccess>('/pub/savePubData', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postPubGetListByPage */
-interface PostPubGetListByPageOption {
+export interface PostPubGetListByPageOption {
   body: PubGetListPageReqDto
 }
 
@@ -2718,7 +2718,7 @@ export const postPubGetListByPage = (option: PostPubGetListByPageOption, config?
   requester<PostPubGetListByPageResponseSuccess>('/pub/getListByPage', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postPubGetPubRecord */
-interface PostPubGetPubRecordOption {
+export interface PostPubGetPubRecordOption {
   body: IdsReqDto
 }
 
@@ -2741,7 +2741,7 @@ export const postPubGetPubRecord = (option: PostPubGetPubRecordOption, config?: 
   requester<PostPubGetPubRecordResponseSuccess>('/pub/getPubRecord', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postPubUpdate */
-interface PostPubUpdateOption {
+export interface PostPubUpdateOption {
   body: PubUpdateReqDto
 }
 
@@ -2764,7 +2764,7 @@ export const postPubUpdate = (option: PostPubUpdateOption, config?: AxiosRequest
   requester<PostPubUpdateResponseSuccess>('/pub/update', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postPubUpdateBatch */
-interface PostPubUpdateBatchOption {
+export interface PostPubUpdateBatchOption {
   body: PubUpdateBatchReqDto
 }
 
@@ -2787,7 +2787,7 @@ export const postPubUpdateBatch = (option: PostPubUpdateBatchOption, config?: Ax
   requester<PostPubUpdateBatchResponseSuccess>('/pub/updateBatch', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postPubGetMcodeList */
-interface PostPubGetMcodeListOption {
+export interface PostPubGetMcodeListOption {
   body: PubGetMcodeReqDto
 }
 
@@ -2810,7 +2810,7 @@ export const postPubGetMcodeList = (option: PostPubGetMcodeListOption, config?: 
   requester<PostPubGetMcodeListResponseSuccess>('/pub/getMcodeList', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postPubSendmsg4Js */
-interface PostPubSendmsg4JsOption {
+export interface PostPubSendmsg4JsOption {
   query: {
     recordId: number
   }
@@ -2835,7 +2835,7 @@ export const postPubSendmsg4Js = (option: PostPubSendmsg4JsOption, config?: Axio
   requester<PostPubSendmsg4JsResponseSuccess>('/pub/sendmsg4js', { method: 'post', ...option }, config)
 
 /** @description request parameter type for postAuditCreate */
-interface PostAuditCreateOption {
+export interface PostAuditCreateOption {
   body: AuditCreateReqDto
 }
 

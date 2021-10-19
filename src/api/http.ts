@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import * as pathToRegexp from 'path-to-regexp'
-import type { RequestParameter } from 'tsg-tgjz'
+import type { RequestParameter } from 'ts-gear'
 
 // region 基础方法 基本不需要动
 interface ReturnMessageArg {
