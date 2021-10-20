@@ -13,6 +13,7 @@ const projects: Project[] = [
     source: 'http://test-pim-define.titanmatrix.cn/define/swagger-json',
     keepGeneric: false,
     shouldExportResponseType: false,
+    shouldExportRequestOptionType: false,
     importRequesterStatement: `import { http, AxiosRequestConfig } from "../http"`,
     prettierConfig: prettier,
     // 过滤掉某些不想生成的api
