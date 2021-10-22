@@ -1,7 +1,7 @@
-import { Object } from 'ts-toolbelt'
+import { DeepPartial } from 'ts-essentials'
 
 export class ConfigType {
   env = ''
 }
 
-export type ConfigTypeOptional = Object.Optional<ConfigType>
+export type ConfigTypeOptional = DeepPartial<ConfigType>

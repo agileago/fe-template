@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite",
     "uat": "vite build --mode uat",
-    "build": "vite build",
+    "release": "vite build",
     "serve": "vite preview",
     "type:check": "tsc --noEmit --skipLibCheck",
     "commit": "git-cz",
@@ -19,14 +19,13 @@
     "@titanmatrix/vue3-class-component": "^0.2.14",
     "ant-design-vue": "^2.2.8",
     "axios": "^0.21.1",
-    "mitt": "^3.0.0",
     "path-to-regexp": "^6.2.0",
     "reflect-metadata": "^0.1.13",
     "ts-deepmerge": "^1.1.0",
-    "ts-toolbelt": "^9.6.0",
+    "ts-essentials": "^9.0.0",
     "tslib": "^2.3.1",
     "vue": "^3.2.20",
-    "vue-router": "^4.0.11"
+    "vue-router": "4.0.11"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2.1",

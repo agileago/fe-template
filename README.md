@@ -11,11 +11,24 @@
 - [Awesome Console—控制台链接到代码](https://plugins.jetbrains.com/plugin/7677-awesome-console)
 - [Rainbow Brackets—彩虹大括号](https://plugins.jetbrains.com/plugin/10080-rainbow-brackets)
 
-### 安装
+### 设置**npm/yarn**国内镜像
+
+```shell
+yarn global add nrm
+nrm use taobao
+```
+
+### 安装依赖
 
 ```shell
 yarn
 ```
+
+### 设置Webstorm
+
+打开IDE设置界面： <kbd>command⌘</kbd> + <kbd>.</kbd>
+1. 工具 -> 保存时的操作 勾上保存时优化`import`和运行`prettier`
+2. 其他设置 -> ConventialCommit -> 基于模板
 
 ### 命令
 
@@ -23,7 +36,7 @@ yarn
 
 - `dev` : 启动开发
 - `uat` : 测试环境构建
-- `build` : 生产环境构建
+- `release` : 生产环境构建(包含上传CDN)
 - `serve` : 本地构建完成预览
 - `lint` : eslint修复代码
 - `format` : prettier代码

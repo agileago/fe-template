@@ -6,7 +6,7 @@ import * as path from 'path'
 import vitePluginAliyunOss from 'vite-plugin-aliyun-oss'
 
 const CDN_HOST = 'https://cdn.titanmatrix.com'
-const OSS_DIR = '文件目录请更改' // 例子： /matrial/starter 资源存放路径，一般以仓库路径为主
+const OSS_DIR = '文件目录请更改' // 例子： /matrial/starter 资源存放路径，一般以仓库路径为主，**请注意**后面没有 /
 
 export default defineConfig(({ command, mode }) => {
   // 处理NODE_ENV
