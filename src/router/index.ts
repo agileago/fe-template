@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory, Router, RouterHistory } from 'vue-router'
 import { routes } from '@/router/routes'
 import { App } from 'vue'
+import { ServiceContainer } from '@/service'
+import { UserService } from '@/service/user.service'
 
 let router: Router
 let history: RouterHistory
@@ -18,7 +20,8 @@ export function destroy() {
 }
 export function setupRouter(router: Router, app: App<Element>) {
   app.use(router)
-  router.beforeEach((to, from, next) => {
-    next(true)
+  router.beforeEach(async (to, from) => {
+    console.log(ServiceContainer.get(UserService))
+    return
   })
 }

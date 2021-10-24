@@ -498,10 +498,10 @@
     core-js "^3.15.1"
     nanopop "^2.1.0"
 
-"@titanmatrix/vue3-class-component@^0.2.14":
-  version "0.2.14"
-  resolved "https://registry.npmmirror.com/@titanmatrix/vue3-class-component/download/@titanmatrix/vue3-class-component-0.2.14.tgz#7fc499992093d5e9796db06cbc5909c0e9b474c6"
-  integrity sha1-f8SZmSCT1el5bbBsvFkJwOm0dMY=
+"@titanmatrix/vue3-class-component@^0.2.16":
+  version "0.2.16"
+  resolved "https://registry.npmmirror.com/@titanmatrix/vue3-class-component/download/@titanmatrix/vue3-class-component-0.2.16.tgz#368e4f5be398b58613690b5a86ff9617f1096b78"
+  integrity sha1-No5PW+OYtYYTaQtahv+WF/EJa3g=
 
 "@tootallnate/once@1":
   version "1.1.2"
@@ -2158,10 +2158,10 @@ eslint-visitor-keys@^3.0.0:
   resolved "https://registry.npmmirror.com/eslint-visitor-keys/download/eslint-visitor-keys-3.0.0.tgz?cache=0&sync_timestamp=1632753980208&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Feslint-visitor-keys%2Fdownload%2Feslint-visitor-keys-3.0.0.tgz#e32e99c6cdc2eb063f204eda5db67bfe58bb4186"
   integrity sha1-4y6Zxs3C6wY/IE7aXbZ7/li7QYY=
 
-eslint@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.npmmirror.com/eslint/download/eslint-8.0.1.tgz?cache=0&sync_timestamp=1634180197021&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Feslint%2Fdownload%2Feslint-8.0.1.tgz#3610e7fe4a05c2154669515ca60835a76a19f700"
-  integrity sha1-NhDn/koFwhVGaVFcpgg1p2oZ9wA=
+eslint@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.npmmirror.com/eslint/download/eslint-8.1.0.tgz?cache=0&sync_timestamp=1634967351319&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Feslint%2Fdownload%2Feslint-8.1.0.tgz#00f1f7dbf4134f26588e6c9f2efe970760f64664"
+  integrity sha1-APH32/QTTyZYjmyfLv6XB2D2RmQ=
   dependencies:
     "@eslint/eslintrc" "^1.0.3"
     "@humanwhocodes/config-array" "^0.6.0"

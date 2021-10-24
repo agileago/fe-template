@@ -77,7 +77,19 @@ export class UserService extends VueService {
 }
 ```
 
-全局服务请在 `service`文件夹定义，并且在 `index.ts` 中初始化
+2. 全局服务
+
+```typescript
+import { VueGlobalService } from '@titanmatrix/vue3-class-component'
+import { UserService } from './user.service'
+
+export class ServiceContainer extends VueGlobalService {
+  userService = new UserService()
+}
+
+// 在其他地方直接使用
+const userService = ServiceContainer.get(UserService)
+```
 
 #### 组件
 
