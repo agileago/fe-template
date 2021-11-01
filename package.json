@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@titanmatrix/vue3-class-component": "^0.2.16",
-    "ant-design-vue": "^2.2.8",
+    "ant-design-vue": "^3.0.0-alpha.8",
     "axios": "^0.21.1",
     "path-to-regexp": "^6.2.0",
     "reflect-metadata": "^0.1.13",
@@ -49,6 +49,7 @@
     "typescript": "^4.4.4",
     "vite": "^2.6.10",
     "vite-plugin-aliyun-oss": "^1.0.1",
+    "vite-plugin-html": "^2.1.1",
     "vite-plugin-mockit": "^1.0.2",
     "vite-plugin-svg-icons": "^1.0.5",
     "vite-plugin-ts": "^1.1.8",

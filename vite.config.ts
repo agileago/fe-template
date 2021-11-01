@@ -4,9 +4,10 @@ import mock from 'vite-plugin-mockit'
 import svgIcons from 'vite-plugin-svg-icons'
 import * as path from 'path'
 import vitePluginAliyunOss from 'vite-plugin-aliyun-oss'
+import html from 'vite-plugin-html'
 
 const CDN_HOST = 'https://cdn.titanmatrix.com'
-const OSS_DIR = '文件目录请更改' // 例子： /matrial/starter 资源存放路径，一般以仓库路径为主，**请注意**后面没有 /
+const OSS_DIR = 'OSS文件目录请更改' // 例子： /matrial/starter 资源存放路径，一般以仓库路径为主，**请注意**后面没有 /
 
 export default defineConfig(({ command, mode }) => {
   // 处理NODE_ENV
@@ -36,6 +37,19 @@ export default defineConfig(({ command, mode }) => {
       )
       break
   }
+  // html模板ejs变量注入 <%- MODE %>
+  plugins.push(
+    ...html({
+      inject: {
+        data: {
+          MODE: mode,
+          COMMAND: command,
+          BASE_URL: base + '/',
+          PROD: command === 'build',
+        },
+      },
+    }),
+  )
   return {
     base: base + '/',
     plugins,

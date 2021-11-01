@@ -3,6 +3,7 @@ import { routes } from '@/router/routes'
 import { App } from 'vue'
 import { ServiceContainer } from '@/service'
 import { UserService } from '@/service/user.service'
+import { message } from 'ant-design-vue'
 
 let router: Router
 let history: RouterHistory
@@ -21,7 +22,11 @@ export function destroy() {
 export function setupRouter(router: Router, app: App<Element>) {
   app.use(router)
   router.beforeEach(async (to, from) => {
-    console.log(ServiceContainer.get(UserService))
+    const userService = ServiceContainer.get(UserService)
+    if (userService.user) return
+    const closeMessage = message.loading('正在获取用户信息...')
+    await userService.getUser()
+    closeMessage()
     return
   })
 }

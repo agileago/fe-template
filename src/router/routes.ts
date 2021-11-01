@@ -4,10 +4,9 @@ export const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => import('../layout/default.layout'),
-    redirect: '/index',
     children: [
       {
-        path: '/index',
+        path: '/',
         component: () => import('../view/dashboard'),
       },
     ],
