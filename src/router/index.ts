@@ -9,7 +9,8 @@ let router: Router
 let history: RouterHistory
 // 这样写主要是为了应用可作为子应用注册到基座应用
 export function create() {
-  history = createWebHistory()
+  const base = import.meta.env.BASE_URL
+  history = createWebHistory(/^https?:/.test(base) ? undefined : base)
   router = createRouter({
     routes,
     history,
