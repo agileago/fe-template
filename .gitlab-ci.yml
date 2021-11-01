@@ -2,10 +2,6 @@ image: node:16.5.0
 pages:
   stage: deploy
   cache:
-    key:
-      files:
-        - yarn.lock
-      prefix: yarn
     paths:
       - node_modules/
   script:
