@@ -23,6 +23,10 @@ export default defineConfig(({ command, mode }) => {
     case 'development':
       plugins.push(mock())
       break
+    // gitlab配置可删除
+    case 'gitlab':
+      base = '/vue3-vite'
+      break
     case 'production':
       // 配置上传CDN OSS
       base = CDN_HOST + OSS_DIR

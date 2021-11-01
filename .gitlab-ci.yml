@@ -6,7 +6,7 @@ pages:
       - node_modules/
   script:
     - yarn install
-    - yarn run uat
+    - vite build --mode gitlab
     - cp -a dist/. public/
   artifacts:
     paths:
