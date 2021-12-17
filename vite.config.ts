@@ -1,10 +1,12 @@
 import { defineConfig } from 'vite'
-import vueJsx from 'vite-plugin-ts'
+import vueJsx from '@vue3-oop/plugin-vue-jsx'
 import mock from 'vite-plugin-mockit'
 import svgIcons from 'vite-plugin-svg-icons'
 import * as path from 'path'
 import vitePluginAliyunOss from 'vite-plugin-aliyun-oss'
 import html from 'vite-plugin-html'
+import typescript from 'rollup-plugin-typescript2'
+import vitePluginImp from 'vite-plugin-imp'
 
 const CDN_HOST = 'https://cdn.titanmatrix.com'
 const OSS_DIR = 'OSS文件目录请更改' // 例子： /matrial/starter 资源存放路径，一般以仓库路径为主，**请注意**后面没有 /
@@ -12,11 +14,26 @@ const OSS_DIR = 'OSS文件目录请更改' // 例子： /matrial/starter 资源�
 export default defineConfig(({ command, mode }) => {
   // 处理NODE_ENV
   if (command === 'build') process.env.VITE_USER_NODE_ENV = process.env.NODE_ENV = 'production'
+
   let base = ''
   const plugins = [
-    vueJsx({}),
-    svgIcons({
-      iconDirs: [path.resolve(__dirname, 'src/assets/icons')],
+    // tsx sourcemap not work
+    typescript({ check: false }),
+    vueJsx(),
+    svgIcons({ iconDirs: [path.resolve(__dirname, 'src/assets/icons')] }),
+    vitePluginImp({
+      libList: [
+        {
+          libName: 'ant-design-vue',
+          style(name) {
+            if (/popconfirm/.test(name)) {
+              // support multiple style file path to import
+              return ['ant-design-vue/es/button/style/index.css', 'ant-design-vue/es/popover/style/index.css']
+            }
+            return `ant-design-vue/es/${name}/style/index.css`
+          },
+        },
+      ],
     }),
   ]
   switch (mode) {
@@ -56,6 +73,9 @@ export default defineConfig(({ command, mode }) => {
   )
   return {
     base: base + '/',
+    esbuild: {
+      exclude: /\.tsx?$/,
+    },
     plugins,
     css: {
       preprocessorOptions: {

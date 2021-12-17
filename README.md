@@ -11,17 +11,17 @@
 - [Awesome Console—控制台链接到代码](https://plugins.jetbrains.com/plugin/7677-awesome-console)
 - [Rainbow Brackets—彩虹大括号](https://plugins.jetbrains.com/plugin/10080-rainbow-brackets)
 
-### 设置**npm/yarn**国内镜像
+### 设置**npm**国内镜像
 
 ```shell
-yarn global add nrm
+npm install -g nrm
 nrm use taobao
 ```
 
 ### 安装依赖
 
 ```shell
-yarn
+pnpm install
 ```
 
 ### 设置Webstorm
@@ -45,105 +45,4 @@ yarn
 
 ### 开发规范
 
-全面面向对象开发 **OOP**, 使用类定义服务和组件
-
-#### 服务
-
-服务是指可复用的业务逻辑，类似 `hooks`, 和 `hooks`的区别是，一个使用类，一个使用函数定义， 使用类天生自带类型，可使用装饰器
-
-1. 定义服务
-
-```typescript
-import { VueService, Ref } from '@titanmatrix/vue3-class-component'
-import { User } from './user.service'
-
-export class UserService extends VueService {
-  @Ref() user?: User
-  @Ref() count = 1
-
-  constructor() {
-    super()
-    //  watch, watchEffect 等需写在构造函数中
-    watch(() => this.count, this.countChange)
-  }
-
-  countChange = (n: number, o: number) => {
-    console.log('change', n, o)
-  }
-  
-  add() {
-    this.count++
-  }
-}
-```
-
-2. 全局服务
-
-```typescript
-import { VueGlobalService } from '@titanmatrix/vue3-class-component'
-import { UserService } from './user.service'
-
-export class ServiceContainer extends VueGlobalService {
-  userService = new UserService()
-}
-
-// 在其他地方直接使用
-const userService = ServiceContainer.get(UserService)
-```
-
-#### 组件
-
-统一使用类进行组件的声明，组件是指可复用的UI组件
-
-1. 定义组件
-
-```typescript
-import { ComponentProps, VueComponent } from '@titanmatrix/vue3-class-component'
-import { watchEffect } from 'vue'
-
-export interface LoginForm_Props {
-  /**
-   * 大小
-   */
-  size?: 'small' | 'large'
-  /**
-   * 提交事件
-   * @param data
-   */
-  onSubmit: (data: any) => any
-}
-
-export class LoginForm extends VueComponent<LoginForm_Props> {
-  // 如果组件有属性必须定义此属性
-  static defaultProps: ComponentProps<LoginForm_Props> = {
-    size: String,
-    onSubmit: Function
-  }
-
-  @Ref() model = {
-    username: '',
-    password: ''
-  }
-
-  @Hook('Mounted')
-  mounted() {
-    console.log('mounted')
-  }
-
-  constructor() {
-    super()
-    watchEffect(this.usernameChange)
-  }
-
-  usernameChange = () => {
-    console.log(this.model.username)
-  }
-
-  render() {
-    return <div>{this.props.size}{this.model.username}</div>
-  }
-}
-```
-
-
-
+全面面向对象开发 **OOP**, 使用类定义服务和组件 [vue3-oop](https://github.com/agileago/vue3-oop)

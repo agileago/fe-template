@@ -10,6 +10,7 @@
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "useDefineForClassFields": false,
     "allowSyntheticDefaultImports": true,
     "strictPropertyInitialization": true,

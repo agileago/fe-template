@@ -1,13 +1,11 @@
-import { VueComponent } from '@titanmatrix/vue3-class-component'
-import { RouterView } from 'vue-router'
-import { ServiceProvider } from '@/service'
+import { Component, VueComponent } from 'vue3-oop'
+import { RouterView } from '@vue3-oop/vue-router'
+import { RouterService } from '@/router/router.service'
+import { CountSercice } from '@/module/count/count.sercice'
 
-export default class App extends VueComponent {
+@Component({ providers: [RouterService, CountSercice] })
+export class App extends VueComponent {
   render() {
-    return (
-      <ServiceProvider>
-        <RouterView></RouterView>
-      </ServiceProvider>
-    )
+    return <RouterView></RouterView>
   }
 }
