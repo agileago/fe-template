@@ -1,6 +1,6 @@
 /// <reference types="vite/client" />
 declare module 'vite-plugin-mockit'
-declare module 'vite-plugin-aliyun-oss'
+declare module 'webpack-aliyun-oss'
 
 // 环境变量定义
 interface ImportMetaEnv extends Readonly<Record<string, string | boolean | undefined>> {

@@ -1,7 +1,7 @@
-import { VueComponent } from 'vue3-oop'
+import { defineComponent } from 'vue'
 
-export default class HomeView extends VueComponent {
-  render() {
-    return <h1 style={{ textAlign: 'center' }}>home1111aaa</h1>
-  }
-}
+export default defineComponent({
+  setup() {
+    return () => <h1 style={{ textAlign: 'center' }}>home</h1>
+  },
+})

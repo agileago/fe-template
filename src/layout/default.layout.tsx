@@ -1,10 +1,10 @@
-import { VueComponent } from 'vue3-oop'
-import { RouterLink, RouterView } from '@vue3-oop/vue-router'
+import { RouterLink, RouterView } from 'vue-router'
 import { Button } from 'ant-design-vue'
+import { defineComponent } from 'vue'
 
-export default class DefaultLayout extends VueComponent {
-  render() {
-    return (
+export default defineComponent({
+  setup() {
+    return () => (
       <>
         <div style={{ textAlign: 'center' }}>
           <h2>I am layout</h2>
@@ -20,5 +20,5 @@ export default class DefaultLayout extends VueComponent {
         <RouterView></RouterView>
       </>
     )
-  }
-}
+  },
+})

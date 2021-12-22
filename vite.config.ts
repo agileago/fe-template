@@ -1,11 +1,10 @@
 import { defineConfig } from 'vite'
-import vueJsx from '@vue3-oop/plugin-vue-jsx'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import mock from 'vite-plugin-mockit'
 import svgIcons from 'vite-plugin-svg-icons'
 import * as path from 'path'
-import vitePluginAliyunOss from 'vite-plugin-aliyun-oss'
+import WebpackAliyunOss from 'webpack-aliyun-oss'
 import html from 'vite-plugin-html'
-import typescript from 'rollup-plugin-typescript2'
 import vitePluginImp from 'vite-plugin-imp'
 
 const CDN_HOST = 'https://cdn.titanmatrix.com'
@@ -17,8 +16,6 @@ export default defineConfig(({ command, mode }) => {
 
   let base = ''
   const plugins = [
-    // tsx sourcemap not work
-    typescript({ check: false }),
     vueJsx(),
     svgIcons({ iconDirs: [path.resolve(__dirname, 'src/assets/icons')] }),
     vitePluginImp({
@@ -47,15 +44,23 @@ export default defineConfig(({ command, mode }) => {
     case 'production':
       // 配置上传CDN OSS
       base = CDN_HOST + OSS_DIR
-      plugins.push(
-        vitePluginAliyunOss({
-          region: process.env.OSS_REGION,
-          accessKeyId: process.env.OSS_KEY,
-          accessKeySecret: process.env.OSS_SECRET,
-          bucket: process.env.OSS_BUCKET,
-          ossFilePath: OSS_DIR,
-        }),
-      )
+      plugins.push({
+        name: 'vite-plugin-ali-oss-uploader',
+        async closeBundle() {
+          const options = {
+            from: ['./dist/**', '!./dist/**/*.html'],
+            dist: OSS_DIR,
+            region: process.env.OSS_REGION,
+            accessKeyId: process.env.OSS_KEY,
+            accessKeySecret: process.env.OSS_SECRET,
+            bucket: process.env.OSS_BUCKET,
+            verbose: true,
+            overwrite: true,
+            buildRoot: 'dist',
+          }
+          await new WebpackAliyunOss(options).apply()
+        },
+      })
       break
   }
   // html模板ejs变量注入 <%- MODE %>
@@ -73,9 +78,6 @@ export default defineConfig(({ command, mode }) => {
   )
   return {
     base: base + '/',
-    esbuild: {
-      exclude: /\.tsx?$/,
-    },
     plugins,
     css: {
       preprocessorOptions: {
