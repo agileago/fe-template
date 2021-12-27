@@ -1,7 +1,7 @@
-import { ref } from 'vue'
+import { Mut, VueService } from 'vue3-oop'
 
-export class CountSercice {
-  count = ref(1)
-  add = () => this.count.value++
-  remove = () => this.count.value--
+export class CountSercice extends VueService {
+  @Mut() count = 1
+  add = () => this.count++
+  remove = () => this.count--
 }

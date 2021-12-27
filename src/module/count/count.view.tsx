@@ -10,7 +10,7 @@ export default class CountView extends VueComponent {
   render() {
     return (
       <div style={{ textAlign: 'center' }}>
-        <h2>{this.countService.count.value}</h2>
+        <h2>{this.countService.count}</h2>
         <Button type={'primary'} onClick={this.countService.add}>
           +1
         </Button>
