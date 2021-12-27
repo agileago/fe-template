@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import vueJsx from '@vitejs/plugin-vue-jsx'
+import vueJsx from '@vue3-oop/plugin-vue-jsx'
 import mock from 'vite-plugin-mockit'
 import svgIcons from 'vite-plugin-svg-icons'
 import * as path from 'path'
@@ -12,26 +12,15 @@ const OSS_DIR = 'OSS文件目录请更改' // 例子： /matrial/starter 资源�
 
 export default defineConfig(({ command, mode }) => {
   // 处理NODE_ENV
-  if (command === 'build') process.env.VITE_USER_NODE_ENV = process.env.NODE_ENV = 'production'
+  if (command === 'build')
+    process.env.VITE_USER_NODE_ENV = process.env.NODE_ENV = 'production'
 
   let base = ''
+
   const plugins = [
+    vitePluginImp(),
     vueJsx(),
     svgIcons({ iconDirs: [path.resolve(__dirname, 'src/assets/icons')] }),
-    vitePluginImp({
-      libList: [
-        {
-          libName: 'ant-design-vue',
-          style(name) {
-            if (/popconfirm/.test(name)) {
-              // support multiple style file path to import
-              return ['ant-design-vue/es/button/style/index.css', 'ant-design-vue/es/popover/style/index.css']
-            }
-            return `ant-design-vue/es/${name}/style/index.css`
-          },
-        },
-      ],
-    }),
   ]
   switch (mode) {
     case 'development':

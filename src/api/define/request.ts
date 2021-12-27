@@ -1,113 +1,107 @@
 /* eslint-disable */
 /* tslint:disable */
 /** Do not modify manually.
-content is generated automatically by `ts-gear`. */
-import { http as requester, AxiosRequestConfig } from '../http'
+ content is generated automatically by `ts-gear`. */
+import { AxiosRequestConfig, http as requester } from '../http'
 import type {
-  GetSpecByBatchDto,
-  GetSpecByBatchResDto,
-  GetSpecByCodesDto,
-  ResSpecCodeDto,
-  GetSeriesCategoryDto,
-  ResCategoryDto,
-  OpenFactEntityDto,
-  GetFactCategoryOpenDto,
-  GetFactCategoryAddiResOpenDto,
-  SeriesIdOpenDto,
-  TblComponentEntity,
-  OpenGetSeriesCompsTreeResDto,
-  OpenGetEffectMcodesReqDto,
-  GetPcodeOneReqDto,
-  SearchPcodeEntity,
-  GetPcodeListReqDto,
-  GetCombBulkReqDto,
+  AuditCreateReqDto,
+  CompCreateReqDto,
+  CompGroupBatchUpdateReqDto,
+  CompGroupCreateReqDto,
+  CompGroupIdReqDto,
+  CompGroupUpdateReqDto,
   CompIdReqDto,
-  MacafeRequestDto,
-  MacafeResponseDto,
-  ZdProvinceEntity,
-  ZdCountryEntity,
+  CompUpdateBatchReqDto,
+  CompUpdateReqDto,
+  ExistNameReqDto,
+  FactCreateReqDto,
+  FactEntityDto,
+  FactGetAllReqDto,
   FactGetByPageReqDto,
   FactGetByPageResDto,
-  FactGetAllReqDto,
-  TblFactoryEntity,
   FactIdReqDto,
-  FactEntityDto,
-  FactCreateReqDto,
-  FactUpdateReqDto,
-  FactRemoveIdsReqDto,
-  ExistNameReqDto,
-  FactProdTypeFactIdReqDto,
-  TblFactoryProdtypeEntityWithExt,
-  TblFactoryProdtypeEntity,
   FactProdTypeCreateReqDto,
-  FactProdTypeUpdateReqDto,
-  IdsReqDto,
-  FactProdTypeUpdateBatchReqDto,
   FactProdTypeExistNameReqDto,
-  TblIndustryEntity,
-  SeriesFidReqDto,
-  SeriesEntityDto,
-  SeriesIdReqDto,
-  SeriesCreateReqDto,
-  SeriesUpdateStatusReqDto,
-  SeriesUpdateReqDto,
-  SeriesUpdateBatchReqDto,
+  FactProdTypeFactIdReqDto,
+  FactProdTypeUpdateBatchReqDto,
+  FactProdTypeUpdateReqDto,
+  FactRemoveIdsReqDto,
+  FactUpdateReqDto,
+  GetCombBulkReqDto,
+  GetFactCategoryAddiResOpenDto,
+  GetFactCategoryOpenDto,
+  GetPcodeListReqDto,
+  GetPcodeOneReqDto,
   GetSeriesIndustryReqDto,
   GetSeriesIndustryResDto,
-  SaveSeriesIndustryDto,
-  SeriesGetNamePropsResDto,
-  TblPropertyEntity,
-  SeriesExistNameReqDto,
-  TblSeriesExtEntity,
-  SeriesChangeSatusReqDto,
-  SeriesCopyReqDto,
-  SeriesIdReqCompDto,
-  TblComponentTypeEntity,
-  CompGroupIdReqDto,
-  CompGroupCreateReqDto,
-  CompGroupUpdateReqDto,
-  CompGroupBatchUpdateReqDto,
-  TblComponentEntityWithExt,
-  CompCreateReqDto,
-  CompUpdateReqDto,
-  CompUpdateBatchReqDto,
-  PropsCompIdReqDto,
-  TblPropertyEntityWithOpt,
-  PropsIdReqDto,
-  PropsCreateReqDto,
-  PropsCreateBatchReqDto,
-  PropsUpdateReqDto,
-  PropsUpdateBatchReqDto,
-  PropsCreateRefPropsReqDto,
-  PropsExistNameReqDto,
-  PropsRelFPropIdReqDto,
-  TblPropertyProprelEntity,
-  SharedCompIdReqDto,
-  PropsRelCreateBatchReqDto,
-  OptPropsIdReqDto,
-  TblPropertyOptionEntity,
-  OptIdReqDto,
-  OptCreateReqDto,
-  OptCreateBatchReqDto,
-  OptUpdateReqDto,
-  OptUpdateBatchReqDto,
+  IdsReqDto,
+  MacafeRequestDto,
+  MacafeResponseDto,
+  OpenFactEntityDto,
+  OpenGetEffectMcodesReqDto,
+  OpenGetSeriesCompsTreeResDto,
   OptBatchIdsReqDto,
-  OptRelFpropIdReqDto,
-  OptRelEntityResDto,
-  OptRelCreateReqDto,
+  OptCreateBatchReqDto,
+  OptCreateReqDto,
+  OptIdReqDto,
+  OptPropsIdReqDto,
   OptRelCreateBatchReqDto,
-  OptRelUpdateReqDto,
+  OptRelCreateReqDto,
+  OptRelEntityResDto,
+  OptRelFpropIdReqDto,
   OptRelRemoveIdsReqDto,
+  OptRelUpdateReqDto,
+  OptUpdateBatchReqDto,
+  OptUpdateReqDto,
+  PropsCompIdReqDto,
+  PropsCreateBatchReqDto,
+  PropsCreateRefPropsReqDto,
+  PropsCreateReqDto,
+  PropsExistNameReqDto,
+  PropsIdReqDto,
+  PropsRelCreateBatchReqDto,
+  PropsRelFPropIdReqDto,
+  PropsUpdateBatchReqDto,
+  PropsUpdateReqDto,
+  PubGetListByPageResDto,
+  PubGetListPageReqDto,
+  PubGetMcodeReqDto,
   PubGetTreeItemDto,
   PubSaveDataReqDto,
-  PubGetListPageReqDto,
-  PubGetListByPageResDto,
-  TblDatapubEntity,
-  PubUpdateReqDto,
   PubUpdateBatchReqDto,
-  PubGetMcodeReqDto,
+  PubUpdateReqDto,
+  SaveSeriesIndustryDto,
+  SearchPcodeEntity,
   SearchSpecItemEntity,
-  AuditCreateReqDto,
+  SeriesChangeSatusReqDto,
+  SeriesCopyReqDto,
+  SeriesCreateReqDto,
+  SeriesEntityDto,
+  SeriesExistNameReqDto,
+  SeriesFidReqDto,
+  SeriesGetNamePropsResDto,
+  SeriesIdOpenDto,
+  SeriesIdReqCompDto,
+  SeriesIdReqDto,
+  SeriesUpdateBatchReqDto,
+  SeriesUpdateReqDto,
+  SeriesUpdateStatusReqDto,
+  SharedCompIdReqDto,
+  TblComponentEntity,
+  TblComponentEntityWithExt,
+  TblComponentTypeEntity,
+  TblDatapubEntity,
+  TblFactoryEntity,
+  TblFactoryProdtypeEntity,
+  TblFactoryProdtypeEntityWithExt,
+  TblIndustryEntity,
+  TblPropertyEntity,
+  TblPropertyEntityWithOpt,
+  TblPropertyOptionEntity,
+  TblPropertyProprelEntity,
+  TblSeriesExtEntity,
+  ZdCountryEntity,
+  ZdProvinceEntity,
 } from './definition'
 
 /** @description response type for postOpenGetFactList */
@@ -126,7 +120,11 @@ type PostOpenGetFactListResponseSuccess = PostOpenGetFactListResponse[200]
  * @tags: 开放服务
  */
 export const postOpenGetFactList = (config?: AxiosRequestConfig) =>
-  requester<PostOpenGetFactListResponseSuccess>('/open/getFactList', { method: 'post' }, config)
+  requester<PostOpenGetFactListResponseSuccess>(
+    '/open/getFactList',
+    { method: 'post' },
+    config,
+  )
 
 /** @description request parameter type for postOpenGetFactCategory */
 export interface PostOpenGetFactCategoryOption {
@@ -142,14 +140,22 @@ interface PostOpenGetFactCategoryResponse {
   200: GetFactCategoryAddiResOpenDto
 }
 
-type PostOpenGetFactCategoryResponseSuccess = PostOpenGetFactCategoryResponse[200]
+type PostOpenGetFactCategoryResponseSuccess =
+  PostOpenGetFactCategoryResponse[200]
 /**
  * @description
  *   公开-获取品牌分类
  * @tags: 开放服务
  */
-export const postOpenGetFactCategory = (option: PostOpenGetFactCategoryOption, config?: AxiosRequestConfig) =>
-  requester<PostOpenGetFactCategoryResponseSuccess>('/open/getFactCategory', { method: 'post', ...option }, config)
+export const postOpenGetFactCategory = (
+  option: PostOpenGetFactCategoryOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOpenGetFactCategoryResponseSuccess>(
+    '/open/getFactCategory',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOpenGetSeriesComps */
 export interface PostOpenGetSeriesCompsOption {
@@ -171,8 +177,15 @@ type PostOpenGetSeriesCompsResponseSuccess = PostOpenGetSeriesCompsResponse[200]
  *   公开-获取系列下组件
  * @tags: 开放服务
  */
-export const postOpenGetSeriesComps = (option: PostOpenGetSeriesCompsOption, config?: AxiosRequestConfig) =>
-  requester<PostOpenGetSeriesCompsResponseSuccess>('/open/getSeriesComps', { method: 'post', ...option }, config)
+export const postOpenGetSeriesComps = (
+  option: PostOpenGetSeriesCompsOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOpenGetSeriesCompsResponseSuccess>(
+    '/open/getSeriesComps',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOpenGetSeriesCompsTree */
 export interface PostOpenGetSeriesCompsTreeOption {
@@ -188,13 +201,17 @@ interface PostOpenGetSeriesCompsTreeResponse {
   200: Array<OpenGetSeriesCompsTreeResDto>
 }
 
-type PostOpenGetSeriesCompsTreeResponseSuccess = PostOpenGetSeriesCompsTreeResponse[200]
+type PostOpenGetSeriesCompsTreeResponseSuccess =
+  PostOpenGetSeriesCompsTreeResponse[200]
 /**
  * @description
  *   公开-获取系列下分组组件树
  * @tags: 开放服务
  */
-export const postOpenGetSeriesCompsTree = (option: PostOpenGetSeriesCompsTreeOption, config?: AxiosRequestConfig) =>
+export const postOpenGetSeriesCompsTree = (
+  option: PostOpenGetSeriesCompsTreeOption,
+  config?: AxiosRequestConfig,
+) =>
   requester<PostOpenGetSeriesCompsTreeResponseSuccess>(
     '/open/getSeriesCompsTree',
     { method: 'post', ...option },
@@ -215,13 +232,17 @@ interface PostOpenProdGetSeriesCompsResponse {
   200: Array<TblComponentEntity>
 }
 
-type PostOpenProdGetSeriesCompsResponseSuccess = PostOpenProdGetSeriesCompsResponse[200]
+type PostOpenProdGetSeriesCompsResponseSuccess =
+  PostOpenProdGetSeriesCompsResponse[200]
 /**
  * @description
  *   公开-获取系列下组件-正式
  * @tags: 开放服务
  */
-export const postOpenProdGetSeriesComps = (option: PostOpenProdGetSeriesCompsOption, config?: AxiosRequestConfig) =>
+export const postOpenProdGetSeriesComps = (
+  option: PostOpenProdGetSeriesCompsOption,
+  config?: AxiosRequestConfig,
+) =>
   requester<PostOpenProdGetSeriesCompsResponseSuccess>(
     '/open/prod/getSeriesComps',
     { method: 'post', ...option },
@@ -242,7 +263,8 @@ interface PostOpenProdGetSeriesCompsTreeProdResponse {
   200: Array<OpenGetSeriesCompsTreeResDto>
 }
 
-type PostOpenProdGetSeriesCompsTreeProdResponseSuccess = PostOpenProdGetSeriesCompsTreeProdResponse[200]
+type PostOpenProdGetSeriesCompsTreeProdResponseSuccess =
+  PostOpenProdGetSeriesCompsTreeProdResponse[200]
 /**
  * @description
  *   公开-获取系列下分组组件树-正式
@@ -272,14 +294,22 @@ interface PostOpenGetEffectMcodesResponse {
   200: Array<string>
 }
 
-type PostOpenGetEffectMcodesResponseSuccess = PostOpenGetEffectMcodesResponse[200]
+type PostOpenGetEffectMcodesResponseSuccess =
+  PostOpenGetEffectMcodesResponse[200]
 /**
  * @description
  *   公开-通途-获取选项值影响的物料号
  * @tags: 开放服务
  */
-export const postOpenGetEffectMcodes = (option: PostOpenGetEffectMcodesOption, config?: AxiosRequestConfig) =>
-  requester<PostOpenGetEffectMcodesResponseSuccess>('/open/getEffectMcodes', { method: 'post', ...option }, config)
+export const postOpenGetEffectMcodes = (
+  option: PostOpenGetEffectMcodesOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOpenGetEffectMcodesResponseSuccess>(
+    '/open/getEffectMcodes',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description response type for postOpenProdGetFactList */
 interface PostOpenProdGetFactListResponse {
@@ -290,14 +320,19 @@ interface PostOpenProdGetFactListResponse {
   200: Array<OpenFactEntityDto>
 }
 
-type PostOpenProdGetFactListResponseSuccess = PostOpenProdGetFactListResponse[200]
+type PostOpenProdGetFactListResponseSuccess =
+  PostOpenProdGetFactListResponse[200]
 /**
  * @description
  *   公开-获取品牌列表-正式库
  * @tags: 开放服务
  */
 export const postOpenProdGetFactList = (config?: AxiosRequestConfig) =>
-  requester<PostOpenProdGetFactListResponseSuccess>('/open/prod/getFactList', { method: 'post' }, config)
+  requester<PostOpenProdGetFactListResponseSuccess>(
+    '/open/prod/getFactList',
+    { method: 'post' },
+    config,
+  )
 
 /** @description request parameter type for postOpenProdGetFactCategory */
 export interface PostOpenProdGetFactCategoryOption {
@@ -313,13 +348,17 @@ interface PostOpenProdGetFactCategoryResponse {
   200: GetFactCategoryAddiResOpenDto
 }
 
-type PostOpenProdGetFactCategoryResponseSuccess = PostOpenProdGetFactCategoryResponse[200]
+type PostOpenProdGetFactCategoryResponseSuccess =
+  PostOpenProdGetFactCategoryResponse[200]
 /**
  * @description
  *   公开-获取品牌分类-正式库
  * @tags: 开放服务
  */
-export const postOpenProdGetFactCategory = (option: PostOpenProdGetFactCategoryOption, config?: AxiosRequestConfig) =>
+export const postOpenProdGetFactCategory = (
+  option: PostOpenProdGetFactCategoryOption,
+  config?: AxiosRequestConfig,
+) =>
   requester<PostOpenProdGetFactCategoryResponseSuccess>(
     '/open/prod/getFactCategory',
     { method: 'post', ...option },
@@ -340,14 +379,22 @@ interface PostOpenProdGetPcodeOneResponse {
   200: SearchPcodeEntity
 }
 
-type PostOpenProdGetPcodeOneResponseSuccess = PostOpenProdGetPcodeOneResponse[200]
+type PostOpenProdGetPcodeOneResponseSuccess =
+  PostOpenProdGetPcodeOneResponse[200]
 /**
  * @description
  *   获取规格(精准)-正式库
  * @tags: 开放服务
  */
-export const postOpenProdGetPcodeOne = (option: PostOpenProdGetPcodeOneOption, config?: AxiosRequestConfig) =>
-  requester<PostOpenProdGetPcodeOneResponseSuccess>('/open/prod/getPcodeOne', { method: 'post', ...option }, config)
+export const postOpenProdGetPcodeOne = (
+  option: PostOpenProdGetPcodeOneOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOpenProdGetPcodeOneResponseSuccess>(
+    '/open/prod/getPcodeOne',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOpenProdGetPcodeList */
 export interface PostOpenProdGetPcodeListOption {
@@ -363,14 +410,22 @@ interface PostOpenProdGetPcodeListResponse {
   200: Array<SearchPcodeEntity>
 }
 
-type PostOpenProdGetPcodeListResponseSuccess = PostOpenProdGetPcodeListResponse[200]
+type PostOpenProdGetPcodeListResponseSuccess =
+  PostOpenProdGetPcodeListResponse[200]
 /**
  * @description
  *   获取规格(模糊)-正式库
  * @tags: 开放服务
  */
-export const postOpenProdGetPcodeList = (option: PostOpenProdGetPcodeListOption, config?: AxiosRequestConfig) =>
-  requester<PostOpenProdGetPcodeListResponseSuccess>('/open/prod/getPcodeList', { method: 'post', ...option }, config)
+export const postOpenProdGetPcodeList = (
+  option: PostOpenProdGetPcodeListOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOpenProdGetPcodeListResponseSuccess>(
+    '/open/prod/getPcodeList',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOpenProdGetComponentList */
 export interface PostOpenProdGetComponentListOption {
@@ -386,13 +441,17 @@ interface PostOpenProdGetComponentListResponse {
   200: any
 }
 
-type PostOpenProdGetComponentListResponseSuccess = PostOpenProdGetComponentListResponse[200]
+type PostOpenProdGetComponentListResponseSuccess =
+  PostOpenProdGetComponentListResponse[200]
 /**
  * @description
  *   获取系列下组件列表-正式库
  * @tags: 开放服务
  */
-export const postOpenProdGetComponentList = (option: PostOpenProdGetComponentListOption, config?: AxiosRequestConfig) =>
+export const postOpenProdGetComponentList = (
+  option: PostOpenProdGetComponentListOption,
+  config?: AxiosRequestConfig,
+) =>
   requester<PostOpenProdGetComponentListResponseSuccess>(
     '/open/prod/getComponentList',
     { method: 'post', ...option },
@@ -413,14 +472,22 @@ interface PostOpenProdGetDefineDataResponse {
   200: any
 }
 
-type PostOpenProdGetDefineDataResponseSuccess = PostOpenProdGetDefineDataResponse[200]
+type PostOpenProdGetDefineDataResponseSuccess =
+  PostOpenProdGetDefineDataResponse[200]
 /**
  * @description
  *   获取系列下定义数据-正式库
  * @tags: 开放服务
  */
-export const postOpenProdGetDefineData = (option: PostOpenProdGetDefineDataOption, config?: AxiosRequestConfig) =>
-  requester<PostOpenProdGetDefineDataResponseSuccess>('/open/prod/getDefineData', { method: 'post', ...option }, config)
+export const postOpenProdGetDefineData = (
+  option: PostOpenProdGetDefineDataOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOpenProdGetDefineDataResponseSuccess>(
+    '/open/prod/getDefineData',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOpenProdGetCombList */
 export interface PostOpenProdGetCombListOption {
@@ -436,14 +503,22 @@ interface PostOpenProdGetCombListResponse {
   200: any
 }
 
-type PostOpenProdGetCombListResponseSuccess = PostOpenProdGetCombListResponse[200]
+type PostOpenProdGetCombListResponseSuccess =
+  PostOpenProdGetCombListResponse[200]
 /**
  * @description
  *   获取系列下价格组根据价格pkey-正式库
  * @tags: 开放服务
  */
-export const postOpenProdGetCombList = (option: PostOpenProdGetCombListOption, config?: AxiosRequestConfig) =>
-  requester<PostOpenProdGetCombListResponseSuccess>('/open/prod/getCombList', { method: 'post', ...option }, config)
+export const postOpenProdGetCombList = (
+  option: PostOpenProdGetCombListOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOpenProdGetCombListResponseSuccess>(
+    '/open/prod/getCombList',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOpenProdGetCombBulkByCompId */
 export interface PostOpenProdGetCombBulkByCompIdOption {
@@ -459,7 +534,8 @@ interface PostOpenProdGetCombBulkByCompIdResponse {
   200: any
 }
 
-type PostOpenProdGetCombBulkByCompIdResponseSuccess = PostOpenProdGetCombBulkByCompIdResponse[200]
+type PostOpenProdGetCombBulkByCompIdResponseSuccess =
+  PostOpenProdGetCombBulkByCompIdResponse[200]
 /**
  * @description
  *   获取组件下所有价格组-正式库
@@ -489,13 +565,17 @@ interface PostOpenProdGetCombPriceListResponse {
   200: any
 }
 
-type PostOpenProdGetCombPriceListResponseSuccess = PostOpenProdGetCombPriceListResponse[200]
+type PostOpenProdGetCombPriceListResponseSuccess =
+  PostOpenProdGetCombPriceListResponse[200]
 /**
  * @description
  *   根据价格pkey获取价格-正式库
  * @tags: 开放服务
  */
-export const postOpenProdGetCombPriceList = (option: PostOpenProdGetCombPriceListOption, config?: AxiosRequestConfig) =>
+export const postOpenProdGetCombPriceList = (
+  option: PostOpenProdGetCombPriceListOption,
+  config?: AxiosRequestConfig,
+) =>
   requester<PostOpenProdGetCombPriceListResponseSuccess>(
     '/open/prod/getCombPriceList',
     { method: 'post', ...option },
@@ -516,7 +596,8 @@ interface PostOpenProdGetCompInfoByCkeyResponse {
   200: any
 }
 
-type PostOpenProdGetCompInfoByCkeyResponseSuccess = PostOpenProdGetCompInfoByCkeyResponse[200]
+type PostOpenProdGetCompInfoByCkeyResponseSuccess =
+  PostOpenProdGetCompInfoByCkeyResponse[200]
 /**
  * @description
  *   根据价格pkey获取组件数据-正式库
@@ -552,8 +633,15 @@ type PostOpenProdGetStateResponseSuccess = PostOpenProdGetStateResponse[200]
  *   根据pkey获取规格数据
  * @tags: 开放服务
  */
-export const postOpenProdGetState = (option: PostOpenProdGetStateOption, config?: AxiosRequestConfig) =>
-  requester<PostOpenProdGetStateResponseSuccess>('/open/prod/getState', { method: 'post', ...option }, config)
+export const postOpenProdGetState = (
+  option: PostOpenProdGetStateOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOpenProdGetStateResponseSuccess>(
+    '/open/prod/getState',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description response type for postCommonGetProvince */
 interface PostCommonGetProvinceResponse {
@@ -571,7 +659,11 @@ type PostCommonGetProvinceResponseSuccess = PostCommonGetProvinceResponse[200]
  * @tags: 通用
  */
 export const postCommonGetProvince = (config?: AxiosRequestConfig) =>
-  requester<PostCommonGetProvinceResponseSuccess>('/common/getProvince', { method: 'post' }, config)
+  requester<PostCommonGetProvinceResponseSuccess>(
+    '/common/getProvince',
+    { method: 'post' },
+    config,
+  )
 
 /** @description response type for postCommonGetCountryList */
 interface PostCommonGetCountryListResponse {
@@ -582,14 +674,19 @@ interface PostCommonGetCountryListResponse {
   200: Array<ZdCountryEntity>
 }
 
-type PostCommonGetCountryListResponseSuccess = PostCommonGetCountryListResponse[200]
+type PostCommonGetCountryListResponseSuccess =
+  PostCommonGetCountryListResponse[200]
 /**
  * @description
  *   获取国家
  * @tags: 通用
  */
 export const postCommonGetCountryList = (config?: AxiosRequestConfig) =>
-  requester<PostCommonGetCountryListResponseSuccess>('/common/getCountryList', { method: 'post' }, config)
+  requester<PostCommonGetCountryListResponseSuccess>(
+    '/common/getCountryList',
+    { method: 'post' },
+    config,
+  )
 
 /** @description request parameter type for postFactGetByPage */
 export interface PostFactGetByPageOption {
@@ -611,8 +708,15 @@ type PostFactGetByPageResponseSuccess = PostFactGetByPageResponse[200]
  *   分页获取品牌
  * @tags: 品牌
  */
-export const postFactGetByPage = (option: PostFactGetByPageOption, config?: AxiosRequestConfig) =>
-  requester<PostFactGetByPageResponseSuccess>('/fact/getByPage', { method: 'post', ...option }, config)
+export const postFactGetByPage = (
+  option: PostFactGetByPageOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostFactGetByPageResponseSuccess>(
+    '/fact/getByPage',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postFactGetAll */
 export interface PostFactGetAllOption {
@@ -634,8 +738,15 @@ type PostFactGetAllResponseSuccess = PostFactGetAllResponse[200]
  *   获取全部品牌
  * @tags: 品牌
  */
-export const postFactGetAll = (option: PostFactGetAllOption, config?: AxiosRequestConfig) =>
-  requester<PostFactGetAllResponseSuccess>('/fact/getAll', { method: 'post', ...option }, config)
+export const postFactGetAll = (
+  option: PostFactGetAllOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostFactGetAllResponseSuccess>(
+    '/fact/getAll',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postFactGetById */
 export interface PostFactGetByIdOption {
@@ -657,8 +768,15 @@ type PostFactGetByIdResponseSuccess = PostFactGetByIdResponse[200]
  *   获取单个品牌
  * @tags: 品牌
  */
-export const postFactGetById = (option: PostFactGetByIdOption, config?: AxiosRequestConfig) =>
-  requester<PostFactGetByIdResponseSuccess>('/fact/getById', { method: 'post', ...option }, config)
+export const postFactGetById = (
+  option: PostFactGetByIdOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostFactGetByIdResponseSuccess>(
+    '/fact/getById',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postFactCreate */
 export interface PostFactCreateOption {
@@ -680,8 +798,15 @@ type PostFactCreateResponseSuccess = PostFactCreateResponse[200]
  *   保存品牌
  * @tags: 品牌
  */
-export const postFactCreate = (option: PostFactCreateOption, config?: AxiosRequestConfig) =>
-  requester<PostFactCreateResponseSuccess>('/fact/create', { method: 'post', ...option }, config)
+export const postFactCreate = (
+  option: PostFactCreateOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostFactCreateResponseSuccess>(
+    '/fact/create',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postFactUpdate */
 export interface PostFactUpdateOption {
@@ -703,8 +828,15 @@ type PostFactUpdateResponseSuccess = PostFactUpdateResponse[200]
  *   更新品牌
  * @tags: 品牌
  */
-export const postFactUpdate = (option: PostFactUpdateOption, config?: AxiosRequestConfig) =>
-  requester<PostFactUpdateResponseSuccess>('/fact/update', { method: 'post', ...option }, config)
+export const postFactUpdate = (
+  option: PostFactUpdateOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostFactUpdateResponseSuccess>(
+    '/fact/update',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postFactRemove */
 export interface PostFactRemoveOption {
@@ -726,8 +858,15 @@ type PostFactRemoveResponseSuccess = PostFactRemoveResponse[200]
  *   删除品牌
  * @tags: 品牌
  */
-export const postFactRemove = (option: PostFactRemoveOption, config?: AxiosRequestConfig) =>
-  requester<PostFactRemoveResponseSuccess>('/fact/remove', { method: 'post', ...option }, config)
+export const postFactRemove = (
+  option: PostFactRemoveOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostFactRemoveResponseSuccess>(
+    '/fact/remove',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postFactExistName */
 export interface PostFactExistNameOption {
@@ -749,8 +888,15 @@ type PostFactExistNameResponseSuccess = PostFactExistNameResponse[200]
  *   品牌名称是否存在
  * @tags: 品牌
  */
-export const postFactExistName = (option: PostFactExistNameOption, config?: AxiosRequestConfig) =>
-  requester<PostFactExistNameResponseSuccess>('/fact/existName', { method: 'post', ...option }, config)
+export const postFactExistName = (
+  option: PostFactExistNameOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostFactExistNameResponseSuccess>(
+    '/fact/existName',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postFactExistCategory */
 export interface PostFactExistCategoryOption {
@@ -772,8 +918,15 @@ type PostFactExistCategoryResponseSuccess = PostFactExistCategoryResponse[200]
  *   品牌目录是否存在
  * @tags: 品牌
  */
-export const postFactExistCategory = (option: PostFactExistCategoryOption, config?: AxiosRequestConfig) =>
-  requester<PostFactExistCategoryResponseSuccess>('/fact/existCategory', { method: 'post', ...option }, config)
+export const postFactExistCategory = (
+  option: PostFactExistCategoryOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostFactExistCategoryResponseSuccess>(
+    '/fact/existCategory',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postFactProdTypeGetTree */
 export interface PostFactProdTypeGetTreeOption {
@@ -789,14 +942,22 @@ interface PostFactProdTypeGetTreeResponse {
   200: Array<TblFactoryProdtypeEntityWithExt>
 }
 
-type PostFactProdTypeGetTreeResponseSuccess = PostFactProdTypeGetTreeResponse[200]
+type PostFactProdTypeGetTreeResponseSuccess =
+  PostFactProdTypeGetTreeResponse[200]
 /**
  * @description
  *   获得目录树
  * @tags: 目录
  */
-export const postFactProdTypeGetTree = (option: PostFactProdTypeGetTreeOption, config?: AxiosRequestConfig) =>
-  requester<PostFactProdTypeGetTreeResponseSuccess>('/factProdType/getTree', { method: 'post', ...option }, config)
+export const postFactProdTypeGetTree = (
+  option: PostFactProdTypeGetTreeOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostFactProdTypeGetTreeResponseSuccess>(
+    '/factProdType/getTree',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postFactProdTypeGetByFactoryId */
 export interface PostFactProdTypeGetByFactoryIdOption {
@@ -812,7 +973,8 @@ interface PostFactProdTypeGetByFactoryIdResponse {
   200: Array<TblFactoryProdtypeEntity>
 }
 
-type PostFactProdTypeGetByFactoryIdResponseSuccess = PostFactProdTypeGetByFactoryIdResponse[200]
+type PostFactProdTypeGetByFactoryIdResponseSuccess =
+  PostFactProdTypeGetByFactoryIdResponse[200]
 /**
  * @description
  *   获得所有目录
@@ -848,8 +1010,15 @@ type PostFactProdTypeCreateResponseSuccess = PostFactProdTypeCreateResponse[200]
  *   保存目录
  * @tags: 目录
  */
-export const postFactProdTypeCreate = (option: PostFactProdTypeCreateOption, config?: AxiosRequestConfig) =>
-  requester<PostFactProdTypeCreateResponseSuccess>('/factProdType/create', { method: 'post', ...option }, config)
+export const postFactProdTypeCreate = (
+  option: PostFactProdTypeCreateOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostFactProdTypeCreateResponseSuccess>(
+    '/factProdType/create',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postFactProdTypeUpdate */
 export interface PostFactProdTypeUpdateOption {
@@ -871,8 +1040,15 @@ type PostFactProdTypeUpdateResponseSuccess = PostFactProdTypeUpdateResponse[200]
  *   更新目录
  * @tags: 目录
  */
-export const postFactProdTypeUpdate = (option: PostFactProdTypeUpdateOption, config?: AxiosRequestConfig) =>
-  requester<PostFactProdTypeUpdateResponseSuccess>('/factProdType/update', { method: 'post', ...option }, config)
+export const postFactProdTypeUpdate = (
+  option: PostFactProdTypeUpdateOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostFactProdTypeUpdateResponseSuccess>(
+    '/factProdType/update',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postFactProdTypeRemove */
 export interface PostFactProdTypeRemoveOption {
@@ -894,8 +1070,15 @@ type PostFactProdTypeRemoveResponseSuccess = PostFactProdTypeRemoveResponse[200]
  *   删除目录
  * @tags: 目录
  */
-export const postFactProdTypeRemove = (option: PostFactProdTypeRemoveOption, config?: AxiosRequestConfig) =>
-  requester<PostFactProdTypeRemoveResponseSuccess>('/factProdType/remove', { method: 'post', ...option }, config)
+export const postFactProdTypeRemove = (
+  option: PostFactProdTypeRemoveOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostFactProdTypeRemoveResponseSuccess>(
+    '/factProdType/remove',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postFactProdTypeUpdateBatch */
 export interface PostFactProdTypeUpdateBatchOption {
@@ -911,13 +1094,17 @@ interface PostFactProdTypeUpdateBatchResponse {
   200: any
 }
 
-type PostFactProdTypeUpdateBatchResponseSuccess = PostFactProdTypeUpdateBatchResponse[200]
+type PostFactProdTypeUpdateBatchResponseSuccess =
+  PostFactProdTypeUpdateBatchResponse[200]
 /**
  * @description
  *   批量更新
  * @tags: 目录
  */
-export const postFactProdTypeUpdateBatch = (option: PostFactProdTypeUpdateBatchOption, config?: AxiosRequestConfig) =>
+export const postFactProdTypeUpdateBatch = (
+  option: PostFactProdTypeUpdateBatchOption,
+  config?: AxiosRequestConfig,
+) =>
   requester<PostFactProdTypeUpdateBatchResponseSuccess>(
     '/factProdType/updateBatch',
     { method: 'post', ...option },
@@ -938,14 +1125,22 @@ interface PostFactProdTypeExistNameResponse {
   200: boolean
 }
 
-type PostFactProdTypeExistNameResponseSuccess = PostFactProdTypeExistNameResponse[200]
+type PostFactProdTypeExistNameResponseSuccess =
+  PostFactProdTypeExistNameResponse[200]
 /**
  * @description
  *   是否存在同名目录
  * @tags: 目录
  */
-export const postFactProdTypeExistName = (option: PostFactProdTypeExistNameOption, config?: AxiosRequestConfig) =>
-  requester<PostFactProdTypeExistNameResponseSuccess>('/factProdType/existName', { method: 'post', ...option }, config)
+export const postFactProdTypeExistName = (
+  option: PostFactProdTypeExistNameOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostFactProdTypeExistNameResponseSuccess>(
+    '/factProdType/existName',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description response type for postIndustryGetWholeTree */
 interface PostIndustryGetWholeTreeResponse {
@@ -956,14 +1151,19 @@ interface PostIndustryGetWholeTreeResponse {
   200: Array<TblIndustryEntity>
 }
 
-type PostIndustryGetWholeTreeResponseSuccess = PostIndustryGetWholeTreeResponse[200]
+type PostIndustryGetWholeTreeResponseSuccess =
+  PostIndustryGetWholeTreeResponse[200]
 /**
  * @description
  *   获取行业分类树
  * @tags: 行业分类
  */
 export const postIndustryGetWholeTree = (config?: AxiosRequestConfig) =>
-  requester<PostIndustryGetWholeTreeResponseSuccess>('/industry/getWholeTree', { method: 'post' }, config)
+  requester<PostIndustryGetWholeTreeResponseSuccess>(
+    '/industry/getWholeTree',
+    { method: 'post' },
+    config,
+  )
 
 /** @description response type for postIndustryGetList */
 interface PostIndustryGetListResponse {
@@ -981,7 +1181,11 @@ type PostIndustryGetListResponseSuccess = PostIndustryGetListResponse[200]
  * @tags: 行业分类
  */
 export const postIndustryGetList = (config?: AxiosRequestConfig) =>
-  requester<PostIndustryGetListResponseSuccess>('/industry/getList', { method: 'post' }, config)
+  requester<PostIndustryGetListResponseSuccess>(
+    '/industry/getList',
+    { method: 'post' },
+    config,
+  )
 
 /** @description request parameter type for postSeriesGetAll */
 export interface PostSeriesGetAllOption {
@@ -1003,8 +1207,15 @@ type PostSeriesGetAllResponseSuccess = PostSeriesGetAllResponse[200]
  *   获取所有系列
  * @tags: 系列
  */
-export const postSeriesGetAll = (option: PostSeriesGetAllOption, config?: AxiosRequestConfig) =>
-  requester<PostSeriesGetAllResponseSuccess>('/series/getAll', { method: 'post', ...option }, config)
+export const postSeriesGetAll = (
+  option: PostSeriesGetAllOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostSeriesGetAllResponseSuccess>(
+    '/series/getAll',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postSeriesGetById */
 export interface PostSeriesGetByIdOption {
@@ -1026,8 +1237,15 @@ type PostSeriesGetByIdResponseSuccess = PostSeriesGetByIdResponse[200]
  *   获取系列
  * @tags: 系列
  */
-export const postSeriesGetById = (option: PostSeriesGetByIdOption, config?: AxiosRequestConfig) =>
-  requester<PostSeriesGetByIdResponseSuccess>('/series/getById', { method: 'post', ...option }, config)
+export const postSeriesGetById = (
+  option: PostSeriesGetByIdOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostSeriesGetByIdResponseSuccess>(
+    '/series/getById',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postSeriesCreate */
 export interface PostSeriesCreateOption {
@@ -1059,8 +1277,15 @@ type PostSeriesCreateResponseSuccess = PostSeriesCreateResponse[200]
  *   保存系列
  * @tags: 系列
  */
-export const postSeriesCreate = (option: PostSeriesCreateOption, config?: AxiosRequestConfig) =>
-  requester<PostSeriesCreateResponseSuccess>('/series/create', { method: 'post', ...option }, config)
+export const postSeriesCreate = (
+  option: PostSeriesCreateOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostSeriesCreateResponseSuccess>(
+    '/series/create',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postSeriesUpdateSeriesStatus */
 export interface PostSeriesUpdateSeriesStatusOption {
@@ -1076,13 +1301,17 @@ interface PostSeriesUpdateSeriesStatusResponse {
   200: any
 }
 
-type PostSeriesUpdateSeriesStatusResponseSuccess = PostSeriesUpdateSeriesStatusResponse[200]
+type PostSeriesUpdateSeriesStatusResponseSuccess =
+  PostSeriesUpdateSeriesStatusResponse[200]
 /**
  * @description
  *   更新系列启用、停产、默认状态
  * @tags: 系列
  */
-export const postSeriesUpdateSeriesStatus = (option: PostSeriesUpdateSeriesStatusOption, config?: AxiosRequestConfig) =>
+export const postSeriesUpdateSeriesStatus = (
+  option: PostSeriesUpdateSeriesStatusOption,
+  config?: AxiosRequestConfig,
+) =>
   requester<PostSeriesUpdateSeriesStatusResponseSuccess>(
     '/series/updateSeriesStatus',
     { method: 'post', ...option },
@@ -1119,8 +1348,15 @@ type PostSeriesUpdateResponseSuccess = PostSeriesUpdateResponse[200]
  *   更新系列
  * @tags: 系列
  */
-export const postSeriesUpdate = (option: PostSeriesUpdateOption, config?: AxiosRequestConfig) =>
-  requester<PostSeriesUpdateResponseSuccess>('/series/update', { method: 'post', ...option }, config)
+export const postSeriesUpdate = (
+  option: PostSeriesUpdateOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostSeriesUpdateResponseSuccess>(
+    '/series/update',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postSeriesUpdateBatch */
 export interface PostSeriesUpdateBatchOption {
@@ -1142,8 +1378,15 @@ type PostSeriesUpdateBatchResponseSuccess = PostSeriesUpdateBatchResponse[200]
  *   批量更新（系列树排序用）
  * @tags: 系列
  */
-export const postSeriesUpdateBatch = (option: PostSeriesUpdateBatchOption, config?: AxiosRequestConfig) =>
-  requester<PostSeriesUpdateBatchResponseSuccess>('/series/updateBatch', { method: 'post', ...option }, config)
+export const postSeriesUpdateBatch = (
+  option: PostSeriesUpdateBatchOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostSeriesUpdateBatchResponseSuccess>(
+    '/series/updateBatch',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postSeriesRemove */
 export interface PostSeriesRemoveOption {
@@ -1165,8 +1408,15 @@ type PostSeriesRemoveResponseSuccess = PostSeriesRemoveResponse[200]
  *   删除系列
  * @tags: 系列
  */
-export const postSeriesRemove = (option: PostSeriesRemoveOption, config?: AxiosRequestConfig) =>
-  requester<PostSeriesRemoveResponseSuccess>('/series/remove', { method: 'post', ...option }, config)
+export const postSeriesRemove = (
+  option: PostSeriesRemoveOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostSeriesRemoveResponseSuccess>(
+    '/series/remove',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postSeriesRemoveById */
 export interface PostSeriesRemoveByIdOption {
@@ -1188,8 +1438,15 @@ type PostSeriesRemoveByIdResponseSuccess = PostSeriesRemoveByIdResponse[200]
  *   删除单个系列(如果错误消息是 需审批 需提示审批)
  * @tags: 系列
  */
-export const postSeriesRemoveById = (option: PostSeriesRemoveByIdOption, config?: AxiosRequestConfig) =>
-  requester<PostSeriesRemoveByIdResponseSuccess>('/series/removeById', { method: 'post', ...option }, config)
+export const postSeriesRemoveById = (
+  option: PostSeriesRemoveByIdOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostSeriesRemoveByIdResponseSuccess>(
+    '/series/removeById',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postSeriesIsAuditBeforeDelete */
 export interface PostSeriesIsAuditBeforeDeleteOption {
@@ -1205,7 +1462,8 @@ interface PostSeriesIsAuditBeforeDeleteResponse {
   200: boolean
 }
 
-type PostSeriesIsAuditBeforeDeleteResponseSuccess = PostSeriesIsAuditBeforeDeleteResponse[200]
+type PostSeriesIsAuditBeforeDeleteResponseSuccess =
+  PostSeriesIsAuditBeforeDeleteResponse[200]
 /**
  * @description
  *   删除系列是否要审批
@@ -1235,13 +1493,17 @@ interface PostSeriesGetSeriesIndustryResponse {
   200: Array<GetSeriesIndustryResDto>
 }
 
-type PostSeriesGetSeriesIndustryResponseSuccess = PostSeriesGetSeriesIndustryResponse[200]
+type PostSeriesGetSeriesIndustryResponseSuccess =
+  PostSeriesGetSeriesIndustryResponse[200]
 /**
  * @description
  *   获取系列行业分类
  * @tags: 系列
  */
-export const postSeriesGetSeriesIndustry = (option: PostSeriesGetSeriesIndustryOption, config?: AxiosRequestConfig) =>
+export const postSeriesGetSeriesIndustry = (
+  option: PostSeriesGetSeriesIndustryOption,
+  config?: AxiosRequestConfig,
+) =>
   requester<PostSeriesGetSeriesIndustryResponseSuccess>(
     '/series/getSeriesIndustry',
     { method: 'post', ...option },
@@ -1272,13 +1534,17 @@ interface PostSeriesSaveSeriesIndustryResponse {
   200: Array<GetSeriesIndustryResDto>
 }
 
-type PostSeriesSaveSeriesIndustryResponseSuccess = PostSeriesSaveSeriesIndustryResponse[200]
+type PostSeriesSaveSeriesIndustryResponseSuccess =
+  PostSeriesSaveSeriesIndustryResponse[200]
 /**
  * @description
  *   保存系列行业关系
  * @tags: 系列
  */
-export const postSeriesSaveSeriesIndustry = (option: PostSeriesSaveSeriesIndustryOption, config?: AxiosRequestConfig) =>
+export const postSeriesSaveSeriesIndustry = (
+  option: PostSeriesSaveSeriesIndustryOption,
+  config?: AxiosRequestConfig,
+) =>
   requester<PostSeriesSaveSeriesIndustryResponseSuccess>(
     '/series/saveSeriesIndustry',
     { method: 'post', ...option },
@@ -1305,8 +1571,15 @@ type PostSeriesGetNamePropsResponseSuccess = PostSeriesGetNamePropsResponse[200]
  *   获取系列下系列命名相关属性
  * @tags: 系列
  */
-export const postSeriesGetNameProps = (option: PostSeriesGetNamePropsOption, config?: AxiosRequestConfig) =>
-  requester<PostSeriesGetNamePropsResponseSuccess>('/series/getNameProps', { method: 'post', ...option }, config)
+export const postSeriesGetNameProps = (
+  option: PostSeriesGetNamePropsOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostSeriesGetNamePropsResponseSuccess>(
+    '/series/getNameProps',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postSeriesGetAllProps */
 export interface PostSeriesGetAllPropsOption {
@@ -1328,8 +1601,15 @@ type PostSeriesGetAllPropsResponseSuccess = PostSeriesGetAllPropsResponse[200]
  *   获取系列下系列所有属性
  * @tags: 系列
  */
-export const postSeriesGetAllProps = (option: PostSeriesGetAllPropsOption, config?: AxiosRequestConfig) =>
-  requester<PostSeriesGetAllPropsResponseSuccess>('/series/getAllProps', { method: 'post', ...option }, config)
+export const postSeriesGetAllProps = (
+  option: PostSeriesGetAllPropsOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostSeriesGetAllPropsResponseSuccess>(
+    '/series/getAllProps',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postSeriesExistSameName */
 export interface PostSeriesExistSameNameOption {
@@ -1345,14 +1625,22 @@ interface PostSeriesExistSameNameResponse {
   200: boolean
 }
 
-type PostSeriesExistSameNameResponseSuccess = PostSeriesExistSameNameResponse[200]
+type PostSeriesExistSameNameResponseSuccess =
+  PostSeriesExistSameNameResponse[200]
 /**
  * @description
  *   品牌下是否存在相同名称系列
  * @tags: 系列
  */
-export const postSeriesExistSameName = (option: PostSeriesExistSameNameOption, config?: AxiosRequestConfig) =>
-  requester<PostSeriesExistSameNameResponseSuccess>('/series/existSameName', { method: 'post', ...option }, config)
+export const postSeriesExistSameName = (
+  option: PostSeriesExistSameNameOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostSeriesExistSameNameResponseSuccess>(
+    '/series/existSameName',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postSeriesGetSeriesStatus */
 export interface PostSeriesGetSeriesStatusOption {
@@ -1368,14 +1656,22 @@ interface PostSeriesGetSeriesStatusResponse {
   200: TblSeriesExtEntity
 }
 
-type PostSeriesGetSeriesStatusResponseSuccess = PostSeriesGetSeriesStatusResponse[200]
+type PostSeriesGetSeriesStatusResponseSuccess =
+  PostSeriesGetSeriesStatusResponse[200]
 /**
  * @description
  *   获取当前系列状态
  * @tags: 系列
  */
-export const postSeriesGetSeriesStatus = (option: PostSeriesGetSeriesStatusOption, config?: AxiosRequestConfig) =>
-  requester<PostSeriesGetSeriesStatusResponseSuccess>('/series/getSeriesStatus', { method: 'post', ...option }, config)
+export const postSeriesGetSeriesStatus = (
+  option: PostSeriesGetSeriesStatusOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostSeriesGetSeriesStatusResponseSuccess>(
+    '/series/getSeriesStatus',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postSeriesChangeSeriesStatus */
 export interface PostSeriesChangeSeriesStatusOption {
@@ -1391,13 +1687,17 @@ interface PostSeriesChangeSeriesStatusResponse {
   200: any
 }
 
-type PostSeriesChangeSeriesStatusResponseSuccess = PostSeriesChangeSeriesStatusResponse[200]
+type PostSeriesChangeSeriesStatusResponseSuccess =
+  PostSeriesChangeSeriesStatusResponse[200]
 /**
  * @description
  *   修改系列状态
  * @tags: 系列
  */
-export const postSeriesChangeSeriesStatus = (option: PostSeriesChangeSeriesStatusOption, config?: AxiosRequestConfig) =>
+export const postSeriesChangeSeriesStatus = (
+  option: PostSeriesChangeSeriesStatusOption,
+  config?: AxiosRequestConfig,
+) =>
   requester<PostSeriesChangeSeriesStatusResponseSuccess>(
     '/series/changeSeriesStatus',
     { method: 'post', ...option },
@@ -1418,13 +1718,17 @@ interface PostSeriesGetSeriesCompTreeResponse {
   200: Array<OpenGetSeriesCompsTreeResDto>
 }
 
-type PostSeriesGetSeriesCompTreeResponseSuccess = PostSeriesGetSeriesCompTreeResponse[200]
+type PostSeriesGetSeriesCompTreeResponseSuccess =
+  PostSeriesGetSeriesCompTreeResponse[200]
 /**
  * @description
  *   获取系列下组件分组树
  * @tags: 系列
  */
-export const postSeriesGetSeriesCompTree = (option: PostSeriesGetSeriesCompTreeOption, config?: AxiosRequestConfig) =>
+export const postSeriesGetSeriesCompTree = (
+  option: PostSeriesGetSeriesCompTreeOption,
+  config?: AxiosRequestConfig,
+) =>
   requester<PostSeriesGetSeriesCompTreeResponseSuccess>(
     '/series/getSeriesCompTree',
     { method: 'post', ...option },
@@ -1451,8 +1755,15 @@ type PostSeriesCopySeriesResponseSuccess = PostSeriesCopySeriesResponse[200]
  *   复制系列
  * @tags: 系列
  */
-export const postSeriesCopySeries = (option: PostSeriesCopySeriesOption, config?: AxiosRequestConfig) =>
-  requester<PostSeriesCopySeriesResponseSuccess>('/series/copySeries', { method: 'post', ...option }, config)
+export const postSeriesCopySeries = (
+  option: PostSeriesCopySeriesOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostSeriesCopySeriesResponseSuccess>(
+    '/series/copySeries',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postCompGetAllGroupBySid */
 export interface PostCompGetAllGroupBySidOption {
@@ -1468,14 +1779,22 @@ interface PostCompGetAllGroupBySidResponse {
   200: Array<TblComponentTypeEntity>
 }
 
-type PostCompGetAllGroupBySidResponseSuccess = PostCompGetAllGroupBySidResponse[200]
+type PostCompGetAllGroupBySidResponseSuccess =
+  PostCompGetAllGroupBySidResponse[200]
 /**
  * @description
  *   获取系列下所有组件分组
  * @tags: 组件
  */
-export const postCompGetAllGroupBySid = (option: PostCompGetAllGroupBySidOption, config?: AxiosRequestConfig) =>
-  requester<PostCompGetAllGroupBySidResponseSuccess>('/comp/getAllGroupBySid', { method: 'post', ...option }, config)
+export const postCompGetAllGroupBySid = (
+  option: PostCompGetAllGroupBySidOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostCompGetAllGroupBySidResponseSuccess>(
+    '/comp/getAllGroupBySid',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postCompGetGroup */
 export interface PostCompGetGroupOption {
@@ -1497,8 +1816,15 @@ type PostCompGetGroupResponseSuccess = PostCompGetGroupResponse[200]
  *   获取组件分组
  * @tags: 组件
  */
-export const postCompGetGroup = (option: PostCompGetGroupOption, config?: AxiosRequestConfig) =>
-  requester<PostCompGetGroupResponseSuccess>('/comp/getGroup', { method: 'post', ...option }, config)
+export const postCompGetGroup = (
+  option: PostCompGetGroupOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostCompGetGroupResponseSuccess>(
+    '/comp/getGroup',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postCompGetGroupBatch */
 export interface PostCompGetGroupBatchOption {
@@ -1520,8 +1846,15 @@ type PostCompGetGroupBatchResponseSuccess = PostCompGetGroupBatchResponse[200]
  *   批量获取组件分组
  * @tags: 组件
  */
-export const postCompGetGroupBatch = (option: PostCompGetGroupBatchOption, config?: AxiosRequestConfig) =>
-  requester<PostCompGetGroupBatchResponseSuccess>('/comp/getGroupBatch', { method: 'post', ...option }, config)
+export const postCompGetGroupBatch = (
+  option: PostCompGetGroupBatchOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostCompGetGroupBatchResponseSuccess>(
+    '/comp/getGroupBatch',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postCompCreateGroup */
 export interface PostCompCreateGroupOption {
@@ -1553,8 +1886,15 @@ type PostCompCreateGroupResponseSuccess = PostCompCreateGroupResponse[200]
  *   保存分组
  * @tags: 组件
  */
-export const postCompCreateGroup = (option: PostCompCreateGroupOption, config?: AxiosRequestConfig) =>
-  requester<PostCompCreateGroupResponseSuccess>('/comp/createGroup', { method: 'post', ...option }, config)
+export const postCompCreateGroup = (
+  option: PostCompCreateGroupOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostCompCreateGroupResponseSuccess>(
+    '/comp/createGroup',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postCompUpdateGroup */
 export interface PostCompUpdateGroupOption {
@@ -1586,8 +1926,15 @@ type PostCompUpdateGroupResponseSuccess = PostCompUpdateGroupResponse[200]
  *   更新分组
  * @tags: 组件
  */
-export const postCompUpdateGroup = (option: PostCompUpdateGroupOption, config?: AxiosRequestConfig) =>
-  requester<PostCompUpdateGroupResponseSuccess>('/comp/updateGroup', { method: 'post', ...option }, config)
+export const postCompUpdateGroup = (
+  option: PostCompUpdateGroupOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostCompUpdateGroupResponseSuccess>(
+    '/comp/updateGroup',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postCompRemoveGroup */
 export interface PostCompRemoveGroupOption {
@@ -1619,8 +1966,15 @@ type PostCompRemoveGroupResponseSuccess = PostCompRemoveGroupResponse[200]
  *   批量删除分组信息
  * @tags: 组件
  */
-export const postCompRemoveGroup = (option: PostCompRemoveGroupOption, config?: AxiosRequestConfig) =>
-  requester<PostCompRemoveGroupResponseSuccess>('/comp/removeGroup', { method: 'post', ...option }, config)
+export const postCompRemoveGroup = (
+  option: PostCompRemoveGroupOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostCompRemoveGroupResponseSuccess>(
+    '/comp/removeGroup',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postCompSaveBatchGroup */
 export interface PostCompSaveBatchGroupOption {
@@ -1652,8 +2006,15 @@ type PostCompSaveBatchGroupResponseSuccess = PostCompSaveBatchGroupResponse[200]
  *   批量更新分组信息
  * @tags: 组件
  */
-export const postCompSaveBatchGroup = (option: PostCompSaveBatchGroupOption, config?: AxiosRequestConfig) =>
-  requester<PostCompSaveBatchGroupResponseSuccess>('/comp/saveBatchGroup', { method: 'post', ...option }, config)
+export const postCompSaveBatchGroup = (
+  option: PostCompSaveBatchGroupOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostCompSaveBatchGroupResponseSuccess>(
+    '/comp/saveBatchGroup',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postCompGetAll */
 export interface PostCompGetAllOption {
@@ -1675,8 +2036,15 @@ type PostCompGetAllResponseSuccess = PostCompGetAllResponse[200]
  *   获取系列下所有组件
  * @tags: 组件
  */
-export const postCompGetAll = (option: PostCompGetAllOption, config?: AxiosRequestConfig) =>
-  requester<PostCompGetAllResponseSuccess>('/comp/getAll', { method: 'post', ...option }, config)
+export const postCompGetAll = (
+  option: PostCompGetAllOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostCompGetAllResponseSuccess>(
+    '/comp/getAll',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postCompGetById */
 export interface PostCompGetByIdOption {
@@ -1698,8 +2066,15 @@ type PostCompGetByIdResponseSuccess = PostCompGetByIdResponse[200]
  *   获取组件
  * @tags: 组件
  */
-export const postCompGetById = (option: PostCompGetByIdOption, config?: AxiosRequestConfig) =>
-  requester<PostCompGetByIdResponseSuccess>('/comp/getById', { method: 'post', ...option }, config)
+export const postCompGetById = (
+  option: PostCompGetByIdOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostCompGetByIdResponseSuccess>(
+    '/comp/getById',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postCompCreate */
 export interface PostCompCreateOption {
@@ -1731,8 +2106,15 @@ type PostCompCreateResponseSuccess = PostCompCreateResponse[200]
  *   保存组件
  * @tags: 组件
  */
-export const postCompCreate = (option: PostCompCreateOption, config?: AxiosRequestConfig) =>
-  requester<PostCompCreateResponseSuccess>('/comp/create', { method: 'post', ...option }, config)
+export const postCompCreate = (
+  option: PostCompCreateOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostCompCreateResponseSuccess>(
+    '/comp/create',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postCompUpdate */
 export interface PostCompUpdateOption {
@@ -1764,8 +2146,15 @@ type PostCompUpdateResponseSuccess = PostCompUpdateResponse[200]
  *   更新组件
  * @tags: 组件
  */
-export const postCompUpdate = (option: PostCompUpdateOption, config?: AxiosRequestConfig) =>
-  requester<PostCompUpdateResponseSuccess>('/comp/update', { method: 'post', ...option }, config)
+export const postCompUpdate = (
+  option: PostCompUpdateOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostCompUpdateResponseSuccess>(
+    '/comp/update',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postCompRemove */
 export interface PostCompRemoveOption {
@@ -1797,8 +2186,15 @@ type PostCompRemoveResponseSuccess = PostCompRemoveResponse[200]
  *   删除组件
  * @tags: 组件
  */
-export const postCompRemove = (option: PostCompRemoveOption, config?: AxiosRequestConfig) =>
-  requester<PostCompRemoveResponseSuccess>('/comp/remove', { method: 'post', ...option }, config)
+export const postCompRemove = (
+  option: PostCompRemoveOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostCompRemoveResponseSuccess>(
+    '/comp/remove',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postCompUpdateBatch */
 export interface PostCompUpdateBatchOption {
@@ -1830,8 +2226,15 @@ type PostCompUpdateBatchResponseSuccess = PostCompUpdateBatchResponse[200]
  *   批量更新组件信息
  * @tags: 组件
  */
-export const postCompUpdateBatch = (option: PostCompUpdateBatchOption, config?: AxiosRequestConfig) =>
-  requester<PostCompUpdateBatchResponseSuccess>('/comp/updateBatch', { method: 'post', ...option }, config)
+export const postCompUpdateBatch = (
+  option: PostCompUpdateBatchOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostCompUpdateBatchResponseSuccess>(
+    '/comp/updateBatch',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postPropsGetByCombId */
 export interface PostPropsGetByCombIdOption {
@@ -1853,8 +2256,15 @@ type PostPropsGetByCombIdResponseSuccess = PostPropsGetByCombIdResponse[200]
  *   获取组件下所有属性集合
  * @tags: 属性
  */
-export const postPropsGetByCombId = (option: PostPropsGetByCombIdOption, config?: AxiosRequestConfig) =>
-  requester<PostPropsGetByCombIdResponseSuccess>('/props/getByCombId', { method: 'post', ...option }, config)
+export const postPropsGetByCombId = (
+  option: PostPropsGetByCombIdOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPropsGetByCombIdResponseSuccess>(
+    '/props/getByCombId',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postPropsGetById */
 export interface PostPropsGetByIdOption {
@@ -1876,8 +2286,15 @@ type PostPropsGetByIdResponseSuccess = PostPropsGetByIdResponse[200]
  *   获取属性
  * @tags: 属性
  */
-export const postPropsGetById = (option: PostPropsGetByIdOption, config?: AxiosRequestConfig) =>
-  requester<PostPropsGetByIdResponseSuccess>('/props/getById', { method: 'post', ...option }, config)
+export const postPropsGetById = (
+  option: PostPropsGetByIdOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPropsGetByIdResponseSuccess>(
+    '/props/getById',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postPropsGetByIds */
 export interface PostPropsGetByIdsOption {
@@ -1899,8 +2316,15 @@ type PostPropsGetByIdsResponseSuccess = PostPropsGetByIdsResponse[200]
  *   批量获取属性
  * @tags: 属性
  */
-export const postPropsGetByIds = (option: PostPropsGetByIdsOption, config?: AxiosRequestConfig) =>
-  requester<PostPropsGetByIdsResponseSuccess>('/props/getByIds', { method: 'post', ...option }, config)
+export const postPropsGetByIds = (
+  option: PostPropsGetByIdsOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPropsGetByIdsResponseSuccess>(
+    '/props/getByIds',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postPropsCreate */
 export interface PostPropsCreateOption {
@@ -1932,8 +2356,15 @@ type PostPropsCreateResponseSuccess = PostPropsCreateResponse[200]
  *   保存属性
  * @tags: 属性
  */
-export const postPropsCreate = (option: PostPropsCreateOption, config?: AxiosRequestConfig) =>
-  requester<PostPropsCreateResponseSuccess>('/props/create', { method: 'post', ...option }, config)
+export const postPropsCreate = (
+  option: PostPropsCreateOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPropsCreateResponseSuccess>(
+    '/props/create',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postPropsCreateBatch */
 export interface PostPropsCreateBatchOption {
@@ -1965,8 +2396,15 @@ type PostPropsCreateBatchResponseSuccess = PostPropsCreateBatchResponse[200]
  *   批量保存属性
  * @tags: 属性
  */
-export const postPropsCreateBatch = (option: PostPropsCreateBatchOption, config?: AxiosRequestConfig) =>
-  requester<PostPropsCreateBatchResponseSuccess>('/props/createBatch', { method: 'post', ...option }, config)
+export const postPropsCreateBatch = (
+  option: PostPropsCreateBatchOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPropsCreateBatchResponseSuccess>(
+    '/props/createBatch',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postPropsUpdate */
 export interface PostPropsUpdateOption {
@@ -1998,8 +2436,15 @@ type PostPropsUpdateResponseSuccess = PostPropsUpdateResponse[200]
  *   更新属性
  * @tags: 属性
  */
-export const postPropsUpdate = (option: PostPropsUpdateOption, config?: AxiosRequestConfig) =>
-  requester<PostPropsUpdateResponseSuccess>('/props/update', { method: 'post', ...option }, config)
+export const postPropsUpdate = (
+  option: PostPropsUpdateOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPropsUpdateResponseSuccess>(
+    '/props/update',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postPropsUpdateBatch */
 export interface PostPropsUpdateBatchOption {
@@ -2031,8 +2476,15 @@ type PostPropsUpdateBatchResponseSuccess = PostPropsUpdateBatchResponse[200]
  *   批量更新属性
  * @tags: 属性
  */
-export const postPropsUpdateBatch = (option: PostPropsUpdateBatchOption, config?: AxiosRequestConfig) =>
-  requester<PostPropsUpdateBatchResponseSuccess>('/props/updateBatch', { method: 'post', ...option }, config)
+export const postPropsUpdateBatch = (
+  option: PostPropsUpdateBatchOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPropsUpdateBatchResponseSuccess>(
+    '/props/updateBatch',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postPropsRemove */
 export interface PostPropsRemoveOption {
@@ -2064,8 +2516,15 @@ type PostPropsRemoveResponseSuccess = PostPropsRemoveResponse[200]
  *   删除属性
  * @tags: 属性
  */
-export const postPropsRemove = (option: PostPropsRemoveOption, config?: AxiosRequestConfig) =>
-  requester<PostPropsRemoveResponseSuccess>('/props/remove', { method: 'post', ...option }, config)
+export const postPropsRemove = (
+  option: PostPropsRemoveOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPropsRemoveResponseSuccess>(
+    '/props/remove',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postPropsCreateRefProps */
 export interface PostPropsCreateRefPropsOption {
@@ -2091,14 +2550,22 @@ interface PostPropsCreateRefPropsResponse {
   200: Array<TblPropertyEntityWithOpt>
 }
 
-type PostPropsCreateRefPropsResponseSuccess = PostPropsCreateRefPropsResponse[200]
+type PostPropsCreateRefPropsResponseSuccess =
+  PostPropsCreateRefPropsResponse[200]
 /**
  * @description
  *   保存外接属性
  * @tags: 属性
  */
-export const postPropsCreateRefProps = (option: PostPropsCreateRefPropsOption, config?: AxiosRequestConfig) =>
-  requester<PostPropsCreateRefPropsResponseSuccess>('/props/createRefProps', { method: 'post', ...option }, config)
+export const postPropsCreateRefProps = (
+  option: PostPropsCreateRefPropsOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPropsCreateRefPropsResponseSuccess>(
+    '/props/createRefProps',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postPropsExistPropName */
 export interface PostPropsExistPropNameOption {
@@ -2130,8 +2597,15 @@ type PostPropsExistPropNameResponseSuccess = PostPropsExistPropNameResponse[200]
  *   组件下是否存在属性重名
  * @tags: 属性
  */
-export const postPropsExistPropName = (option: PostPropsExistPropNameOption, config?: AxiosRequestConfig) =>
-  requester<PostPropsExistPropNameResponseSuccess>('/props/existPropName', { method: 'post', ...option }, config)
+export const postPropsExistPropName = (
+  option: PostPropsExistPropNameOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPropsExistPropNameResponseSuccess>(
+    '/props/existPropName',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postPropsRelGetListById */
 export interface PostPropsRelGetListByIdOption {
@@ -2147,14 +2621,22 @@ interface PostPropsRelGetListByIdResponse {
   200: Array<TblPropertyProprelEntity>
 }
 
-type PostPropsRelGetListByIdResponseSuccess = PostPropsRelGetListByIdResponse[200]
+type PostPropsRelGetListByIdResponseSuccess =
+  PostPropsRelGetListByIdResponse[200]
 /**
  * @description
  *   获取主动属性集合(根据被动属性ID)
  * @tags: 主被动属性关系
  */
-export const postPropsRelGetListById = (option: PostPropsRelGetListByIdOption, config?: AxiosRequestConfig) =>
-  requester<PostPropsRelGetListByIdResponseSuccess>('/propsRel/getListById', { method: 'post', ...option }, config)
+export const postPropsRelGetListById = (
+  option: PostPropsRelGetListByIdOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPropsRelGetListByIdResponseSuccess>(
+    '/propsRel/getListById',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postPropsRelGetListByCombId */
 export interface PostPropsRelGetListByCombIdOption {
@@ -2172,13 +2654,17 @@ interface PostPropsRelGetListByCombIdResponse {
   }
 }
 
-type PostPropsRelGetListByCombIdResponseSuccess = PostPropsRelGetListByCombIdResponse[200]
+type PostPropsRelGetListByCombIdResponseSuccess =
+  PostPropsRelGetListByCombIdResponse[200]
 /**
  * @description
  *   获取组件下所有主被动属性关系
  * @tags: 主被动属性关系
  */
-export const postPropsRelGetListByCombId = (option: PostPropsRelGetListByCombIdOption, config?: AxiosRequestConfig) =>
+export const postPropsRelGetListByCombId = (
+  option: PostPropsRelGetListByCombIdOption,
+  config?: AxiosRequestConfig,
+) =>
   requester<PostPropsRelGetListByCombIdResponseSuccess>(
     '/propsRel/getListByCombId',
     { method: 'post', ...option },
@@ -2209,14 +2695,22 @@ interface PostPropsRelCreateBatchResponse {
   200: any
 }
 
-type PostPropsRelCreateBatchResponseSuccess = PostPropsRelCreateBatchResponse[200]
+type PostPropsRelCreateBatchResponseSuccess =
+  PostPropsRelCreateBatchResponse[200]
 /**
  * @description
  *   保存主动属性
  * @tags: 主被动属性关系
  */
-export const postPropsRelCreateBatch = (option: PostPropsRelCreateBatchOption, config?: AxiosRequestConfig) =>
-  requester<PostPropsRelCreateBatchResponseSuccess>('/propsRel/createBatch', { method: 'post', ...option }, config)
+export const postPropsRelCreateBatch = (
+  option: PostPropsRelCreateBatchOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPropsRelCreateBatchResponseSuccess>(
+    '/propsRel/createBatch',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postPropsRelExistOptRel */
 export interface PostPropsRelExistOptRelOption {
@@ -2232,14 +2726,22 @@ interface PostPropsRelExistOptRelResponse {
   200: boolean
 }
 
-type PostPropsRelExistOptRelResponseSuccess = PostPropsRelExistOptRelResponse[200]
+type PostPropsRelExistOptRelResponseSuccess =
+  PostPropsRelExistOptRelResponse[200]
 /**
  * @description
  *   是否存在选项约束
  * @tags: 主被动属性关系
  */
-export const postPropsRelExistOptRel = (option: PostPropsRelExistOptRelOption, config?: AxiosRequestConfig) =>
-  requester<PostPropsRelExistOptRelResponseSuccess>('/propsRel/existOptRel', { method: 'post', ...option }, config)
+export const postPropsRelExistOptRel = (
+  option: PostPropsRelExistOptRelOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPropsRelExistOptRelResponseSuccess>(
+    '/propsRel/existOptRel',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOptGetByPropsId */
 export interface PostOptGetByPropsIdOption {
@@ -2261,8 +2763,15 @@ type PostOptGetByPropsIdResponseSuccess = PostOptGetByPropsIdResponse[200]
  *   根据属性ID获取选项集合
  * @tags: 选项
  */
-export const postOptGetByPropsId = (option: PostOptGetByPropsIdOption, config?: AxiosRequestConfig) =>
-  requester<PostOptGetByPropsIdResponseSuccess>('/opt/getByPropsId', { method: 'post', ...option }, config)
+export const postOptGetByPropsId = (
+  option: PostOptGetByPropsIdOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOptGetByPropsIdResponseSuccess>(
+    '/opt/getByPropsId',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOptGetById */
 export interface PostOptGetByIdOption {
@@ -2284,8 +2793,15 @@ type PostOptGetByIdResponseSuccess = PostOptGetByIdResponse[200]
  *   获取选项
  * @tags: 选项
  */
-export const postOptGetById = (option: PostOptGetByIdOption, config?: AxiosRequestConfig) =>
-  requester<PostOptGetByIdResponseSuccess>('/opt/getById', { method: 'post', ...option }, config)
+export const postOptGetById = (
+  option: PostOptGetByIdOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOptGetByIdResponseSuccess>(
+    '/opt/getById',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOptGetByIds */
 export interface PostOptGetByIdsOption {
@@ -2307,8 +2823,15 @@ type PostOptGetByIdsResponseSuccess = PostOptGetByIdsResponse[200]
  *   批量获取选项
  * @tags: 选项
  */
-export const postOptGetByIds = (option: PostOptGetByIdsOption, config?: AxiosRequestConfig) =>
-  requester<PostOptGetByIdsResponseSuccess>('/opt/getByIds', { method: 'post', ...option }, config)
+export const postOptGetByIds = (
+  option: PostOptGetByIdsOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOptGetByIdsResponseSuccess>(
+    '/opt/getByIds',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOptCreate */
 export interface PostOptCreateOption {
@@ -2340,8 +2863,15 @@ type PostOptCreateResponseSuccess = PostOptCreateResponse[200]
  *   保存选项
  * @tags: 选项
  */
-export const postOptCreate = (option: PostOptCreateOption, config?: AxiosRequestConfig) =>
-  requester<PostOptCreateResponseSuccess>('/opt/create', { method: 'post', ...option }, config)
+export const postOptCreate = (
+  option: PostOptCreateOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOptCreateResponseSuccess>(
+    '/opt/create',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOptCreateBatch */
 export interface PostOptCreateBatchOption {
@@ -2373,8 +2903,15 @@ type PostOptCreateBatchResponseSuccess = PostOptCreateBatchResponse[200]
  *   批量保存选项
  * @tags: 选项
  */
-export const postOptCreateBatch = (option: PostOptCreateBatchOption, config?: AxiosRequestConfig) =>
-  requester<PostOptCreateBatchResponseSuccess>('/opt/createBatch', { method: 'post', ...option }, config)
+export const postOptCreateBatch = (
+  option: PostOptCreateBatchOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOptCreateBatchResponseSuccess>(
+    '/opt/createBatch',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOptUpdate */
 export interface PostOptUpdateOption {
@@ -2406,8 +2943,15 @@ type PostOptUpdateResponseSuccess = PostOptUpdateResponse[200]
  *   更新选项
  * @tags: 选项
  */
-export const postOptUpdate = (option: PostOptUpdateOption, config?: AxiosRequestConfig) =>
-  requester<PostOptUpdateResponseSuccess>('/opt/update', { method: 'post', ...option }, config)
+export const postOptUpdate = (
+  option: PostOptUpdateOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOptUpdateResponseSuccess>(
+    '/opt/update',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOptUpdateBatch */
 export interface PostOptUpdateBatchOption {
@@ -2439,8 +2983,15 @@ type PostOptUpdateBatchResponseSuccess = PostOptUpdateBatchResponse[200]
  *   批量更新选项
  * @tags: 选项
  */
-export const postOptUpdateBatch = (option: PostOptUpdateBatchOption, config?: AxiosRequestConfig) =>
-  requester<PostOptUpdateBatchResponseSuccess>('/opt/updateBatch', { method: 'post', ...option }, config)
+export const postOptUpdateBatch = (
+  option: PostOptUpdateBatchOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOptUpdateBatchResponseSuccess>(
+    '/opt/updateBatch',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOptRemove */
 export interface PostOptRemoveOption {
@@ -2472,8 +3023,15 @@ type PostOptRemoveResponseSuccess = PostOptRemoveResponse[200]
  *   删除选项
  * @tags: 选项
  */
-export const postOptRemove = (option: PostOptRemoveOption, config?: AxiosRequestConfig) =>
-  requester<PostOptRemoveResponseSuccess>('/opt/remove', { method: 'post', ...option }, config)
+export const postOptRemove = (
+  option: PostOptRemoveOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOptRemoveResponseSuccess>(
+    '/opt/remove',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOptRelGetListById */
 export interface PostOptRelGetListByIdOption {
@@ -2495,8 +3053,15 @@ type PostOptRelGetListByIdResponseSuccess = PostOptRelGetListByIdResponse[200]
  *   获取被动属性选项约束关系
  * @tags: 选项约束
  */
-export const postOptRelGetListById = (option: PostOptRelGetListByIdOption, config?: AxiosRequestConfig) =>
-  requester<PostOptRelGetListByIdResponseSuccess>('/optRel/getListById', { method: 'post', ...option }, config)
+export const postOptRelGetListById = (
+  option: PostOptRelGetListByIdOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOptRelGetListByIdResponseSuccess>(
+    '/optRel/getListById',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOptRelGetListByCompId */
 export interface PostOptRelGetListByCompIdOption {
@@ -2512,14 +3077,22 @@ interface PostOptRelGetListByCompIdResponse {
   200: Array<OptRelEntityResDto>
 }
 
-type PostOptRelGetListByCompIdResponseSuccess = PostOptRelGetListByCompIdResponse[200]
+type PostOptRelGetListByCompIdResponseSuccess =
+  PostOptRelGetListByCompIdResponse[200]
 /**
  * @description
  *   获取组件下被动属性选项约束关系
  * @tags: 选项约束
  */
-export const postOptRelGetListByCompId = (option: PostOptRelGetListByCompIdOption, config?: AxiosRequestConfig) =>
-  requester<PostOptRelGetListByCompIdResponseSuccess>('/optRel/getListByCompId', { method: 'post', ...option }, config)
+export const postOptRelGetListByCompId = (
+  option: PostOptRelGetListByCompIdOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOptRelGetListByCompIdResponseSuccess>(
+    '/optRel/getListByCompId',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOptRelCreate */
 export interface PostOptRelCreateOption {
@@ -2551,8 +3124,15 @@ type PostOptRelCreateResponseSuccess = PostOptRelCreateResponse[200]
  *   保存被动属性选项约束关系-增量
  * @tags: 选项约束
  */
-export const postOptRelCreate = (option: PostOptRelCreateOption, config?: AxiosRequestConfig) =>
-  requester<PostOptRelCreateResponseSuccess>('/optRel/create', { method: 'post', ...option }, config)
+export const postOptRelCreate = (
+  option: PostOptRelCreateOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOptRelCreateResponseSuccess>(
+    '/optRel/create',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOptRelCreateBatch */
 export interface PostOptRelCreateBatchOption {
@@ -2584,8 +3164,15 @@ type PostOptRelCreateBatchResponseSuccess = PostOptRelCreateBatchResponse[200]
  *   批量保存被动属性约束关系-增量
  * @tags: 选项约束
  */
-export const postOptRelCreateBatch = (option: PostOptRelCreateBatchOption, config?: AxiosRequestConfig) =>
-  requester<PostOptRelCreateBatchResponseSuccess>('/optRel/createBatch', { method: 'post', ...option }, config)
+export const postOptRelCreateBatch = (
+  option: PostOptRelCreateBatchOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOptRelCreateBatchResponseSuccess>(
+    '/optRel/createBatch',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOptRelUpdate */
 export interface PostOptRelUpdateOption {
@@ -2617,8 +3204,15 @@ type PostOptRelUpdateResponseSuccess = PostOptRelUpdateResponse[200]
  *   更新被动属性选项约束关系
  * @tags: 选项约束
  */
-export const postOptRelUpdate = (option: PostOptRelUpdateOption, config?: AxiosRequestConfig) =>
-  requester<PostOptRelUpdateResponseSuccess>('/optRel/update', { method: 'post', ...option }, config)
+export const postOptRelUpdate = (
+  option: PostOptRelUpdateOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOptRelUpdateResponseSuccess>(
+    '/optRel/update',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postOptRelRemove */
 export interface PostOptRelRemoveOption {
@@ -2650,8 +3244,15 @@ type PostOptRelRemoveResponseSuccess = PostOptRelRemoveResponse[200]
  *   删除选项约束关系
  * @tags: 选项约束
  */
-export const postOptRelRemove = (option: PostOptRelRemoveOption, config?: AxiosRequestConfig) =>
-  requester<PostOptRelRemoveResponseSuccess>('/optRel/remove', { method: 'post', ...option }, config)
+export const postOptRelRemove = (
+  option: PostOptRelRemoveOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostOptRelRemoveResponseSuccess>(
+    '/optRel/remove',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description response type for postPubGetPubData */
 interface PostPubGetPubDataResponse {
@@ -2669,7 +3270,11 @@ type PostPubGetPubDataResponseSuccess = PostPubGetPubDataResponse[200]
  * @tags: 数据发布
  */
 export const postPubGetPubData = (config?: AxiosRequestConfig) =>
-  requester<PostPubGetPubDataResponseSuccess>('/pub/getPubData', { method: 'post' }, config)
+  requester<PostPubGetPubDataResponseSuccess>(
+    '/pub/getPubData',
+    { method: 'post' },
+    config,
+  )
 
 /** @description request parameter type for postPubSavePubData */
 export interface PostPubSavePubDataOption {
@@ -2691,8 +3296,15 @@ type PostPubSavePubDataResponseSuccess = PostPubSavePubDataResponse[200]
  *   保存发布数据
  * @tags: 数据发布
  */
-export const postPubSavePubData = (option: PostPubSavePubDataOption, config?: AxiosRequestConfig) =>
-  requester<PostPubSavePubDataResponseSuccess>('/pub/savePubData', { method: 'post', ...option }, config)
+export const postPubSavePubData = (
+  option: PostPubSavePubDataOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPubSavePubDataResponseSuccess>(
+    '/pub/savePubData',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postPubGetListByPage */
 export interface PostPubGetListByPageOption {
@@ -2714,8 +3326,15 @@ type PostPubGetListByPageResponseSuccess = PostPubGetListByPageResponse[200]
  *   获取发布记录
  * @tags: 数据发布
  */
-export const postPubGetListByPage = (option: PostPubGetListByPageOption, config?: AxiosRequestConfig) =>
-  requester<PostPubGetListByPageResponseSuccess>('/pub/getListByPage', { method: 'post', ...option }, config)
+export const postPubGetListByPage = (
+  option: PostPubGetListByPageOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPubGetListByPageResponseSuccess>(
+    '/pub/getListByPage',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postPubGetPubRecord */
 export interface PostPubGetPubRecordOption {
@@ -2737,8 +3356,15 @@ type PostPubGetPubRecordResponseSuccess = PostPubGetPubRecordResponse[200]
  *   获取发布状态
  * @tags: 数据发布
  */
-export const postPubGetPubRecord = (option: PostPubGetPubRecordOption, config?: AxiosRequestConfig) =>
-  requester<PostPubGetPubRecordResponseSuccess>('/pub/getPubRecord', { method: 'post', ...option }, config)
+export const postPubGetPubRecord = (
+  option: PostPubGetPubRecordOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPubGetPubRecordResponseSuccess>(
+    '/pub/getPubRecord',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postPubUpdate */
 export interface PostPubUpdateOption {
@@ -2760,8 +3386,15 @@ type PostPubUpdateResponseSuccess = PostPubUpdateResponse[200]
  *   更新版本启用停用
  * @tags: 数据发布
  */
-export const postPubUpdate = (option: PostPubUpdateOption, config?: AxiosRequestConfig) =>
-  requester<PostPubUpdateResponseSuccess>('/pub/update', { method: 'post', ...option }, config)
+export const postPubUpdate = (
+  option: PostPubUpdateOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPubUpdateResponseSuccess>(
+    '/pub/update',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postPubUpdateBatch */
 export interface PostPubUpdateBatchOption {
@@ -2783,8 +3416,15 @@ type PostPubUpdateBatchResponseSuccess = PostPubUpdateBatchResponse[200]
  *   批量更新启用停用
  * @tags: 数据发布
  */
-export const postPubUpdateBatch = (option: PostPubUpdateBatchOption, config?: AxiosRequestConfig) =>
-  requester<PostPubUpdateBatchResponseSuccess>('/pub/updateBatch', { method: 'post', ...option }, config)
+export const postPubUpdateBatch = (
+  option: PostPubUpdateBatchOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPubUpdateBatchResponseSuccess>(
+    '/pub/updateBatch',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postPubGetMcodeList */
 export interface PostPubGetMcodeListOption {
@@ -2806,8 +3446,15 @@ type PostPubGetMcodeListResponseSuccess = PostPubGetMcodeListResponse[200]
  *   获取系列物料
  * @tags: 数据发布
  */
-export const postPubGetMcodeList = (option: PostPubGetMcodeListOption, config?: AxiosRequestConfig) =>
-  requester<PostPubGetMcodeListResponseSuccess>('/pub/getMcodeList', { method: 'post', ...option }, config)
+export const postPubGetMcodeList = (
+  option: PostPubGetMcodeListOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPubGetMcodeListResponseSuccess>(
+    '/pub/getMcodeList',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postPubSendmsg4Js */
 export interface PostPubSendmsg4JsOption {
@@ -2831,8 +3478,15 @@ type PostPubSendmsg4JsResponseSuccess = PostPubSendmsg4JsResponse[200]
  *   发送生成js消息
  * @tags: 数据发布
  */
-export const postPubSendmsg4Js = (option: PostPubSendmsg4JsOption, config?: AxiosRequestConfig) =>
-  requester<PostPubSendmsg4JsResponseSuccess>('/pub/sendmsg4js', { method: 'post', ...option }, config)
+export const postPubSendmsg4Js = (
+  option: PostPubSendmsg4JsOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostPubSendmsg4JsResponseSuccess>(
+    '/pub/sendmsg4js',
+    { method: 'post', ...option },
+    config,
+  )
 
 /** @description request parameter type for postAuditCreate */
 export interface PostAuditCreateOption {
@@ -2854,5 +3508,12 @@ type PostAuditCreateResponseSuccess = PostAuditCreateResponse[200]
  *   提交审批
  * @tags: 审批
  */
-export const postAuditCreate = (option: PostAuditCreateOption, config?: AxiosRequestConfig) =>
-  requester<PostAuditCreateResponseSuccess>('/audit/create', { method: 'post', ...option }, config)
+export const postAuditCreate = (
+  option: PostAuditCreateOption,
+  config?: AxiosRequestConfig,
+) =>
+  requester<PostAuditCreateResponseSuccess>(
+    '/audit/create',
+    { method: 'post', ...option },
+    config,
+  )

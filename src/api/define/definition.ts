@@ -4,34 +4,81 @@
 content is generated automatically by `ts-gear`. */
 export type ComponentsSchemasOpenFactEntityDtoEnableStatus = 0 | 1
 export type ComponentsSchemasOpenFactEntityDtoChangeStatus = 0 | 1 | 39 | 40
-export type ComponentsSchemasGetFactCategoryResOpenDtoType = 'series' | 'category' | 'compGroup' | 'comp'
-export type ComponentsSchemasGetFactCategoryResOpenDtoChangeStatus = 0 | 10 | 20 | 40
+export type ComponentsSchemasGetFactCategoryResOpenDtoType =
+  | 'series'
+  | 'category'
+  | 'compGroup'
+  | 'comp'
+export type ComponentsSchemasGetFactCategoryResOpenDtoChangeStatus =
+  | 0
+  | 10
+  | 20
+  | 40
 export type ComponentsSchemasTblComponentEntityIsMain = -2 | -1 | 0 | 1
 export type ComponentsSchemasTblComponentEntityNameFlag = 0 | 1
 export type ComponentsSchemasTblComponentEntityPriceFlag = 0 | 1
-export type ComponentsSchemasOpenGetSeriesCompsTreeResDtoIsMain = -2 | -1 | 0 | 1
-export type ComponentsSchemasOpenGetSeriesCompsTreeResDtoType = 'compGroup' | 'comp'
+export type ComponentsSchemasOpenGetSeriesCompsTreeResDtoIsMain =
+  | -2
+  | -1
+  | 0
+  | 1
+export type ComponentsSchemasOpenGetSeriesCompsTreeResDtoType =
+  | 'compGroup'
+  | 'comp'
 export type ComponentsSchemasFactEntityDtoEnableStatus = 0 | 1
 export type ComponentsSchemasFactEntityDtoChangeStatus = 0 | 1 | 39 | 40
 export type ComponentsSchemasFactCreateReqDtoEnableStatus = 0 | 1
 export type ComponentsSchemasFactCreateReqDtoChangeStatus = 0 | 1 | 39 | 40
 export type ComponentsSchemasFactUpdateReqDtoEnableStatus = 0 | 1
 export type ComponentsSchemasFactUpdateReqDtoChangeStatus = 0 | 1 | 39 | 40
-export type ComponentsSchemasSeriesEntityDtoStatus = 0 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 20
+export type ComponentsSchemasSeriesEntityDtoStatus =
+  | 0
+  | 3
+  | 4
+  | 5
+  | 6
+  | 7
+  | 8
+  | 9
+  | 10
+  | 20
 export type ComponentsSchemasSeriesEntityDtoChangeStatus = 0 | 10 | 20 | 40
-export type ComponentsSchemasSeriesCreateReqDtoStatus = 0 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 20
+export type ComponentsSchemasSeriesCreateReqDtoStatus =
+  | 0
+  | 3
+  | 4
+  | 5
+  | 6
+  | 7
+  | 8
+  | 9
+  | 10
+  | 20
 export type ComponentsSchemasSeriesCreateReqDtoChangeStatus = 0 | 10 | 20 | 40
 export type ComponentsSchemasSeriesCreateReqDtoEnableStatus = '停用' | '启用'
 export type ComponentsSchemasSeriesCreateReqDtoIsFactDefault = '否' | '是'
 export type ComponentsSchemasSeriesCreateReqDtoProdStatus = '停产' | '生产中'
 export type ComponentsSchemasSeriesCreateReqDtoIsAuditDelete = '否' | '是'
 export type ComponentsSchemasSeriesCreateReqDtoShowPrice = '否' | '是'
-export type ComponentsSchemasSeriesUpdateReqDtoStatus = 0 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 20
+export type ComponentsSchemasSeriesUpdateReqDtoStatus =
+  | 0
+  | 3
+  | 4
+  | 5
+  | 6
+  | 7
+  | 8
+  | 9
+  | 10
+  | 20
 export type ComponentsSchemasSeriesUpdateReqDtoChangeStatus = 0 | 10 | 20 | 40
 export type ComponentsSchemasSeriesGetNamePropsResDtoJlbs = 0 | 1 | 2 | 3 | 4
 export type ComponentsSchemasTblPropertyEntityJlbs = 0 | 1 | 2 | 3 | 4
 export type ComponentsSchemasTblSeriesExtEntityChangeStatus = 0 | 10 | 20 | 40
-export type ComponentsSchemasSeriesChangeSatusReqDtoFrom = '定义变动' | '价格变动' | '物料变动'
+export type ComponentsSchemasSeriesChangeSatusReqDtoFrom =
+  | '定义变动'
+  | '价格变动'
+  | '物料变动'
 export type ComponentsSchemasTblComponentEntityWithExtIsMain = -2 | -1 | 0 | 1
 export type ComponentsSchemasTblComponentEntityWithExtNameFlag = 0 | 1
 export type ComponentsSchemasTblComponentEntityWithExtPriceFlag = 0 | 1
@@ -47,7 +94,10 @@ export type ComponentsSchemasPropsUpdateReqDtoJlbs = 0 | 1 | 2 | 3 | 4
 export type ComponentsSchemasPubGetTreeItemDtoType = 'fact' | 'series'
 export type ComponentsSchemasPubGetListPageReqDtoPubType = 1 | 2 | 3 | 4
 export type ComponentsSchemasPubGetListPageReqDtoEnableStatus = 0 | 1
-export type ComponentsSchemasAuditCreateReqDtoWhere = '数据定义' | '物料号维护' | '价格维护'
+export type ComponentsSchemasAuditCreateReqDtoWhere =
+  | '数据定义'
+  | '物料号维护'
+  | '价格维护'
 export interface GetSpecByBatchDto {
   /**
    * @description
