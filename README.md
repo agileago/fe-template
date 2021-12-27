@@ -1,5 +1,7 @@
 # vite vue3 前端基础模板
 
+!!! 注意， vite不支持装饰器，所以不能用类组件，如果想用请使用webpack模板
+
 ### 工具
 
 建议使用 `webstorm`IDE,并且安装以下插件：
@@ -42,7 +44,3 @@ pnpm install
 - `format` : prettier代码
 - `api` : swagger生成请求代码，在 `src/api` 下进行配置
 - `gen:icon-types` ： 生成图标类型文件(新增图标了，就执行一下，图标组件会有提示)
-
-### 开发规范
-
-全面面向对象开发 **OOP**, 使用类定义服务和组件 [vue3-oop](https://github.com/agileago/vue3-oop)

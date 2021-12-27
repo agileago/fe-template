@@ -1,6 +1,6 @@
-import { VueComponent } from 'vue3-oop'
-import { RouterLink, RouterView } from '@vue3-oop/vue-router'
+import { RouterLink, RouterView } from 'vue-router'
 import { Button } from 'ant-design-vue'
+import { VueComponent } from 'vue3-oop'
 
 export default class DefaultLayout extends VueComponent {
   render() {

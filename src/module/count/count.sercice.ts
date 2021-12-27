@@ -1,13 +1,7 @@
-import { Track, VueService } from 'vue3-oop'
-import { Injectable } from 'injection-js'
+import { ref } from 'vue'
 
-@Injectable()
-export class CountSercice extends VueService {
-  @Track() count = 1
-  add() {
-    this.count++
-  }
-  remove() {
-    this.count--
-  }
+export class CountSercice {
+  count = ref(1)
+  add = () => this.count.value++
+  remove = () => this.count.value--
 }

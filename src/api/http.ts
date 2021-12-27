@@ -39,7 +39,10 @@ export const parseUrl = (url: string, option?: RequestParameter): string => {
  * @param url
  * @param option
  */
-export function interceptRequest(url: string, option?: RequestParameter): [string, AxiosRequestConfig] {
+export function interceptRequest(
+  url: string,
+  option?: RequestParameter,
+): [string, AxiosRequestConfig] {
   try {
     url = parseUrl(url, option)
   } catch (e: any) {
@@ -72,7 +75,11 @@ export function interceptRequest(url: string, option?: RequestParameter): [strin
  * @param ax
  */
 export const createRequester = (ax: AxiosInstance) => {
-  return <T>(apiUrl: string, param: RequestParameter, config: AxiosRequestConfig = {}) => {
+  return <T>(
+    apiUrl: string,
+    param: RequestParameter,
+    config: AxiosRequestConfig = {},
+  ) => {
     // eslint-disable-next-line prefer-const
     let [url, option] = interceptRequest(apiUrl, param)
     option = { url, ...option, ...config }
