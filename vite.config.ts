@@ -18,7 +18,7 @@ export default defineConfig(({ command, mode }) => {
   let base = ''
 
   const plugins = [
-    vueJsx(),
+    vueJsx({ enableObjectSlots: false }),
     viteImp(),
     svgIcons({ iconDirs: [path.resolve(__dirname, 'src/assets/icons')] }),
   ]

@@ -5,7 +5,7 @@
     "dev": "vite",
     "uat": "vite build --mode uat",
     "release": "vite build",
-    "serve": "vite preview --base /",
+    "preview": "vite preview --base /",
     "type:check": "tsc --noEmit --skipLibCheck",
     "commit": "cz-customizable",
     "lint": "eslint --fix .",
