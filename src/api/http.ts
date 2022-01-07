@@ -26,7 +26,7 @@ export type { AxiosRequestConfig }
 export const parseUrl = (url: string, option?: RequestParameter): string => {
   if (option) {
     if (option.path) {
-      Object.getOwnPropertyNames(option.path).forEach((k) => {
+      Object.getOwnPropertyNames(option.path).forEach(k => {
         option.path[k] = encodeURIComponent(String(option.path[k]))
       })
       url = pathToRegexp.compile(url)(option.path)
@@ -60,7 +60,7 @@ export function interceptRequest(
   }
   if (option.formData) {
     const formData = new FormData()
-    Object.keys(option.formData).forEach((k) => {
+    Object.keys(option.formData).forEach(k => {
       formData.append(k, option?.formData[k])
     })
     requestOption.data = formData
@@ -104,15 +104,8 @@ declare module 'axios' {
 }
 
 // 创建request 对request进行拦截各种操作
-const request = axios.create({
+export const customRequest = axios.create({
   baseURL: '/api',
 })
-request.interceptors.response.use((res) => {
-  const data = res.data
-  if (data.code != 1) {
-    throw new Error(data.msg!)
-  }
-  return data.entity
-})
 
-export const http = createRequester(request)
+export const http = createRequester(customRequest)
