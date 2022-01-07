@@ -5,15 +5,16 @@ import uatConf from './config.uat'
 import deepMerge from 'ts-deepmerge'
 
 let conf = defaultConf
+const mergeOpt = { mergeArrays: false }
 switch (import.meta.env.MODE) {
   case 'development':
-    conf = deepMerge(defaultConf, developmentConf)
+    conf = deepMerge.withOptions(mergeOpt, defaultConf, developmentConf)
     break
   case 'uat':
-    conf = deepMerge(defaultConf, uatConf)
+    conf = deepMerge.withOptions(mergeOpt, defaultConf, uatConf)
     break
   case 'production':
-    conf = deepMerge(defaultConf, productionConf)
+    conf = deepMerge.withOptions(mergeOpt, defaultConf, productionConf)
     break
 }
 conf.env = import.meta.env.MODE

@@ -1,10 +1,14 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { Injectable } from 'injection-js'
+import { RouterService } from '@/router/router.service'
 import { routes } from '@/router/routes'
 
-const history = createWebHistory()
-const router = createRouter({
-  history: history,
-  routes,
-})
-
-export default router
+@Injectable()
+export default class RouterStart {
+  constructor(private routerService: RouterService) {
+    if (routerService.router) {
+      window.location.reload()
+      return
+    }
+    routerService.initRoutes(routes)
+  }
+}

@@ -1,8 +1,0 @@
-import '@abraham/reflection'
-import { createApp } from 'vue'
-import App from './app'
-import router from '@/router'
-
-const app = createApp(App)
-app.use(router)
-app.mount('#app')
