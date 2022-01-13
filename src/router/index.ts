@@ -5,10 +5,6 @@ import { routes } from '@/router/routes'
 @Injectable()
 export default class RouterStart {
   constructor(private routerService: RouterService) {
-    if (routerService.router) {
-      window.location.reload()
-      return
-    }
     routerService.initRoutes(routes)
   }
 }

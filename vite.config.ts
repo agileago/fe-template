@@ -18,7 +18,7 @@ export default defineConfig(({ command, mode }) => {
   let base = ''
 
   const plugins = [
-    vueJsx({ enableObjectSlots: false }),
+    vueJsx({ enableObjectSlots: false, slotStable: true }),
     viteImp(),
     svgIcons({ iconDirs: [path.resolve(__dirname, 'src/assets/icons')] }),
   ]
@@ -74,7 +74,7 @@ export default defineConfig(({ command, mode }) => {
           {
             postcssPlugin: 'internal:charset-removal',
             AtRule: {
-              charset: (atRule) => {
+              charset: atRule => {
                 if (atRule.name === 'charset') {
                   atRule.remove()
                 }
