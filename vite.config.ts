@@ -7,7 +7,7 @@ import WebpackAliyunOss from 'webpack-aliyun-oss'
 import html from 'vite-plugin-html'
 import viteImp from 'vite-plugin-imp'
 
-const CDN_HOST = 'https://cdn.titanmatrix.com'
+const CDN_HOST = 'https://cdn.xxx.com'
 const OSS_DIR = 'OSS文件目录请更改' // 例子： /matrial/starter 资源存放路径，一般以仓库路径为主，**请注意**后面没有 /
 
 export default defineConfig(({ command, mode }) => {
