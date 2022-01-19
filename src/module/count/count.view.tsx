@@ -8,13 +8,14 @@ export default class CountView extends VueComponent {
     super()
   }
   render() {
+    const { countService } = this
     return (
-      <div style={{ textAlign: 'center' }}>
-        <h2>{this.countService.count}</h2>
-        <Button type={'primary'} onClick={this.countService.add}>
+      <div style={{ textAlign: 'center' }} class={'aa'}>
+        <h2>{countService.count}</h2>
+        <Button type={'primary'} onClick={countService.add}>
           +1
         </Button>
-        <Button onClick={this.countService.remove}>-</Button>
+        <Button onClick={countService.remove}>-</Button>
       </div>
     )
   }
