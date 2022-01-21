@@ -32,11 +32,7 @@ export default class HomeView extends VueComponent {
     return (
       <div onClick={() => this.count++}>
         <h2>当前count值： {this.count}</h2>
-        <Child>
-          {{
-            default: () => '我是子组件的默认slot',
-          }}
-        </Child>
+        <Child>我是子组件的默认slot</Child>
         <Child>
           {{
             default: () => '我是子组件的默认slot',
