@@ -1,4 +1,4 @@
-import { DeepPartial } from 'ts-essentials'
+import type { DeepPartial } from 'ts-essentials'
 
 export class ConfigType {
   env = ''

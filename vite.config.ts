@@ -106,5 +106,8 @@ export default defineConfig(({ command, mode }) => {
         // },
       },
     },
+    optimizeDeps: {
+      include: ['tslib'],
+    },
   }
 })

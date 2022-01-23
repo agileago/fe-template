@@ -1,10 +1,6 @@
 import { getCurrentApp, Hook, VueService } from 'vue3-oop'
-import {
-  createRouter,
-  createWebHistory,
-  Router,
-  RouteRecordRaw,
-} from 'vue-router'
+import type { Router, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 export class RouterService extends VueService {
   history = createWebHistory()

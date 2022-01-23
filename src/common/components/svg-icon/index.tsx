@@ -1,5 +1,5 @@
-import { FunctionalComponent, HTMLAttributes } from 'vue'
-import { IconTypes } from './icon.interface'
+import type { FunctionalComponent, HTMLAttributes } from 'vue'
+import type { IconTypes } from './icon.interface'
 import './icon.style.scss'
 
 interface IconProps {

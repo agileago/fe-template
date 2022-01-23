@@ -1,4 +1,5 @@
-import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
+import type { AxiosInstance, AxiosRequestConfig } from 'axios'
+import axios from 'axios'
 import * as pathToRegexp from 'path-to-regexp'
 import type { RequestParameter } from 'ts-gear'
 
@@ -83,7 +84,7 @@ export const createRequester = (ax: AxiosInstance) => {
     // eslint-disable-next-line prefer-const
     let [url, option] = interceptRequest(apiUrl, param)
     option = { url, ...option, ...config }
-    return ax!.request<T>(option) as unknown as Promise<ReturnEntityType<T>>
+    return ax.request<T>(option) as unknown as Promise<ReturnEntityType<T>>
   }
 }
 // endregion

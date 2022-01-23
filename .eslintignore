@@ -6,3 +6,8 @@ public
 *.d.ts
 scripts
 *.html
+.eslintrc.js
+commitlint.config.js
+.cz-config.js
+.prettierrc.js
+mock
