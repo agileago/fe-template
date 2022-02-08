@@ -1,9 +1,12 @@
 import { Component, Mut, VueComponent } from 'vue3-oop'
 import { SkipSelf } from 'injection-js'
 import { RouterService } from '@/router/router.service'
+import type { Home1, HomeInterface } from '@/module/home/home.service'
+import { HomeService } from '@/module/home/home.service'
 
 class Child extends VueComponent {
   count = 0
+
   render() {
     this.count++
     return (
@@ -24,10 +27,16 @@ class Child extends VueComponent {
 
 @Component()
 export default class HomeView extends VueComponent {
-  constructor(@SkipSelf() private routerService: RouterService) {
+  constructor(
+    @SkipSelf() private routerService: RouterService,
+    private homeService: HomeService,
+  ) {
     super()
   }
   @Mut() count = 1
+  a: HomeInterface = {}
+  b: Home1 = {}
+
   render() {
     return (
       <div onClick={() => this.count++}>

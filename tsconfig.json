@@ -12,11 +12,12 @@
     "allowSyntheticDefaultImports": true,
     "strictPropertyInitialization": true,
     "importHelpers": true,
-    "isolatedModules": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "useDefineForClassFields": false,
     "importsNotUsedAsValues": "error",
+    "preserveValueImports": true,
+    "isolatedModules": true,
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
