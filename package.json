@@ -62,7 +62,7 @@
     "commit-msg": "commitlint -E GIT_PARAMS"
   },
   "lint-staged": {
-    "*.{ts,tsx,vue,js}": [
+    "*.{ts,tsx,js}": [
       "eslint --fix",
       "prettier --write"
     ],
