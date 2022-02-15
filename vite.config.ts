@@ -69,20 +69,6 @@ export default defineConfig(({ command, mode }) => {
     base: base + '/',
     plugins,
     css: {
-      postcss: {
-        plugins: [
-          {
-            postcssPlugin: 'internal:charset-removal',
-            AtRule: {
-              charset: atRule => {
-                if (atRule.name === 'charset') {
-                  atRule.remove()
-                }
-              },
-            },
-          },
-        ],
-      },
       preprocessorOptions: {
         less: {
           javascriptEnabled: true,

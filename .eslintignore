@@ -11,3 +11,5 @@ commitlint.config.js
 .cz-config.js
 .prettierrc.js
 mock
+postcss.config.js
+tailwind.config.js

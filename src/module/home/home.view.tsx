@@ -10,13 +10,7 @@ class Child extends VueComponent {
   render() {
     this.count++
     return (
-      <div
-        style={{
-          height: '100px',
-          border: '1px solid green',
-          margin: '20px 40px',
-        }}
-      >
+      <div class="tw-h-1/4 tw-border tw-border-green-400 tw-m-8">
         子组件渲染次数: {this.count}
         子组件slot
         <div>{this.context.slots.default?.()}</div>
