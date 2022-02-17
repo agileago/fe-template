@@ -5,7 +5,7 @@ import { RouterView } from 'vue-router'
 import RouterStart from '@/router'
 import { HttpInterceptor } from '@/api/http.interceptor'
 import { setup } from '@/setup'
-import './index.css'
+import './theme/main.scss'
 
 @Component({ providers: [RouterStart, HttpInterceptor] })
 class App extends VueComponent {
