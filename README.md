@@ -27,7 +27,7 @@ pnpm install
 ### 设置Webstorm
 
 打开IDE设置界面： <kbd>command⌘</kbd> + <kbd>.</kbd>
-1. 工具 -> 保存时的操作 勾上保存时优化`import`和运行`prettier`
+1. 工具 -> 保存时的操作 勾上保存时优化`import`和运行`eslint`
 2. 其他设置 -> ConventialCommit -> 基于模板
 
 ### 命令
@@ -46,3 +46,13 @@ pnpm install
 ### 代码规范
 
 使用`类组件`+`依赖注入`写业务代码 [vue3-oop](https://github.com/agileago/vue3-oop)
+
+### 命名规范
+
+1. 使用小写加 `-` 作为文件命名，比如文件夹 `search-form` 尽量避免文件及文件夹出现大写及汉字情况
+2. js命名采用小驼峰 `searchForm`, 类采用大驼峰 `SearchForm`
+3. 文件使用后缀标识功能 `home.view.tsx` 表示此文件作为页面，`home.service.ts` 作为服务等等
+
+### 项目配置
+
+配置统一写在 `config` 文件夹下面，区分环境
