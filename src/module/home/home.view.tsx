@@ -3,6 +3,8 @@ import { SkipSelf } from 'injection-js'
 import { RouterService } from '@/router/router.service'
 import type { Home1, HomeInterface } from '@/module/home/home.service'
 import { HomeService } from '@/module/home/home.service'
+import { Form, Input } from 'ant-design-vue'
+import { SearchForm } from '@tmatrix/ui'
 
 class Child extends VueComponent {
   count = 0
@@ -34,6 +36,11 @@ export default class HomeView extends VueComponent {
   render() {
     return (
       <div onClick={() => this.count++}>
+        <SearchForm>
+          <Form.Item label={'aaaa'}>
+            <Input></Input>
+          </Form.Item>
+        </SearchForm>
         <h2>当前count值： {this.count}</h2>
         <Child>我是子组件的默认slot</Child>
         <Child>

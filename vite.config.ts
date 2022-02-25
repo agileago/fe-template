@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite'
+import { defineConfig, type PluginOption } from 'vite'
 import vueJsx from '@vue3-oop/plugin-vue-jsx'
 import mock from 'vite-plugin-mockit'
-import svgIcons from 'vite-plugin-svg-icons'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import * as path from 'path'
 import WebpackAliyunOss from 'webpack-aliyun-oss'
-import html from 'vite-plugin-html'
+import { createHtmlPlugin } from 'vite-plugin-html'
 import viteImp from 'vite-plugin-imp'
 
 const CDN_HOST = 'https://cdn.xxx.com'
@@ -17,10 +17,23 @@ export default defineConfig(({ command, mode }) => {
 
   let base = ''
 
-  const plugins = [
+  const plugins: PluginOption[] = [
     vueJsx({ enableObjectSlots: false, slotStable: true }),
-    viteImp(),
-    svgIcons({ iconDirs: [path.resolve(__dirname, 'src/assets/icons')] }),
+    viteImp({
+      libList: [
+        {
+          libName: 'ant-design-vue',
+          replaceOldImport: false,
+          style(name) {
+            return `ant-design-vue/es/${name}/style/index.js`
+          },
+        },
+      ],
+      transpileDependencies: ['@tmatrix/ui'],
+    }),
+    createSvgIconsPlugin({
+      iconDirs: [path.resolve(__dirname, 'src/assets/icons')],
+    }),
   ]
   switch (mode) {
     case 'development':
@@ -54,7 +67,7 @@ export default defineConfig(({ command, mode }) => {
   }
   // html模板ejs变量注入 <%- MODE %>
   plugins.push(
-    ...html({
+    ...createHtmlPlugin({
       inject: {
         data: {
           MODE: mode,
