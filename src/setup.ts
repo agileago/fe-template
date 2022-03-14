@@ -1,4 +1,4 @@
 import type { App } from 'vue'
-import 'xe-utils'
 
+// 一些设置
 export function setup(app: App) {}

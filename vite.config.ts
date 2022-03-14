@@ -17,7 +17,7 @@ export default defineConfig(({ command, mode }) => {
 
   let base = ''
 
-  const plugins: PluginOption[] = [
+  const plugins: (PluginOption | PluginOption[])[] = [
     vueJsx({ enableObjectSlots: false, slotStable: true }),
     viteImp({
       libList: [
@@ -29,7 +29,6 @@ export default defineConfig(({ command, mode }) => {
           },
         },
       ],
-      transpileDependencies: ['@tmatrix/ui'],
     }),
     createSvgIconsPlugin({
       iconDirs: [path.resolve(__dirname, 'src/assets/icons')],
@@ -67,7 +66,9 @@ export default defineConfig(({ command, mode }) => {
   }
   // html模板ejs变量注入 <%- MODE %>
   plugins.push(
-    ...createHtmlPlugin({
+    createHtmlPlugin({
+      entry: 'src/main.tsx',
+      template: 'public/index.html',
       inject: {
         data: {
           MODE: mode,
@@ -97,7 +98,7 @@ export default defineConfig(({ command, mode }) => {
     server: {
       proxy: {
         // '/api': {
-        //   target: 'http://test-tmc.titanmatrix.cn',
+        //   target: 'http://test-xxx.xxx.cn',
         //   changeOrigin: true,
         //   rewrite(path: string) {
         //     return path.replace(/^\/api/, '')

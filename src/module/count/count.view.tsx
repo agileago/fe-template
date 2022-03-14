@@ -1,4 +1,3 @@
-import { Button } from 'ant-design-vue'
 import { Component, VueComponent } from 'vue3-oop'
 import { CountSercice } from '@/module/count/count.sercice'
 
@@ -10,12 +9,12 @@ export default class CountView extends VueComponent {
   render() {
     const { countService } = this
     return (
-      <div style={{ textAlign: 'center' }} class={'aa'}>
+      <div class={'tw-text-center'}>
         <h2>{countService.count}</h2>
-        <Button type={'primary'} onClick={countService.add}>
-          +1
-        </Button>
-        <Button onClick={countService.remove}>-</Button>
+        <button onClick={countService.add} class={'tw-mr-2'}>
+          +
+        </button>
+        <button onClick={countService.remove}>-</button>
       </div>
     )
   }

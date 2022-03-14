@@ -1,55 +1,19 @@
-import { Component, Mut, VueComponent } from 'vue3-oop'
+import { Autobind, Component, VueComponent } from 'vue3-oop'
 import { SkipSelf } from 'injection-js'
 import { RouterService } from '@/router/router.service'
-import type { Home1, HomeInterface } from '@/module/home/home.service'
-import { HomeService } from '@/module/home/home.service'
-import { Form, Input } from 'ant-design-vue'
-import { SearchForm } from '@tmatrix/ui'
-
-class Child extends VueComponent {
-  count = 0
-
-  render() {
-    this.count++
-    return (
-      <div class="tw-h-1/4 tw-border tw-border-green-400 tw-m-8">
-        子组件渲染次数: {this.count}
-        子组件slot
-        <div>{this.context.slots.default?.()}</div>
-      </div>
-    )
-  }
-}
 
 @Component()
 export default class HomeView extends VueComponent {
-  constructor(
-    @SkipSelf() private routerService: RouterService,
-    private homeService: HomeService,
-  ) {
+  constructor(@SkipSelf() private routerService: RouterService) {
     super()
   }
-  @Mut() count = 1
-  a: HomeInterface = {}
-  b: Home1 = {}
+
+  @Autobind()
+  handleClick() {
+    this.routerService.router.push('/count')
+  }
 
   render() {
-    return (
-      <div onClick={() => this.count++}>
-        <SearchForm>
-          <Form.Item label={'aaaa'}>
-            <Input></Input>
-          </Form.Item>
-        </SearchForm>
-        <h2>当前count值： {this.count}</h2>
-        <Child>我是子组件的默认slot</Child>
-        <Child>
-          {{
-            default: () => '我是子组件的默认slot',
-            $stable: false,
-          }}
-        </Child>
-      </div>
-    )
+    return <button onClick={this.handleClick}>跳转到count页面</button>
   }
 }

@@ -10,7 +10,7 @@ const projects: Project[] = [
   {
     name: 'define',
     dest: '../api',
-    source: 'http://test-pim-define.titanmatrix.cn/define/swagger-json',
+    source: 'https://aaaa',
     keepGeneric: false,
     shouldExportResponseType: false,
     shouldExportRequestOptionType: false,
@@ -18,7 +18,7 @@ const projects: Project[] = [
     prettierConfig: prettier,
     // 过滤掉某些不想生成的api
     apiFilter(req) {
-      return !req.pathname.startsWith('/hgy')
+      return !req.pathname.startsWith('/abc')
     },
     /**
      * 自定义代码样例:

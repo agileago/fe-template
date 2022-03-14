@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['./src/**/*.tsx', './node_modules/@tmatrix/ui/**/*.tsx'],
+  content: ['./src/**/*.tsx'],
   prefix: 'tw-',
   theme: {
     extend: {},

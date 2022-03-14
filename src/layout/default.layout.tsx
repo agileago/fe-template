@@ -1,21 +1,18 @@
 import { RouterLink, RouterView } from 'vue-router'
-import { Button } from 'ant-design-vue'
 import { VueComponent } from 'vue3-oop'
 
 export default class DefaultLayout extends VueComponent {
   render() {
     return (
       <>
-        <div style={{ textAlign: 'center' }}>
+        <div
+          class={
+            'tw-text-center tw-border-solid tw-border-2 tw-border-amber-200'
+          }
+        >
           <h2>I am layout</h2>
-          <RouterLink to={'/'}>
-            <Button danger type={'primary'}>
-              go to Home
-            </Button>
-          </RouterLink>
-          <RouterLink to={'/count'}>
-            <Button type={'primary'}>go to Count</Button>
-          </RouterLink>
+          <RouterLink to={'/'}>go to Home</RouterLink> <br />
+          <RouterLink to={'/count'}>go to Count</RouterLink>
         </div>
         <RouterView></RouterView>
       </>
