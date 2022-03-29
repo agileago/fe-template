@@ -41,7 +41,6 @@ pnpm install
 - `lint` : eslint修复代码
 - `format` : prettier代码
 - `api` : swagger生成请求代码，在 `src/api` 下进行配置
-- `gen:icon-types` ： 生成图标类型文件(新增图标了，就执行一下，图标组件会有提示)
 
 ### 代码规范
 
@@ -55,4 +54,6 @@ pnpm install
 
 ### 项目配置
 
-配置统一写在 `config` 文件夹下面，区分环境
+1. 配置统一写在 `config` 文件夹下面，区分环境
+2. 业务按功能模块区分，在 `module` 文件夹下面，每个 `module` 有自己的路由文件，会被顶级路由服务收集到
+

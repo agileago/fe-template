@@ -1,11 +1,8 @@
 import { defineConfig, type PluginOption } from 'vite'
 import vueJsx from '@vue3-oop/plugin-vue-jsx'
 import mock from 'vite-plugin-mockit'
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
-import * as path from 'path'
 import WebpackAliyunOss from 'webpack-aliyun-oss'
 import { createHtmlPlugin } from 'vite-plugin-html'
-import viteImp from 'vite-plugin-imp'
 
 const CDN_HOST = 'https://cdn.xxx.com'
 const OSS_DIR = 'OSS文件目录请更改' // 例子： /matrial/starter 资源存放路径，一般以仓库路径为主，**请注意**后面没有 /
@@ -19,20 +16,6 @@ export default defineConfig(({ command, mode }) => {
 
   const plugins: (PluginOption | PluginOption[])[] = [
     vueJsx({ enableObjectSlots: false, slotStable: true }),
-    viteImp({
-      libList: [
-        {
-          libName: 'ant-design-vue',
-          replaceOldImport: false,
-          style(name) {
-            return `ant-design-vue/es/${name}/style/index.js`
-          },
-        },
-      ],
-    }),
-    createSvgIconsPlugin({
-      iconDirs: [path.resolve(__dirname, 'src/assets/icons')],
-    }),
   ]
   switch (mode) {
     case 'development':
@@ -67,7 +50,7 @@ export default defineConfig(({ command, mode }) => {
   // html模板ejs变量注入 <%- MODE %>
   plugins.push(
     createHtmlPlugin({
-      entry: 'src/main.tsx',
+      entry: '/src/main.tsx',
       template: 'public/index.html',
       inject: {
         data: {

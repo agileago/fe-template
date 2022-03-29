@@ -1,5 +1,5 @@
 import { Component, VueComponent } from 'vue3-oop'
-import { CountSercice } from '@/module/count/count.sercice'
+import { CountSercice } from './count.sercice'
 
 @Component()
 export default class CountView extends VueComponent {
