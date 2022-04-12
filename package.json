@@ -67,10 +67,5 @@
     "*.{js,css,scss,html,json}": [
       "prettier --write"
     ]
-  },
-  "pnpm": {
-    "overrides": {
-      "esbuild": "0.14.34"
-    }
   }
 }
