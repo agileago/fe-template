@@ -48,7 +48,7 @@
     "prettier": "^2.6.2",
     "sass": "^1.50.0",
     "tailwindcss": "^3.0.23",
-    "ts-gear": "^4.6.1",
+    "ts-gear": "^4.7.1",
     "typescript": "^4.6.3",
     "vite": "2.9.1",
     "vite-plugin-html": "^3.2.0",
