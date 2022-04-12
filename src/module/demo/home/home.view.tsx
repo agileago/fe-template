@@ -10,7 +10,7 @@ export default class HomeView extends VueComponent {
 
   @Autobind()
   handleClick() {
-    this.routerService.router.push('/count')
+    this.routerService.router.push('/demo/count')
   }
 
   render() {
