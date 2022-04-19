@@ -15,7 +15,7 @@ export default defineConfig(({ command, mode }) => {
   let base = ''
 
   const plugins: (PluginOption | PluginOption[])[] = [
-    vueJsx({ enableObjectSlots: false, slotStable: true }),
+    vueJsx({ enableObjectSlots: false }),
   ]
   switch (mode) {
     case 'development':
