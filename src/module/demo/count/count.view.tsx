@@ -1,20 +1,16 @@
-import { Component, VueComponent } from 'vue3-oop'
-import { CountSercice } from './count.sercice'
+import { Mut, VueComponent } from 'vue3-oop'
 
-@Component()
 export default class CountView extends VueComponent {
-  constructor(private countService: CountSercice) {
-    super()
-  }
+  @Mut() count = 1
+  add = () => this.count++
+  remove = () => this.count--
+
   render() {
-    const { countService } = this
     return (
       <div class={'tw-text-center'}>
-        <h2>{countService.count}</h2>
-        <button onClick={countService.add} class={'tw-mr-2'}>
-          +
-        </button>
-        <button onClick={countService.remove}>-</button>
+        <h2>{this.count}</h2>
+        <button onClick={this.add}>+</button>
+        <button onClick={this.remove}>-</button>
       </div>
     )
   }
