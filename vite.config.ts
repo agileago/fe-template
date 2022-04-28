@@ -73,10 +73,7 @@ export default defineConfig(({ command, mode }) => {
       },
     },
     resolve: {
-      alias: [
-        { find: /^~/, replacement: '' },
-        { find: '@/', replacement: '/src/' },
-      ],
+      alias: [{ find: '@/', replacement: '/src/' }],
     },
     server: {
       proxy: {

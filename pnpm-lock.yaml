@@ -3,8 +3,8 @@ lockfileVersion: 5.3
 specifiers:
   '@abraham/reflection': ^0.10.0
   '@commitlint/cli': ^16.2.3
+  '@commitlint/config-conventional': ^16.2.1
   '@nexhome/yorkie': ^2.0.8
-  '@types/node': ^17.0.25
   '@types/prettier': ^2.6.0
   '@types/swagger-schema-official': ^2.0.22
   '@typescript-eslint/eslint-plugin': ^5.20.0
@@ -14,8 +14,6 @@ specifiers:
   axios: 0.26.1
   co: '4'
   commitizen: ^4.2.4
-  commitlint-config-cz: ^0.13.3
-  cz-customizable: ^6.3.0
   eslint: ^8.13.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-prettier: ^4.0.0
@@ -33,8 +31,10 @@ specifiers:
   tslib: ^2.3.1
   typescript: ^4.6.3
   vite: 2.9.5
+  vite-plugin-checker: ^0.4.6
   vite-plugin-html: ^3.2.0
   vite-plugin-mockit: ^1.0.2
+  vite-tsconfig-paths: ^3.4.1
   vue: ^3.2.33
   vue-router: ^4.0.14
   vue3-oop: ^0.5.6
@@ -54,8 +54,8 @@ dependencies:
 
 devDependencies:
   '@commitlint/cli': 16.2.3
+  '@commitlint/config-conventional': 16.2.4
   '@nexhome/yorkie': 2.0.8
-  '@types/node': 17.0.25
   '@types/prettier': 2.6.0
   '@types/swagger-schema-official': 2.0.22
   '@typescript-eslint/eslint-plugin': 5.20.0_b9ac9b5656ce5dffade639fcf5e491bf
@@ -64,8 +64,6 @@ devDependencies:
   autoprefixer: 10.4.4_postcss@8.4.12
   co: 4.6.0
   commitizen: 4.2.4
-  commitlint-config-cz: 0.13.3
-  cz-customizable: 6.3.0
   eslint: 8.13.0
   eslint-config-prettier: 8.5.0_eslint@8.13.0
   eslint-plugin-prettier: 4.0.0_1815ac95b7fb26c13c7d48a8eef62d0f
@@ -78,8 +76,10 @@ devDependencies:
   ts-gear: 4.7.1_axios@0.26.1+typescript@4.6.3
   typescript: 4.6.3
   vite: 2.9.5_less@4.1.2+sass@1.50.1
+  vite-plugin-checker: 0.4.6_vite@2.9.5
   vite-plugin-html: 3.2.0_vite@2.9.5
   vite-plugin-mockit: 1.0.2
+  vite-tsconfig-paths: 3.4.1_vite@2.9.5
   webpack-aliyun-oss: 0.5.6
 
 packages:
@@ -408,6 +408,13 @@ packages:
       - '@swc/wasm'
     dev: true
 
+  /@commitlint/config-conventional/16.2.4:
+    resolution: {integrity: sha512-av2UQJa3CuE5P0dzxj/o/B9XVALqYzEViHrMXtDrW9iuflrqCStWBAioijppj9URyz6ONpohJKAtSdgAOE0gkA==}
+    engines: {node: '>=v12'}
+    dependencies:
+      conventional-changelog-conventionalcommits: 4.6.3
+    dev: true
+
   /@commitlint/config-validator/16.2.1:
     resolution: {integrity: sha512-hogSe0WGg7CKmp4IfNbdNES3Rq3UEI4XRPB8JL4EPgo/ORq5nrGTVzxJh78omibNuB8Ho4501Czb1Er1MoDWpw==}
     engines: {node: '>=v12'}
@@ -551,6 +558,10 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@cspotcode/source-map-consumer': 0.8.0
+    dev: true
+
+  /@cush/relative/1.0.0:
+    resolution: {integrity: sha512-RpfLEtTlyIxeNPGKcokS+p3BZII/Q3bYxryFRglh5H3A3T8q9fsLYm72VYAMEOOIBLEa8o93kFLiBDUWKrwXZA==}
     dev: true
 
   /@eslint/eslintrc/1.2.1:
@@ -1597,13 +1608,6 @@ packages:
       - '@swc/wasm'
     dev: true
 
-  /commitlint-config-cz/0.13.3:
-    resolution: {integrity: sha512-6LmCvGiFDTVSmLF0mzVVp1etMM8lAqLmPRlU7Oml1J8J9oOLadf+2g4uMTchdxOvvYLgll99SESFUHgmc6oATA==, tarball: commitlint-config-cz/download/commitlint-config-cz-0.13.3.tgz}
-    dependencies:
-      app-root-path: 3.0.0
-      lodash.clonedeep: 4.5.0
-    dev: true
-
   /compare-func/2.0.0:
     resolution: {integrity: sha512-zHig5N+tPWARooBnb0Zx1MFcdfpyJrfTJ3Y5L+IFvUm8rM74hHz66z0gw0x4tijh5CorKkKUCnW82R2vmpeCRA==}
     dependencies:
@@ -1634,6 +1638,15 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       compare-func: 2.0.0
+      q: 1.5.1
+    dev: true
+
+  /conventional-changelog-conventionalcommits/4.6.3:
+    resolution: {integrity: sha512-LTTQV4fwOM4oLPad317V/QNQ1FY4Hju5qeBIM1uTHbrnCE+Eg4CdRZ3gO2pUeR+tzWdp80M2j3qFFEDWVqOV4g==}
+    engines: {node: '>=10'}
+    dependencies:
+      compare-func: 2.0.0
+      lodash: 4.17.21
       q: 1.5.1
     dev: true
 
@@ -1780,18 +1793,6 @@ packages:
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
-    dev: true
-
-  /cz-customizable/6.3.0:
-    resolution: {integrity: sha1-GyTluE4fzKoYrYN2ErIzuMUdeII=, tarball: cz-customizable/download/cz-customizable-6.3.0.tgz}
-    hasBin: true
-    dependencies:
-      editor: 1.0.0
-      find-config: 1.0.0
-      inquirer: 6.5.2
-      lodash: 4.17.21
-      temp: 0.9.4
-      word-wrap: 1.2.3
     dev: true
 
   /dargs/7.0.0:
@@ -2013,10 +2014,6 @@ packages:
 
   /eastasianwidth/0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
-    dev: true
-
-  /editor/1.0.0:
-    resolution: {integrity: sha1-YMf4e9YrzGqJT6jM1q+3gjok90I=, tarball: editor/download/editor-1.0.0.tgz}
     dev: true
 
   /ee-first/1.1.1:
@@ -2595,13 +2592,6 @@ packages:
       to-regex-range: 5.0.1
     dev: true
 
-  /find-config/1.0.0:
-    resolution: {integrity: sha1-6vorm8B/qckOmgw++c7PHMgA9TA=, tarball: find-config/download/find-config-1.0.0.tgz}
-    engines: {node: '>= 0.12'}
-    dependencies:
-      user-home: 2.0.0
-    dev: true
-
   /find-node-modules/2.1.2:
     resolution: {integrity: sha1-V1ZaNFW69nG4NbxrITSpuTi5xTw=, tarball: find-node-modules/download/find-node-modules-2.1.2.tgz}
     dependencies:
@@ -2800,6 +2790,10 @@ packages:
       is-glob: 4.0.3
     dev: true
 
+  /glob-regex/0.3.2:
+    resolution: {integrity: sha512-m5blUd3/OqDTWwzBBtWBPrGlAzatRywHameHeekAZyZrskYouOGdNB8T/q6JucucvJXtOuyHIn0/Yia7iDasDw==}
+    dev: true
+
   /glob/7.1.4:
     resolution: {integrity: sha1-qmCKL2xXetNX4a5aXCbZqNGWklU=, tarball: glob/download/glob-7.1.4.tgz?cache=0&sync_timestamp=1636357565068&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fglob%2Fdownload%2Fglob-7.1.4.tgz}
     dependencies:
@@ -2885,6 +2879,10 @@ packages:
       ignore: 5.2.0
       merge2: 1.4.1
       slash: 3.0.0
+    dev: true
+
+  /globrex/0.1.2:
+    resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
     dev: true
 
   /graceful-fs/4.2.10:
@@ -3541,8 +3539,8 @@ packages:
       p-locate: 5.0.0
     dev: true
 
-  /lodash.clonedeep/4.5.0:
-    resolution: {integrity: sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==, tarball: lodash.clonedeep/download/lodash.clonedeep-4.5.0.tgz}
+  /lodash.debounce/4.0.8:
+    resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
     dev: true
 
   /lodash.map/4.6.0:
@@ -3551,6 +3549,10 @@ packages:
 
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
+    dev: true
+
+  /lodash.pick/4.4.0:
+    resolution: {integrity: sha512-hXt6Ul/5yWjfklSGvLQl8vM//l3FtyHZeuelpzK6mm99pNvN9yTDruNZPEJZD1oWrqo+izBmB7oUfWgcCX7s4Q==}
     dev: true
 
   /lodash/4.17.21:
@@ -3985,11 +3987,6 @@ packages:
       prelude-ls: 1.2.1
       type-check: 0.4.0
       word-wrap: 1.2.3
-    dev: true
-
-  /os-homedir/1.0.2:
-    resolution: {integrity: sha1-/7xJiDNuDoM94MFox+8VISGqf7M=, tarball: os-homedir/download/os-homedir-1.0.2.tgz}
-    engines: {node: '>=0.10.0'}
     dev: true
 
   /os-name/1.0.3:
@@ -4463,6 +4460,15 @@ packages:
       picomatch: 2.3.1
     dev: true
 
+  /recrawl-sync/2.2.2:
+    resolution: {integrity: sha512-E2sI4F25Fu2nrfV+KsnC7/qfk/spQIYXlonfQoS4rwxeNK5BjxnLPbWiRXHVXPwYBOTWtPX5765kTm/zJiL+LQ==}
+    dependencies:
+      '@cush/relative': 1.0.0
+      glob-regex: 0.3.2
+      slash: 3.0.0
+      tslib: 1.14.1
+    dev: true
+
   /redent/3.0.0:
     resolution: {integrity: sha512-6tDA8g98We0zd0GvVeMT9arEOnTw9qM03L9cJXaCjrip1OO764RDBLBfrB4cwzNGDj5OA5ioymC9GkizgWJDUg==}
     engines: {node: '>=8'}
@@ -4548,13 +4554,6 @@ packages:
 
   /rfdc/1.3.0:
     resolution: {integrity: sha512-V2hovdzFbOi77/WajaSMXk2OLm+xNIeQdMMuB7icj7bk6zi2F8GGAxigcnDFpJHbNyNcgyJDiP+8nOrY5cZGrA==}
-    dev: true
-
-  /rimraf/2.6.3:
-    resolution: {integrity: sha512-mwqeW5XsA2qAejG46gYdENaxXjx9onRNCfn7L0duuP4hCuTIi/QO7PDK07KJfp1d+izWPrzEJDcSqBa0OZQriA==}
-    hasBin: true
-    dependencies:
-      glob: 7.2.0
     dev: true
 
   /rimraf/2.7.1:
@@ -5060,14 +5059,6 @@ packages:
       - ts-node
     dev: true
 
-  /temp/0.9.4:
-    resolution: {integrity: sha1-zSCoWAy2NjXQ5OnUvZidRChudiA=, tarball: temp/download/temp-0.9.4.tgz}
-    engines: {node: '>=6.0.0'}
-    dependencies:
-      mkdirp: 0.5.6
-      rimraf: 2.6.3
-    dev: true
-
   /terser/5.12.1:
     resolution: {integrity: sha512-NXbs+7nisos5E+yXwAD+y7zrcTkMqb0dEJxIGtSKPdCBzopf7ni4odPul2aechpV7EXNvOudYOX2bb5tln1jbQ==}
     engines: {node: '>=10'}
@@ -5109,6 +5100,10 @@ packages:
     resolution: {integrity: sha512-iOqSav00cVxEEICeD7TjLB1sueEL+81Wpzp2bY17uZjZN0pWZPuo4suZ/61VujxmqSGFfgOcNuTZ85QJwNZQpw==}
     dependencies:
       readable-stream: 3.6.0
+    dev: true
+
+  /tiny-invariant/1.2.0:
+    resolution: {integrity: sha512-1Uhn/aqw5C6RI4KejVeTg6mIS7IqxnLJ8Mv2tV5rTc0qWobay7pDUz6Wi392Cnc8ak1H0F2cjoRzb2/AW4+Fvg==}
     dev: true
 
   /tmp/0.0.33:
@@ -5389,13 +5384,6 @@ packages:
       - supports-color
     dev: true
 
-  /user-home/2.0.0:
-    resolution: {integrity: sha1-nHC/2Babwdy/SGBODwS4tJzenp8=, tarball: user-home/download/user-home-2.0.0.tgz}
-    engines: {node: '>=0.10.0'}
-    dependencies:
-      os-homedir: 1.0.2
-    dev: true
-
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
@@ -5433,6 +5421,30 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
+  /vite-plugin-checker/0.4.6_vite@2.9.5:
+    resolution: {integrity: sha512-oFel33hlsc8aUspfq0ThQRpWsfrG772fmZ5qPHKUhmew6ieejd2viITlwXHIRBY6hE3U0kirXoTWwft3DdbK+g==}
+    hasBin: true
+    peerDependencies:
+      vite: ^2.0.0
+    dependencies:
+      '@babel/code-frame': 7.16.7
+      ansi-escapes: 4.3.2
+      chalk: 4.1.2
+      chokidar: 3.5.3
+      commander: 8.3.0
+      fast-glob: 3.2.11
+      lodash.debounce: 4.0.8
+      lodash.pick: 4.4.0
+      npm-run-path: 4.0.1
+      strip-ansi: 6.0.1
+      tiny-invariant: 1.2.0
+      vite: 2.9.5_less@4.1.2+sass@1.50.1
+      vscode-languageclient: 7.0.0
+      vscode-languageserver: 7.0.0
+      vscode-languageserver-textdocument: 1.0.4
+      vscode-uri: 3.0.3
+    dev: true
+
   /vite-plugin-html/3.2.0_vite@2.9.5:
     resolution: {integrity: sha512-2VLCeDiHmV/BqqNn5h2V+4280KRgQzCFN47cst3WiNK848klESPQnzuC3okH5XHtgwHH/6s1Ho/YV6yIO0pgoQ==}
     peerDependencies:
@@ -5462,6 +5474,20 @@ packages:
       debug: 3.2.7
       parseurl: 1.3.3
       path-to-regexp: 2.4.0
+    dev: true
+
+  /vite-tsconfig-paths/3.4.1_vite@2.9.5:
+    resolution: {integrity: sha512-SgK3/pnTuJ3i+gMSAWLR6VCPSw26bnxawrmXGvCDjJgk8MAQgmbCrFrAzfwbwZBXSqSuvWEuX04Wt73qJKx8fQ==}
+    peerDependencies:
+      vite: '>2.0.0-0'
+    dependencies:
+      debug: 4.3.4
+      globrex: 0.1.2
+      recrawl-sync: 2.2.2
+      tsconfig-paths: 3.14.1
+      vite: 2.9.5_less@4.1.2+sass@1.50.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /vite/2.9.5_less@4.1.2+sass@1.50.1:
@@ -5497,6 +5523,46 @@ packages:
     dependencies:
       acorn: 8.7.0
       acorn-walk: 8.2.0
+    dev: true
+
+  /vscode-jsonrpc/6.0.0:
+    resolution: {integrity: sha512-wnJA4BnEjOSyFMvjZdpiOwhSq9uDoK8e/kpRJDTaMYzwlkrhG1fwDIZI94CLsLzlCK5cIbMMtFlJlfR57Lavmg==}
+    engines: {node: '>=8.0.0 || >=10.0.0'}
+    dev: true
+
+  /vscode-languageclient/7.0.0:
+    resolution: {integrity: sha512-P9AXdAPlsCgslpP9pRxYPqkNYV7Xq8300/aZDpO35j1fJm/ncize8iGswzYlcvFw5DQUx4eVk+KvfXdL0rehNg==}
+    engines: {vscode: ^1.52.0}
+    dependencies:
+      minimatch: 3.1.2
+      semver: 7.3.7
+      vscode-languageserver-protocol: 3.16.0
+    dev: true
+
+  /vscode-languageserver-protocol/3.16.0:
+    resolution: {integrity: sha512-sdeUoAawceQdgIfTI+sdcwkiK2KU+2cbEYA0agzM2uqaUy2UpnnGHtWTHVEtS0ES4zHU0eMFRGN+oQgDxlD66A==}
+    dependencies:
+      vscode-jsonrpc: 6.0.0
+      vscode-languageserver-types: 3.16.0
+    dev: true
+
+  /vscode-languageserver-textdocument/1.0.4:
+    resolution: {integrity: sha512-/xhqXP/2A2RSs+J8JNXpiiNVvvNM0oTosNVmQnunlKvq9o4mupHOBAnnzH0lwIPKazXKvAKsVp1kr+H/K4lgoQ==}
+    dev: true
+
+  /vscode-languageserver-types/3.16.0:
+    resolution: {integrity: sha512-k8luDIWJWyenLc5ToFQQMaSrqCHiLwyKPHKPQZ5zz21vM+vIVUSvsRpcbiECH4WR88K2XZqc4ScRcZ7nk/jbeA==}
+    dev: true
+
+  /vscode-languageserver/7.0.0:
+    resolution: {integrity: sha512-60HTx5ID+fLRcgdHfmz0LDZAXYEV68fzwG0JWwEPBode9NuMYTIxuYXPg4ngO8i8+Ou0lM7y6GzaYWbiDL0drw==}
+    hasBin: true
+    dependencies:
+      vscode-languageserver-protocol: 3.16.0
+    dev: true
+
+  /vscode-uri/3.0.3:
+    resolution: {integrity: sha512-EcswR2S8bpR7fD0YPeS7r2xXExrScVMxg4MedACaWHEtx9ftCF/qHG1xGkolzTPcEmjTavCQgbVzHUIdTMzFGA==}
     dev: true
 
   /vue-router/4.0.14_vue@3.2.33:
