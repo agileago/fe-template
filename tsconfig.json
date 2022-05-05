@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ES2021",
     "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
@@ -18,6 +18,8 @@
     "importsNotUsedAsValues": "error",
     "preserveValueImports": true,
     "isolatedModules": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]

@@ -3,6 +3,8 @@ import vueJsx from '@vue3-oop/plugin-vue-jsx'
 import mock from 'vite-plugin-mockit'
 import WebpackAliyunOss from 'webpack-aliyun-oss'
 import { createHtmlPlugin } from 'vite-plugin-html'
+import tsconfigPaths from 'vite-tsconfig-paths'
+import checker from 'vite-plugin-checker'
 
 const CDN_HOST = 'https://cdn.xxx.com'
 const OSS_DIR = 'OSS文件目录请更改' // 例子： /matrial/starter 资源存放路径，一般以仓库路径为主，**请注意**后面没有 /
@@ -16,14 +18,12 @@ export default defineConfig(({ command, mode }) => {
 
   const plugins: (PluginOption | PluginOption[])[] = [
     vueJsx({ enableObjectSlots: false }),
+    tsconfigPaths(),
+    checker({ typescript: true }),
   ]
   switch (mode) {
     case 'development':
       plugins.push(mock())
-      break
-    // gitlab配置可删除
-    case 'gitlab':
-      base = '/vue3-vite'
       break
     case 'production':
       // 配置上传CDN OSS
@@ -71,9 +71,6 @@ export default defineConfig(({ command, mode }) => {
           javascriptEnabled: true,
         },
       },
-    },
-    resolve: {
-      alias: [{ find: '@/', replacement: '/src/' }],
     },
     server: {
       proxy: {
