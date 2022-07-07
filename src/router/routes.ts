@@ -1,10 +1,8 @@
 import type { RouteRecordRaw } from 'vue-router'
-import { RouterView } from 'vue-router'
 
 let routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: RouterView,
     redirect: '/demo',
   },
 ]
