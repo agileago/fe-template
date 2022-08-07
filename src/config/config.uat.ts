@@ -1,5 +1,3 @@
-import type { ConfigTypeOptional } from '@/config/config.type'
+import type { ConfigOptional } from '@/config/config.default'
 
-const uatConf: ConfigTypeOptional = {}
-
-export default uatConf
+export default {} as ConfigOptional

@@ -1,5 +1,3 @@
-import type { ConfigTypeOptional } from '@/config/config.type'
+import type { ConfigOptional } from '@/config/config.default'
 
-const productionConf: ConfigTypeOptional = {}
-
-export default productionConf
+export default {} as ConfigOptional

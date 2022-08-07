@@ -1,21 +1,16 @@
-import defaultConf from './config.default'
-import developmentConf from './config.development'
-import productionConf from './config.production'
-import uatConf from './config.uat'
+import defaultConf, { type ConfigOptional } from './config.default'
 import deepMerge from 'ts-deepmerge'
 
-let conf = defaultConf
-const mergeOpt = { mergeArrays: false }
-switch (import.meta.env.MODE) {
-  case 'development':
-    conf = deepMerge.withOptions(mergeOpt, defaultConf, developmentConf)
-    break
-  case 'uat':
-    conf = deepMerge.withOptions(mergeOpt, defaultConf, uatConf)
-    break
-  case 'production':
-    conf = deepMerge.withOptions(mergeOpt, defaultConf, productionConf)
-    break
-}
+// 自动扫描配置文件
+const modules = import.meta.glob(['./config.*.ts', '!./config.default.ts'], {
+  import: 'default',
+  eager: true,
+})
+
+const conf = deepMerge.withOptions(
+  { mergeArrays: false },
+  defaultConf,
+  (modules[`./config.${import.meta.env.MODE}.ts`] || {}) as ConfigOptional,
+)
 conf.env = import.meta.env.MODE
 export default conf

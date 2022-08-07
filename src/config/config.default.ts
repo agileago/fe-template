@@ -1,4 +1,9 @@
-import { ConfigType } from '@/config/config.type'
+import type { DeepPartial } from 'ts-essentials'
 
-const defaultConf = new ConfigType()
-export default defaultConf
+export class Config {
+  env = ''
+}
+
+export type ConfigOptional = DeepPartial<Config>
+
+export default new Config()
