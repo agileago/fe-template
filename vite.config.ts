@@ -1,8 +1,8 @@
-import { defineConfig, type PluginOption } from 'vite'
+import { defineConfig, loadEnv, type PluginOption } from 'vite'
 import vueJsx from '@vue3-oop/plugin-vue-jsx'
 import mock from 'vite-plugin-mockit'
 import WebpackAliyunOss from 'webpack-aliyun-oss'
-import { createHtmlPlugin } from 'vite-plugin-html'
+import htmlTemplate from 'vite-plugin-html-template'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import checker from 'vite-plugin-checker'
 
@@ -14,12 +14,18 @@ export default defineConfig(({ command, mode }) => {
   if (command === 'build')
     process.env.VITE_USER_NODE_ENV = process.env.NODE_ENV = 'production'
 
+  const envDir = './env'
+  const env = loadEnv(mode, envDir)
+
   let base = ''
 
   const plugins: (PluginOption | PluginOption[])[] = [
     vueJsx({ enableObjectSlots: false }),
     tsconfigPaths(),
     checker({ typescript: true }),
+    htmlTemplate({
+      data: env,
+    }),
   ]
   switch (mode) {
     case 'development':
@@ -47,21 +53,6 @@ export default defineConfig(({ command, mode }) => {
       })
       break
   }
-  // html模板ejs变量注入 <%- MODE %>
-  plugins.push(
-    createHtmlPlugin({
-      entry: '/src/main.tsx',
-      template: 'public/index.html',
-      inject: {
-        data: {
-          MODE: mode,
-          COMMAND: command,
-          BASE_URL: base + '/',
-          PROD: command === 'build',
-        },
-      },
-    }),
-  )
   return {
     base: base + '/',
     plugins,
@@ -70,6 +61,10 @@ export default defineConfig(({ command, mode }) => {
         less: {
           javascriptEnabled: true,
         },
+      },
+      modules: {
+        localsConvention: 'camelCaseOnly',
+        generateScopedName: '[local]--[hash:base64:5]',
       },
     },
     server: {

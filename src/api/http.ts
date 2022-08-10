@@ -17,7 +17,7 @@ interface ReturnMessageArg {
   /** 描述信息 */
   data?: any | null
 }
-type ReturnEntityType<T> = T extends ReturnMessageArg ? T['entity'] : T
+type ReturnEntityType<T> = T
 export type { AxiosRequestConfig }
 /**
  * 解析url中的参数  /abc/:id 替换id
