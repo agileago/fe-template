@@ -25,7 +25,7 @@ export class HttpInterceptor extends VueService {
       config.data = config.data || {}
       return config
     })
-    const eres = customRequest.interceptors.response.use(res => {
+    const eres = customRequest.interceptors.response.use(undefined, res => {
       if (res.status === 401) {
         routerService.router.push('/login')
       }
