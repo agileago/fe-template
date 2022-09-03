@@ -31,6 +31,7 @@ const projects: Project[] = [
      * @param arg
      */
     generateRequestFunction(arg) {
+      // 转换python的 {id} 为 :id
       const path = arg.pathname.replace(/{(\w+?)}/g, (s, p1) => `:${p1}`)
       let parameter = arg.parameterTypeName
         ? `option${!arg.parameterRequired ? '?' : ''}: ${

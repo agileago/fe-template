@@ -1,9 +1,10 @@
 import { getCurrentApp, Hook, VueService } from 'vue3-oop'
 import type { Router, RouteRecordRaw } from 'vue-router'
 import { createRouter, createWebHistory } from 'vue-router'
+import config from '@/config'
 
 export class RouterService extends VueService {
-  history = createWebHistory()
+  history = createWebHistory(config.BASE_ROUTE)
   router!: Router
   get currentRoute() {
     return this.router.currentRoute.value
