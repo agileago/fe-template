@@ -4,5 +4,5 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-  presets: [require('@vue3-oop/tailwind-preset')],
+  presets: [require('tailwindcss-rem2px-preset')],
 }
