@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  touch-action: manipulation;
+  font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont,
+    'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'miui',
+    'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+}
+@import './common';

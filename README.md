@@ -35,11 +35,12 @@ pnpm install
 所有命令使用 `pnpm run` 执行
 
 - `dev` : 启动开发
-- `uat` : 测试环境构建
-- `release` : 生产环境构建(包含上传CDN)
-- `serve` : 本地构建完成预览
+- `build` : 生产构建
+- `preview` : 本地构建完成预览
+- `type:check` : 类型检查
 - `lint` : eslint修复代码
 - `format` : prettier代码
+- `chrome` : 打开无跨域限制的浏览器
 - `api` : swagger生成请求代码，在 `src/api` 下进行配置
 
 ### 代码规范

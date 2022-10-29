@@ -1,44 +1,31 @@
-import { Injectable } from 'injection-js'
-import { RouterService } from '@/router/router.service'
 import { customRequest } from '@/api/http'
-import { Hook, VueService } from 'vue3-oop'
+import type { AxiosResponse } from 'axios'
 
-customRequest.interceptors.response.use(res => {
+// 过滤返回数据
+function handleResponseSuccess(res: AxiosResponse) {
   const data = res.data
-  if (data?.code !== 1) {
-    throw new Error(data?.msg)
-  }
-  return data?.entity
-})
-
-@Injectable()
-export class HttpInterceptor extends VueService {
-  constructor(private routerService: RouterService) {
-    super()
-    this.customInterceptor()
-  }
-  private cleanupFns: (() => void)[] = []
-
-  customInterceptor() {
-    const { routerService } = this
-    const ereq = customRequest.interceptors.request.use(config => {
-      config.data = config.data || {}
-      return config
-    })
-    const eres = customRequest.interceptors.response.use(undefined, res => {
-      if (res.status === 401) {
-        routerService.router.push('/login')
-      }
-      return res
-    })
-    this.cleanupFns.push(() => {
-      customRequest.interceptors.request.eject(ereq)
-      customRequest.interceptors.response.eject(eres)
-    })
-  }
-
-  @Hook('Unmounted')
-  unmount() {
-    this.cleanupFns.forEach(k => k())
+  if (data.status == 0) {
+    return data.result
+  } else {
+    // 抛出错误
+    const error = new Error(data.message || '系统内部错误')
+    // @ts-ignore
+    error.code = data.status
+    throw error
   }
 }
+// 处理错误
+function handleResponseError(error: any) {
+  // 后端返回401直接到登录
+  if (error?.response?.status === 401) {
+    // location.href = config.BASE_ROUTE + 'login'
+  }
+  if (error?.response) {
+    throw new Error(error.response.data)
+  }
+  return Promise.reject(error)
+}
+
+// 请求拦截
+customRequest.interceptors.response.use(handleResponseSuccess)
+customRequest.interceptors.response.use(undefined, handleResponseError)

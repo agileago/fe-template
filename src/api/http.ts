@@ -2,6 +2,7 @@ import type { AxiosInstance, AxiosRequestConfig } from 'axios'
 import axios from 'axios'
 import * as pathToRegexp from 'path-to-regexp'
 import type { RequestParameter } from 'ts-gear'
+import config from '@/config'
 
 // region 基础方法 基本不需要动
 interface ReturnMessageArg {
@@ -106,7 +107,7 @@ declare module 'axios' {
 
 // 创建request 对request进行拦截各种操作
 export const customRequest = axios.create({
-  baseURL: '/api',
+  baseURL: config.API,
 })
 
 export const http = createRequester(customRequest)
