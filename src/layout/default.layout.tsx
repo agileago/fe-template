@@ -1,10 +1,14 @@
 import { RouterLink, RouterView } from 'vue-router'
 import { VueComponent } from 'vue3-oop'
+import RightIcon from './right.svg?component'
 
 export default class DefaultLayout extends VueComponent {
   render() {
     return (
       <>
+        <span>
+          aaaaaa<RightIcon></RightIcon>
+        </span>
         <header aria-label="Site Header" class="bg-white">
           <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">

@@ -6,6 +6,7 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 import checker from 'vite-plugin-checker'
 import vitePluginAliOss from 'vite-plugin-ali-oss'
 import legacy from '@vitejs/plugin-legacy'
+import svgLoader from 'vite-svg-loader'
 
 export default defineConfig(({ command, mode }) => {
   // 处理NODE_ENV
@@ -18,6 +19,7 @@ export default defineConfig(({ command, mode }) => {
 
   const plugins: (PluginOption | PluginOption[])[] = [
     vueJsx({ enableObjectSlots: false }),
+    svgLoader(),
     tsconfigPaths(),
     checker({ typescript: true }),
     htmlTemplate({

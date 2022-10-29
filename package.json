@@ -58,6 +58,7 @@
     "vite-plugin-checker": "^0.5.1",
     "vite-plugin-html-template": "^1.1.5",
     "vite-plugin-mockit": "^1.0.2",
+    "vite-svg-loader": "^3.6.0",
     "vite-tsconfig-paths": "^3.5.2"
   },
   "simple-git-hooks": {
