@@ -6,47 +6,59 @@ import type { Project } from 'ts-gear'
 import { generateRequestFunctionName } from 'ts-gear/lib/tool/generateRequestFunctionName'
 // @ts-ignore
 import prettier from '../../.prettierrc'
-import upperFirst from 'lodash/upperFirst'
+import * as _ from 'lodash'
 
-const projects: Project[] = [
+// 调用的所有api
+const projects: Partial<Project>[] = [
   {
-    name: 'define',
-    dest: '../api',
+    name: 'abc',
     source: 'http://211.154.163.74:21191/we_uc/openapi_json',
-    keepGeneric: false,
-    shouldExportResponseType: false,
-    shouldExportRequestOptionType: false,
-    importRequesterStatement: `import { http, type AxiosRequestConfig } from "../http"`,
-    prettierConfig: prettier,
-    // 过滤掉某些不想生成的api
-    apiFilter(req) {
-      return !req.pathname.startsWith('/abc')
-    },
-    generateRequestFunctionName(arg) {
-      return 'api' + upperFirst(generateRequestFunctionName(arg))
-    },
-    /**
-     * 自定义代码样例:
-     * (option?: RequestType, config?: AxiosRequestConfig) => requester<ResponseType>('getdata', {method: 'post', ...option}, config)
-     * @param arg
-     */
-    generateRequestFunction(arg) {
-      // 转换python的 {id} 为 :id
-      const path = arg.pathname.replace(/{(\w+?)}/g, (s, p1) => `:${p1}`)
-      let parameter = arg.parameterTypeName
-        ? `option${!arg.parameterRequired ? '?' : ''}: ${
-            arg.parameterTypeName
-          }, `
-        : ''
-      parameter += 'config?: AxiosRequestConfig'
-      const body = `requester<${
-        arg.responseSuccessTypeName
-      }>('${path}', { method: '${arg.httpMethod}' ${
-        arg.parameterTypeName ? ', ...option' : ''
-      }}, config)`
-      return `(${parameter}) => ${body}`
-    },
   },
 ]
 
-export default projects
+/**
+ * 生成请求代码样例:
+ * (option?: RequestType, config?: AxiosRequestConfig) => requester<ResponseType>('/url', {method: 'post', ...option}, config)
+ */
+const requestTemplate: Project['generateRequestFunction'] = function (arg) {
+  // 适配 fastApi 路径参数需要被path-to-regexp正确解析
+  const path = arg.pathname.replace(/{(\w+?)}/g, (s, p1) => `:${p1}`)
+  let parameter = arg.parameterTypeName
+    ? `option${!arg.parameterRequired ? '?' : ''}: ${arg.parameterTypeName}, `
+    : ''
+  parameter += 'config?: AxiosRequestConfig'
+  const body = `requester<${
+    arg.responseSuccessTypeName
+  }>('${path}', { method: '${arg.httpMethod}' ${
+    arg.parameterTypeName ? ', ...option' : ''
+  }}, config)`
+  return `(${parameter}) => ${body}`
+}
+function createStandardProjects(projects: Partial<Project>[]) {
+  return projects.map(p => {
+    const { name } = p
+    return {
+      dest: '../api',
+      keepGeneric: false,
+      shouldExportResponseType: false,
+      shouldExportRequestOptionType: false,
+      shouldForceSkipRequestHeaderOption: true,
+      importRequesterStatement: `import { ${
+        _.camelCase(name) + 'Requester'
+      }, type AxiosRequestConfig } from "../http"`,
+      prettierConfig: prettier,
+      // 生成请求函数名称
+      generateRequestFunctionName(arg) {
+        return (
+          'api' +
+          _.upperFirst(_.camelCase(name)) +
+          _.upperFirst(generateRequestFunctionName(arg))
+        )
+      },
+      generateRequestFunction: requestTemplate,
+      ...p,
+    } as Project
+  })
+}
+
+export default createStandardProjects(projects)

@@ -9,10 +9,6 @@ import legacy from '@vitejs/plugin-legacy'
 import svgLoader from 'vite-svg-loader'
 
 export default defineConfig(({ command, mode }) => {
-  // 处理NODE_ENV
-  if (command === 'build')
-    process.env.VITE_USER_NODE_ENV = process.env.NODE_ENV = 'production'
-
   const envPrefix = 'VUE_APP_'
   const env = loadEnv(mode, '', envPrefix) as ImportMetaEnv
   env.VUE_APP_MODE = process.env.VUE_APP_MODE = mode
@@ -25,7 +21,7 @@ export default defineConfig(({ command, mode }) => {
     htmlTemplate({
       data: env,
     }),
-    legacy({ modernPolyfills: true }),
+    legacy({ modernPolyfills: true, targets: ['ios >= 10', 'chrome >= 51'] }),
     mode === 'development' ? mock() : undefined,
     // cdn
     command === 'build' &&
