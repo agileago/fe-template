@@ -1,6 +1,6 @@
 import Config from './config.default'
 
-const modules = import.meta.glob(['./config.*.ts', '!./config.default.ts'], {
+const modules = import.meta.glob('./config.*.ts', {
   import: 'default',
   eager: true,
 })
