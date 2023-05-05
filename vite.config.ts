@@ -7,7 +7,6 @@ import checker from 'vite-plugin-checker'
 import vitePluginAliOss from 'vite-plugin-ali-oss'
 import legacy from '@vitejs/plugin-legacy'
 import svgLoader from 'vite-svg-loader'
-import { createMpaPlugin, createPages } from 'vite-plugin-virtual-mpa'
 
 export default defineConfig(({ command, mode }) => {
   const envPrefix = 'VUE_APP_'
@@ -19,16 +18,8 @@ export default defineConfig(({ command, mode }) => {
     svgLoader(),
     tsconfigPaths(),
     checker({ typescript: true }),
-    createMpaPlugin({
-      pages: createPages([
-        {
-          name: 'index',
-          entry: '/src/main.ts',
-          template: 'public/index.html',
-          filename: 'index.html',
-          data: env,
-        },
-      ]),
+    htmlTemplate({
+      data: env,
     }),
     legacy({ modernPolyfills: true, targets: ['ios >= 10', 'chrome >= 51'] }),
     mode === 'development' ? mock() : undefined,

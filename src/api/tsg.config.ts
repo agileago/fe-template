@@ -12,7 +12,7 @@ import * as _ from 'lodash'
 const projects: Partial<Project>[] = [
   {
     name: 'abc',
-    source: 'http://jk.12302.xyz/v2/api-docs',
+    source: 'http://aaaa',
     translationEngine: 'baidu',
     keepGeneric: true,
   },
