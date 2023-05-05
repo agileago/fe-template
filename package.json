@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@abraham/reflection": "^0.12.0",
+    "ant-design-vue": "^4.0.0-beta.2",
     "axios": "1.4.0",
     "injection-js": "^2.4.0",
     "path-to-regexp": "^6.2.1",
@@ -53,11 +54,12 @@
     "terser": "^5.17.1",
     "ts-gear": "^4.11.5",
     "typescript": "^5.0.4",
-    "vite": "4.3.4",
+    "vite": "4.3.5",
     "vite-plugin-ali-oss": "^1.0.7",
     "vite-plugin-checker": "^0.6.0",
     "vite-plugin-html-template": "^1.1.5",
     "vite-plugin-mockit": "^1.0.2",
+    "vite-plugin-virtual-mpa": "^1.8.2",
     "vite-svg-loader": "^4.0.0",
     "vite-tsconfig-paths": "^4.2.0"
   },
