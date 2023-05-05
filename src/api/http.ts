@@ -90,24 +90,9 @@ export const createRequester = (ax: AxiosInstance) => {
 }
 // endregion
 
-// 扩展axios配置里面的自定义字段
-declare module 'axios' {
-  interface AxiosRequestConfig {
-    /**
-     * 签名
-     */
-    nosign?: boolean
-
-    /**
-     * 身份校验
-     */
-    notoken?: boolean
-  }
-}
-
 // 创建request 对request进行拦截各种操作
-export const customRequest = axios.create({
+export const abcRequest = axios.create({
   baseURL: config.API,
 })
 
-export const http = createRequester(customRequest)
+export const abcRequester = createRequester(abcRequest)

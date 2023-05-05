@@ -1,4 +1,4 @@
-import { customRequest } from '@/api/http'
+import { abcRequest } from '@/api/http'
 import type { AxiosResponse } from 'axios'
 
 // 过滤返回数据
@@ -27,5 +27,5 @@ function handleResponseError(error: any) {
 }
 
 // 请求拦截
-customRequest.interceptors.response.use(handleResponseSuccess)
-customRequest.interceptors.response.use(undefined, handleResponseError)
+abcRequest.interceptors.response.use(handleResponseSuccess)
+abcRequest.interceptors.response.use(undefined, handleResponseError)

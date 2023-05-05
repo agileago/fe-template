@@ -15,7 +15,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "useDefineForClassFields": false,
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "baseUrl": "./",
