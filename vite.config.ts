@@ -1,7 +1,7 @@
 import { defineConfig, loadEnv, type PluginOption } from 'vite'
 import vueJsx from '@vue3-oop/plugin-vue-jsx'
 import mock from 'vite-plugin-mockit'
-import htmlTemplate from 'vite-plugin-html-template'
+import htmlTemplate from '@vue3-oop/vite-plugin-html-template'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import checker from 'vite-plugin-checker'
 import vitePluginAliOss from 'vite-plugin-ali-oss'

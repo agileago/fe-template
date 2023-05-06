@@ -69,6 +69,9 @@ devDependencies:
   '@vue3-oop/plugin-vue-jsx':
     specifier: ^1.4.6
     version: 1.4.6(typescript@5.0.4)
+  '@vue3-oop/vite-plugin-html-template':
+    specifier: ^1.1.6
+    version: 1.1.6
   eslint:
     specifier: ~8.39.0
     version: 8.39.0
@@ -129,9 +132,6 @@ devDependencies:
   vite-plugin-checker:
     specifier: ^0.6.0
     version: 0.6.0(eslint@8.39.0)(typescript@5.0.4)(vite@4.3.5)
-  vite-plugin-html-template:
-    specifier: ^1.1.5
-    version: 1.1.5
   vite-plugin-mockit:
     specifier: ^1.0.2
     version: 1.0.2
@@ -2842,6 +2842,12 @@ packages:
       - supports-color
     dev: true
 
+  /@vue3-oop/vite-plugin-html-template@1.1.6:
+    resolution: {integrity: sha512-3yNy0dGtV94WxzcHKiVNEfMa6s2ohhzlaVWBgw8H3uf54k2AQKJyIRIzXOMKsgzA4KrO2YQvNjDNl2hxFS6EtA==}
+    dependencies:
+      shelljs: 0.8.4
+    dev: true
+
   /JSONStream@1.3.5:
     resolution: {integrity: sha512-E+iruNOY8VV9s4JEbe1aNEm6MiszPRr/UfcHMz0TQh1BXSxHK+ASV1R6W4HpjBhSeS+54PIsAMCBmwD06LLsqQ==}
     hasBin: true
@@ -3481,7 +3487,7 @@ packages:
     dev: false
 
   /concat-map@0.0.1:
-    resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
+    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=, tarball: https://registry.npmmirror.com/concat-map/download/concat-map-0.0.1.tgz}
     dev: true
 
   /configstore@5.0.1:
@@ -4922,12 +4928,6 @@ packages:
     resolution: {integrity: sha512-0n+pzCC6ICtVr/WXnN2f03TK/3BfXY7me4cjCAqT8TYXEl0+JBRoqBo94JJHXcyDSLUeWbNX8Fvy5g5RJdAstQ==}
     dev: true
 
-  /is-core-module@2.10.0:
-    resolution: {integrity: sha512-Erxj2n/LDAZ7H8WNJXd9tw38GYM3dv8rk8Zcs+jJuxYTW7sozH+SS8NtrSjVL1/vpLvWi1hxy96IzjJ3EHTJJg==}
-    dependencies:
-      has: 1.0.3
-    dev: true
-
   /is-core-module@2.12.0:
     resolution: {integrity: sha512-RECHCBCd/viahWmwj6enj19sKbHfJrddi/6cBDsNTKbNq0f7VeaUkBo60BqzvPqo/W54ChS62Z5qyun7cfOMqQ==}
     dependencies:
@@ -5668,7 +5668,7 @@ packages:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
     dependencies:
       hosted-git-info: 2.8.9
-      resolve: 1.22.1
+      resolve: 1.22.2
       semver: 5.7.1
       validate-npm-package-license: 3.0.4
     dev: true
@@ -5678,7 +5678,7 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       hosted-git-info: 4.1.0
-      is-core-module: 2.10.0
+      is-core-module: 2.12.0
       semver: 7.3.8
       validate-npm-package-license: 3.0.4
     dev: true
@@ -6698,7 +6698,7 @@ packages:
     resolution: {integrity: sha512-HFM8rkZ+i3zrV+4LQjwQ0W+ez98pApMGM3HUrN04j3CqzPOzl9nmP15Y8YXNm8QHGv/eacOVEjqhmWpkRV0NAw==}
     engines: {node: '>= 0.10'}
     dependencies:
-      resolve: 1.22.1
+      resolve: 1.22.2
     dev: true
 
   /redent@3.0.0:
@@ -6782,15 +6782,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       global-dirs: 0.1.1
-    dev: true
-
-  /resolve@1.22.1:
-    resolution: {integrity: sha512-nBpuuYuY5jFsli/JIs1oldw6fOQCBioohqWZg/2hiaOybXOft4lonv85uDOKXdf8rhyK159cxU5cDcK/NKk8zw==}
-    hasBin: true
-    dependencies:
-      is-core-module: 2.10.0
-      path-parse: 1.0.7
-      supports-preserve-symlinks-flag: 1.0.0
     dev: true
 
   /resolve@1.22.2:
@@ -7801,12 +7792,6 @@ packages:
       vscode-languageserver: 7.0.0
       vscode-languageserver-textdocument: 1.0.8
       vscode-uri: 3.0.7
-    dev: true
-
-  /vite-plugin-html-template@1.1.5:
-    resolution: {integrity: sha512-G40Rz9FcsenSF81bYn6DctFEDoktTzJRoaUPyi0npUwjiXQD9qFm2Ut1LoZmOsSCAZgCjtYhNa8tKse/GZhz9A==}
-    dependencies:
-      shelljs: 0.8.4
     dev: true
 
   /vite-plugin-mockit@1.0.2:
