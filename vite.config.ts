@@ -21,7 +21,7 @@ export default defineConfig(({ command, mode }) => {
     htmlTemplate({
       data: env,
     }),
-    legacy({ modernPolyfills: true, targets: ['ios >= 10', 'chrome >= 51'] }),
+    legacy({ modernPolyfills: true }),
     mode === 'development' ? mock() : undefined,
     // cdn
     command === 'build' &&
