@@ -13,7 +13,7 @@ export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, '', envPrefix) as ImportMetaEnv
   env.VUE_APP_MODE = process.env.VUE_APP_MODE = mode
 
-  const plugins: (PluginOption | PluginOption[])[] = [
+  const plugins: PluginOption[] = [
     vueJsx({ enableObjectSlots: false }),
     svgLoader(),
     tsconfigPaths(),
