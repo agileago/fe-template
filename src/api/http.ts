@@ -5,20 +5,9 @@ import type { RequestParameter } from 'ts-gear'
 import config from '@/config'
 
 // region 基础方法 基本不需要动
-interface ReturnMessageArg {
-  /**
-   * 状态值  1为正常  0为失败  -1未经过验证
-   * format: int32
-   */
-  code?: number
-  /** 错误信息 */
-  msg?: string | null
-  /** 返回数据 */
-  entity?: any
-  /** 描述信息 */
-  data?: any | null
-}
+
 type ReturnEntityType<T> = T
+
 export type { AxiosRequestConfig }
 /**
  * 解析url中的参数  /abc/:id 替换id

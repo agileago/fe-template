@@ -2,8 +2,19 @@ import '@abraham/reflection'
 import { createApp } from 'vue'
 import { setup } from '@/setup'
 import { App } from '@/app'
-import '@/api/http.interceptor'
+import { createMainRouter } from '@/router'
 
-const app = createApp(App)
-setup(app)
-app.mount('#app')
+export function createMainApp() {
+  const app = createApp(App)
+  const router = createMainRouter()
+  app.use(router)
+  setup(app)
+  return {
+    app,
+    router,
+  }
+}
+
+const { app, router } = createMainApp()
+
+router.isReady().then(() => app.mount('#app'))

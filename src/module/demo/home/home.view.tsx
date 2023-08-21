@@ -1,16 +1,11 @@
-import { Autobind, Component, VueComponent } from 'vue3-oop'
-import { SkipSelf } from 'injection-js'
-import { RouterService } from '@/router/router.service'
+import { Autobind, VueComponent } from 'vue3-oop'
+import { useRouter } from 'vue-router'
 
-@Component()
 export default class HomeView extends VueComponent {
-  constructor(@SkipSelf() private routerService: RouterService) {
-    super()
-  }
-
+  router = useRouter()
   @Autobind()
   handleClick() {
-    this.routerService.router.push('/demo/count')
+    this.router.push('/demo/count')
   }
 
   render() {
@@ -20,7 +15,7 @@ export default class HomeView extends VueComponent {
           <thead>
             <tr>
               <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-                Name
+                Name111
               </th>
               <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                 Date of Birth

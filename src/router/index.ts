@@ -1,10 +1,11 @@
-import { Injectable } from 'injection-js'
-import { RouterService } from '@/router/router.service'
+import { createRouter, createWebHistory } from 'vue-router'
+import config from '@/config'
 import { routes } from '@/router/routes'
 
-@Injectable()
-export default class RouterStart {
-  constructor(private routerService: RouterService) {
-    routerService.initRoutes(routes)
-  }
+export function createMainRouter() {
+  const history = createWebHistory(config.BASE_ROUTE)
+  return createRouter({
+    history,
+    routes,
+  })
 }

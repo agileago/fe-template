@@ -1,12 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router'
 
-const routes: RouteRecordRaw[] = [
-  {
-    path: '/',
-    component: () => import('@/layout/default.layout'),
-    redirect: '/demo',
-    children: [],
-  },
+let routes: RouteRecordRaw[] = [
   {
     path: '/login',
     component: () => import('@/auth/login.view'),
@@ -18,12 +12,13 @@ const moduleRoutes = import.meta.glob('../module/**/*.router.ts', {
   eager: true,
   import: 'default',
 })
+
 let mainRoutes: RouteRecordRaw[] = []
 Object.keys(moduleRoutes)
   .map(k => moduleRoutes[k as string] as RouteRecordRaw | RouteRecordRaw[])
   .filter(Boolean)
   .forEach(k => (mainRoutes = mainRoutes.concat(k)))
 
-routes[0].children = mainRoutes
+routes = routes.concat(mainRoutes)
 
 export { routes }

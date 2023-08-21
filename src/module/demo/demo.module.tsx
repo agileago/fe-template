@@ -10,7 +10,7 @@ export default class DemoModule extends VueComponent {
         >
           <h2>I am layout</h2>
           <RouterLink class={'text-xl'} to={'/demo/home'}>
-            go to Home
+            go to Home111
           </RouterLink>{' '}
           <br />
           <RouterLink to={'/demo/count'}>go to Count</RouterLink>
