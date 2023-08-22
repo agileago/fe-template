@@ -4,8 +4,13 @@ import { routes } from '@/router/routes'
 
 export function createMainRouter() {
   const history = createWebHistory(config.BASE_ROUTE)
-  return createRouter({
+  const router = createRouter({
     history,
     routes,
   })
+
+  return {
+    router,
+    history,
+  }
 }

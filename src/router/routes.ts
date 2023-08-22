@@ -5,6 +5,10 @@ let routes: RouteRecordRaw[] = [
     path: '/login',
     component: () => import('@/auth/login.view'),
   },
+  {
+    path: '/',
+    redirect: '/demo',
+  },
 ]
 
 // 自动收集子模块的路由

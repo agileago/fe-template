@@ -6,7 +6,7 @@ import { createMainRouter } from '@/router'
 
 export function createMainApp() {
   const app = createApp(App)
-  const router = createMainRouter()
+  const { router } = createMainRouter()
   app.use(router)
   setup(app)
   return {

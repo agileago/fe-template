@@ -48,6 +48,11 @@ export default defineConfig(({ command, mode }) => {
         generateScopedName: '[local]--[hash:base64:5]',
       },
     },
+    build: {
+      target: 'chrome51',
+      // css 8位hex颜色 -> rgba
+      cssTarget: 'chrome51',
+    },
     server: {
       host: true,
       proxy: {
