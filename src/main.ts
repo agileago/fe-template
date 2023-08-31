@@ -15,6 +15,6 @@ export function createMainApp() {
   }
 }
 
-const { app, router } = createMainApp()
+const { app } = createMainApp()
 
-router.isReady().then(() => app.mount('#app'))
+app.mount('#app')
