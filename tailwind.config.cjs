@@ -1,3 +1,5 @@
+const { iconsPlugin, getIconCollections } = require("@egoist/tailwindcss-icons")
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.tsx'],
@@ -5,9 +7,15 @@ module.exports = {
     extend: {},
   },
   corePlugins: {
-    // 如果遇到button背景色为透明色的问题，请把这个关闭，然后使用ui库带的reset.css
-    preflight: true
+    // 解决button背景色为透明色的问题
+    preflight: false
   },
-  plugins: [],
+  plugins: [
+    // https://github.com/egoist/tailwindcss-icons
+    // 选择图标  https://icones.js.org/
+    iconsPlugin({
+      collections: getIconCollections(["ant-design"]),
+    }),
+  ],
   presets: [require('tailwindcss-rem2px-preset')],
 }

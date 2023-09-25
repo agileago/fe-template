@@ -1,10 +1,19 @@
+@import 'preflight.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 body {
+  font-size: 16px;
   touch-action: manipulation;
   font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont,
     'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'miui',
     'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
 }
-@import './common';
+
+svg {
+  display: inline;
+  width: 1em;
+  height: 1em;
+}

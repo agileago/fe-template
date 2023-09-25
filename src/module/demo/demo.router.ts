@@ -1,21 +1,12 @@
-import type { RouteRecordRaw } from 'vue-router'
+import type { RouteModule } from '@/router/type'
 
-const routes: RouteRecordRaw[] = [
+const routes: RouteModule = [
   {
-    path: '/demo',
-    component: () => import('./demo.module'),
-    redirect: '/demo/home',
-    children: [
-      {
-        path: '/demo/home',
-        component: () => import('./home/home.view'),
-      },
-      {
-        path: '/demo/count',
-        component: () => import('./count/count.view'),
-      },
-    ],
+    path: '/demo/icon',
+    component: () => import('./icon/icon.view'),
   },
 ]
+
+routes.parent = 'main'
 
 export default routes

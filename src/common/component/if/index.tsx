@@ -6,5 +6,5 @@ export interface IfProps {
 }
 export function If(props: IfProps, ctx: SetupContext) {
   if (!props.condition) return null
-  return <>{ctx.slots.default?.()}</>
+  return ctx.slots.default?.()
 }
