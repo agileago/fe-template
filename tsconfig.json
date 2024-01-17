@@ -21,15 +21,15 @@
     "types": ["vue/jsx"],
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
-    }
+      "@/*": ["src/*"],
+    },
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "vite.config.ts",
-    "global.d.ts"
-  ]
+    "vite.config.mts",
+    "global.d.ts",
+  ],
 }

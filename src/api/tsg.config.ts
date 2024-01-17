@@ -4,15 +4,13 @@
  * */
 import type { Project } from 'ts-gear'
 import { generateRequestFunctionName } from 'ts-gear/lib/tool/generateRequestFunctionName'
-// @ts-ignore
-import prettier from '../../.prettierrc'
 import * as _ from 'lodash'
 
 // 调用的所有api
 const projects: Partial<Project>[] = [
   {
     name: 'abc',
-    source: '',
+    source: 'http://211.154.163.74:21399/faster-pre-consultation/open-api-json',
   },
 ]
 
@@ -46,7 +44,7 @@ function createStandardProjects(projects: Partial<Project>[]) {
       importRequesterStatement: `import { ${
         _.camelCase(name) + 'Requester'
       }, type AxiosRequestConfig } from "../http"`,
-      prettierConfig: prettier,
+      prettierConfig: false,
       // 生成请求函数名称
       generateRequestFunctionName(arg) {
         return (

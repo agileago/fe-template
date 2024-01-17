@@ -1,12 +1,17 @@
 import { defineConfig, loadEnv, type PluginOption } from 'vite'
 import vueJsx from '@vue3-oop/plugin-vue-jsx'
 import mock from 'vite-plugin-mockit'
-import htmlTemplate from 'vite-plugin-html-template'
+import htmlTemplateDefault from 'vite-plugin-html-template'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import checker from 'vite-plugin-checker'
 import vitePluginAliOss from 'vite-plugin-ali-oss'
 import legacy from '@vitejs/plugin-legacy'
 import svgLoader from 'vite-svg-loader'
+import VueDevTools from 'vite-plugin-vue-devtools'
+import Vue from '@vitejs/plugin-vue'
+
+// @ts-ignore
+const htmlTemplate = htmlTemplateDefault.default
 
 export default defineConfig(({ command, mode }) => {
   const envPrefix = 'VUE_APP_'
@@ -14,6 +19,8 @@ export default defineConfig(({ command, mode }) => {
   env.VUE_APP_MODE = process.env.VUE_APP_MODE = mode
 
   const plugins: PluginOption[] = [
+    VueDevTools(),
+    Vue(),
     vueJsx({ enableObjectSlots: false }),
     svgLoader({ defaultImport: 'url' }),
     tsconfigPaths(),

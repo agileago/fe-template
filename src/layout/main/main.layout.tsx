@@ -7,7 +7,6 @@ import {
   NMenu,
 } from 'naive-ui'
 import { RouterLink, RouterView } from 'vue-router'
-
 const menuOptions: MenuOption[] = [
   {
     label: () => <RouterLink to={'/demo/icon'}>图标</RouterLink>,
@@ -18,6 +17,11 @@ const menuOptions: MenuOption[] = [
 
 export default class MainLayout extends VueComponent {
   render() {
+    console.log(
+      <div>
+        <div>1111</div>
+      </div>,
+    )
     return (
       <NConfigProvider inlineThemeDisabled>
         <div>

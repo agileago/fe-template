@@ -10,6 +10,7 @@ export default class LoginView extends VueComponent {
           <NButton size={'large'} block type={'success'}>
             登录
           </NButton>
+          <div class={''}></div>
         </RouterLink>
       </div>
     )
