@@ -56,9 +56,8 @@ export default defineConfig(({ command, mode }) => {
       },
     },
     build: {
-      target: 'chrome51',
       // css 8位hex颜色 -> rgba
-      cssTarget: 'chrome51',
+      cssTarget: 'chrome61',
     },
     server: {
       host: true,
