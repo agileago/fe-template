@@ -14,10 +14,8 @@ import Vue from '@vitejs/plugin-vue'
 const htmlTemplate = htmlTemplateDefault.default
 
 export default defineConfig(({ command, mode }) => {
-  const envPrefix = 'VUE_APP_'
-  const env = loadEnv(mode, '', envPrefix) as ImportMetaEnv
-  env.VUE_APP_MODE = process.env.VUE_APP_MODE = mode
-
+  const env = loadEnv(mode, process.cwd()) as ImportMetaEnv
+  env.MODE = mode
   const plugins: PluginOption[] = [
     VueDevTools(),
     Vue(),
@@ -32,7 +30,7 @@ export default defineConfig(({ command, mode }) => {
     mode === 'development' ? mock() : undefined,
     // cdn
     command === 'build' &&
-      /^http/.test(env.VUE_APP_BASE_URL) &&
+      /^http/.test(env.VITE_BASE_URL) &&
       vitePluginAliOss({
         region: process.env.OSS_REGION,
         accessKeyId: process.env.OSS_KEY,
@@ -41,8 +39,7 @@ export default defineConfig(({ command, mode }) => {
       }),
   ]
   return {
-    envPrefix,
-    base: env.VUE_APP_BASE_URL,
+    base: env.VITE_BASE_URL,
     plugins,
     css: {
       preprocessorOptions: {

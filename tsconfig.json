@@ -2,13 +2,13 @@
   "compilerOptions": {
     "target": "ES2021",
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "strict": true,
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "lib": ["esnext", "dom"],
+    "lib": ["esnext", "dom", "DOM.Iterable", "ScriptHost"],
     "allowSyntheticDefaultImports": true,
     "strictPropertyInitialization": true,
     "importHelpers": true,
@@ -21,8 +21,8 @@
     "types": ["vue/jsx"],
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"],
-    },
+      "@/*": ["src/*"]
+    }
   },
   "include": [
     "src/**/*.ts",
@@ -30,6 +30,7 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "vite.config.mts",
-    "global.d.ts",
-  ],
+    "tailwind.config.ts",
+    "global.d.ts"
+  ]
 }

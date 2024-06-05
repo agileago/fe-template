@@ -10,7 +10,7 @@ import * as _ from 'lodash'
 const projects: Partial<Project>[] = [
   {
     name: 'abc',
-    source: 'http://211.154.163.74:21399/faster-pre-consultation/open-api-json',
+    source: 'https://safe-core-workbench.dev.ennew.com/v2/api-docs',
   },
 ]
 
