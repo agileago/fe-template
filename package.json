@@ -58,7 +58,6 @@
     "vite": "^5.2.12",
     "vite-plugin-ali-oss": "^2.0.2",
     "vite-plugin-checker": "^0.6.4",
-    "vite-plugin-html-template": "^1.2.2",
     "vite-plugin-mockit": "^1.0.2",
     "vite-plugin-vue-devtools": "^7.2.1",
     "vite-svg-loader": "^5.1.0",
