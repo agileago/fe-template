@@ -1,10 +1,8 @@
-import type { Config } from 'tailwindcss'
-
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { iconsPlugin, getIconCollections } = require('@egoist/tailwindcss-icons')
 
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: ['./src/**/*.tsx'],
   theme: {
     extend: {},
@@ -21,4 +19,4 @@ export default {
     }),
   ],
   presets: [require('tailwindcss-rem2px-preset')],
-} satisfies Config
+}
