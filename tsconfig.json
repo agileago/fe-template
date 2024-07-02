@@ -30,7 +30,6 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "vite.config.mts",
-    "tailwind.config.ts",
     "global.d.ts"
   ]
 }

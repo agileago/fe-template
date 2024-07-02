@@ -14,11 +14,11 @@ export default defineConfig(({ command, mode }) => {
   const plugins: PluginOption[] = [
     VueDevTools(),
     Vue(),
-    vueJsx({ enableObjectSlots: false }),
+    vueJsx(),
     svgLoader({ defaultImport: 'url' }),
     tsconfigPaths({ loose: true }),
     checker({ typescript: true }),
-    legacy({ modernPolyfills: true }),
+    legacy({ modernPolyfills: true, renderLegacyChunks: false }),
     mode === 'development' ? mock() : undefined,
     // cdn
     command === 'build' &&
@@ -43,10 +43,6 @@ export default defineConfig(({ command, mode }) => {
         localsConvention: 'camelCaseOnly',
         generateScopedName: '[local]--[hash:base64:5]',
       },
-    },
-    build: {
-      // css 8位hex颜色 -> rgba
-      cssTarget: 'chrome61',
     },
     server: {
       host: true,

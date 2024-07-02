@@ -1,7 +1,7 @@
 import type { AxiosInstance, AxiosRequestConfig } from 'axios'
 import axios from 'axios'
 import * as pathToRegexp from 'path-to-regexp'
-import type { RequestParameter } from 'ts-gear'
+import type { RequestParameter } from '@vue3-oop/ts-gear'
 import config from '@/config'
 
 // region 基础方法 基本不需要动
