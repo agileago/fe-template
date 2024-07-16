@@ -1,67 +1,22 @@
-import { type ComponentProps, Link, Mut, VueComponent } from 'vue3-oop'
+import { Mut, VueComponent } from 'vue3-oop'
 import RightIcon from './right.svg?component'
-import { inject, provide, watch } from 'vue'
-
-interface AbcProps {
-  padding?: string
-  modelValue?: string
-  'onUpdate:modelValue'?: (val: string) => void
-}
-
-class Abc extends VueComponent<AbcProps> {
-  // @ts-ignore
-  static defaultProps: ComponentProps<AbcProps> = {
-    modelValue: String,
-    'onUpdate:modelValue': Function,
-  }
-
-  method() {}
-
-  render() {
-    console.log(this, this.$attrs)
-    return (
-      <div
-        onClick={() =>
-          this.props['onUpdate:modelValue']?.(Math.random().toString())
-        }
-      >
-        {this.props.modelValue}
-      </div>
-    )
-  }
-}
 
 export default class IconView extends VueComponent {
-  @Mut() abc = '111'
-
-  @Link() abcRef!: Abc
-
-  constructor() {
-    super()
-    provide('aaa', this)
-    inject('aaa')
-    watch(
-      () => this.abc,
-      () => console.log(this.abc),
-    )
-  }
-
-  click() {
-    console.log(this)
-    console.log(this.abcRef.method())
-  }
+  @Mut() count = 1
 
   render() {
     return (
-      <div onClick={this.click}>
-        <h1 class={'text-center text-base font-bold'}>
-          直接引入svg文件, 通过vite-svg-loader转换成vue组件
-        </h1>
+      <div class={'bg-blue-500 text-center'}>
+        <h2>我是子路由</h2>
         <div>
-          <RightIcon></RightIcon>
-          <span>111</span>
+          <h3>我是图标</h3>
+          <RightIcon class={'text-yellow-400'}></RightIcon>
         </div>
-        <Abc ref={'abcRef'} v-model={this.abc} padding={'111'}></Abc>
+        <div>
+          <button class={'bg-red-500 p-2'} onClick={() => this.count++}>
+            + {this.count}
+          </button>
+        </div>
       </div>
     )
   }

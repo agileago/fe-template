@@ -4,8 +4,8 @@ import { RouterView } from 'vue-router'
 export default class MainLayout extends VueComponent {
   render() {
     return (
-      <div>
-        菜单
+      <div class={'bg-amber-300 text-center'}>
+        我是上层布局
         <RouterView />
       </div>
     )
