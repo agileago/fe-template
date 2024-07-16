@@ -1,3 +1,4 @@
+/* 默认开发环境配置 */
 export default class Config {
   env = import.meta.env.MODE
   // 基础路由 /app/

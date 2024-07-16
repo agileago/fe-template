@@ -2,7 +2,7 @@ import type { RouteModule } from '@/router/type'
 
 const routes: RouteModule = [
   {
-    path: '/demo/icon',
+    path: '',
     component: () => import('./icon/icon.view'),
   },
 ]

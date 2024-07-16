@@ -4,8 +4,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:uat": "vite --mode uat",
     "build": "vite build",
-    "preview": "vite preview --base /",
+    "build:uat": "vite build --mode uat",
+    "preview": "vite preview",
     "type:check": "tsc --noEmit",
     "lint": "eslint --fix .",
     "format": "prettier --write '**/*.{ts,tsx,js,vue,css,scss,html,json}'",
@@ -61,7 +63,8 @@
     "vite-plugin-checker": "^0.6.4",
     "vite-plugin-vue-devtools": "^7.2.1",
     "vite-svg-loader": "^5.1.0",
-    "vite-tsconfig-paths": "^4.3.2"
+    "vite-tsconfig-paths": "^4.3.2",
+    "browserslist-to-esbuild": "^2.1.1"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged",

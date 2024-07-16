@@ -3,14 +3,9 @@ import type { RouteModule } from './type'
 
 let routes: RouteRecordRaw[] = [
   {
-    path: '/login',
-    component: () => import('@/auth/login.view'),
-  },
-  {
     path: '/',
     name: 'main',
     component: () => import('@/layout/main/main.layout'),
-    children: [],
   },
 ]
 

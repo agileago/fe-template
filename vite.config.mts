@@ -7,6 +7,7 @@ import legacy from '@vitejs/plugin-legacy'
 import svgLoader from 'vite-svg-loader'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import Vue from '@vitejs/plugin-vue'
+import browserslistToEsbuild from 'browserslist-to-esbuild'
 
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd()) as ImportMetaEnv
@@ -41,6 +42,9 @@ export default defineConfig(({ command, mode }) => {
         localsConvention: 'camelCaseOnly',
         generateScopedName: '[local]--[hash:base64:5]',
       },
+    },
+    build: {
+      target: browserslistToEsbuild(),
     },
     server: {
       host: true,
