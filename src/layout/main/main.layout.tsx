@@ -7,6 +7,7 @@ import {
   NMenu,
 } from 'naive-ui'
 import { RouterLink, RouterView } from 'vue-router'
+
 const menuOptions: MenuOption[] = [
   {
     label: () => <RouterLink to={'/demo/icon'}>图标</RouterLink>,
@@ -16,6 +17,11 @@ const menuOptions: MenuOption[] = [
 ]
 
 export default class MainLayout extends VueComponent {
+  async foo() {
+    const a = await 1
+    console.log(a)
+  }
+
   render() {
     console.log(
       <div>
@@ -25,7 +31,9 @@ export default class MainLayout extends VueComponent {
     return (
       <NConfigProvider inlineThemeDisabled>
         <div>
-          <div class={'float-right flex h-[42px] items-center pr-4'}>
+          <div
+            class={'float-right flex h-[42px] items-center pr-4 text-amber-500'}
+          >
             <RouterLink to={'/login'}>
               <NButton type={'primary'} size={'small'}>
                 登录

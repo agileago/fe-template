@@ -1,6 +1,7 @@
 {
   "name": "starter",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -9,7 +10,7 @@
     "lint": "eslint --fix .",
     "format": "prettier --write '**/*.{ts,tsx,js,vue,css,scss,html,json}'",
     "chrome": "open -n /Applications/Google\\ Chrome.app/ --args --disable-web-security  --user-data-dir=$HOME/MyChromeDevUserData/",
-    "api": "tsg -c ./src/api/tsg.config.ts && prettier --write src/api/**/*.ts",
+    "api": "tsg -c ./src/api/tsg.config.cts && prettier --write src/api/**/*.ts",
     "postinstall": "simple-git-hooks"
   },
   "dependencies": {
@@ -58,7 +59,6 @@
     "vite": "^5.2.12",
     "vite-plugin-ali-oss": "^2.0.2",
     "vite-plugin-checker": "^0.6.4",
-    "vite-plugin-mockit": "^1.0.2",
     "vite-plugin-vue-devtools": "^7.2.1",
     "vite-svg-loader": "^5.1.0",
     "vite-tsconfig-paths": "^4.3.2"

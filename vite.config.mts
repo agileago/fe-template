@@ -1,6 +1,5 @@
 import { defineConfig, loadEnv, type PluginOption } from 'vite'
 import vueJsx from '@vue3-oop/plugin-vue-jsx'
-import mock from 'vite-plugin-mockit'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import checker from 'vite-plugin-checker'
 import vitePluginAliOss from 'vite-plugin-ali-oss'
@@ -19,7 +18,6 @@ export default defineConfig(({ command, mode }) => {
     tsconfigPaths({ loose: true }),
     checker({ typescript: true }),
     legacy({ modernPolyfills: true, renderLegacyChunks: false }),
-    mode === 'development' ? mock() : undefined,
     // cdn
     command === 'build' &&
       /^http/.test(env.VITE_BASE_URL) &&
