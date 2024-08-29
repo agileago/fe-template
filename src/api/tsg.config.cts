@@ -52,9 +52,7 @@ function createStandardProjects(projects: Partial<Project>[]) {
       // 生成请求函数名称
       generateRequestFunctionName(arg) {
         return (
-          'api' +
-          _.upperFirst(_.camelCase(name)) +
-          _.upperFirst(generateRequestFunctionName(arg))
+          'api' + _.upperFirst(_.camelCase(name)) + _.upperFirst(generateRequestFunctionName(arg))
         )
       },
       generateRequestFunction: requestTemplate,

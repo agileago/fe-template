@@ -66,11 +66,7 @@ export function interceptRequest(
  * @param ax
  */
 export const createRequester = (ax: AxiosInstance) => {
-  return <T>(
-    apiUrl: string,
-    param: RequestParameter,
-    config: AxiosRequestConfig = {},
-  ) => {
+  return <T>(apiUrl: string, param: RequestParameter, config: AxiosRequestConfig = {}) => {
     // eslint-disable-next-line prefer-const
     let [url, option] = interceptRequest(apiUrl, param)
     option = { url, ...option, ...config }
