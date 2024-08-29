@@ -1,5 +1,14 @@
 import { Mut, VueComponent } from 'vue3-oop'
 import RightIcon from './right.svg?component'
+import { defineComponent } from '@/dfc'
+
+interface IconSimpleProps {
+  count: number
+}
+
+export const IconSimple = defineComponent(function IconSimple(props: IconSimpleProps) {
+  return () => <div>icon simple1111 {props.count}</div>
+})
 
 export default class IconView extends VueComponent {
   @Mut() count = 1
@@ -17,6 +26,7 @@ export default class IconView extends VueComponent {
             + {this.count}
           </button>
         </div>
+        <IconSimple count={this.count}></IconSimple>
       </div>
     )
   }

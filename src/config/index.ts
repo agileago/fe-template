@@ -5,7 +5,8 @@ const modules = import.meta.glob('./config.*.ts', {
   eager: true,
 })
 
-const TargetConf: typeof Config =
-  (modules[`./config.${import.meta.env.MODE}.ts`] as any) || Config
+const TargetConf: typeof Config = (modules[`./config.${import.meta.env.MODE}.ts`] as any) || Config
 
-export default new TargetConf()
+const config = new TargetConf()
+
+export default config
