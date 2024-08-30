@@ -7,6 +7,4 @@ const routes: RouteModule = [
   },
 ]
 
-routes.parent = 'main'
-
 export default routes

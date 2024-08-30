@@ -1,6 +1,6 @@
 import { Mut, VueComponent } from 'vue3-oop'
 import RightIcon from './right.svg?component'
-import { defineComponent } from '@/dfc'
+import { defineComponent } from '@/utils/dfc'
 
 interface IconSimpleProps {
   count: number

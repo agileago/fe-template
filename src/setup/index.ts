@@ -1,5 +1,5 @@
 import type { App } from 'vue'
-import { setupDirective } from '@/common/directive'
+import { setupDirective } from '@/directive'
 import '@/api/http.interceptor'
 
 // 一些初始设置

@@ -1,13 +1,7 @@
 import type { RouteRecordRaw } from 'vue-router'
 import type { RouteModule } from './type'
 
-let routes: RouteRecordRaw[] = [
-  {
-    path: '/',
-    name: 'main',
-    component: () => import('@/layout/main/main.layout'),
-  },
-]
+let routes: RouteRecordRaw[] = []
 
 // 自动收集子模块的路由
 const moduleRoutes = import.meta.glob('../module/**/*.router.ts', {
