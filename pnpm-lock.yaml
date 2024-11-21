@@ -23,6 +23,9 @@ importers:
       ts-essentials:
         specifier: ^10.0.2
         version: 10.0.2(typescript@5.5.4)
+      ts-pattern:
+        specifier: ^5.3.1
+        version: 5.3.1
       tslib:
         specifier: ^2.7.0
         version: 2.7.0
@@ -33,11 +36,11 @@ importers:
         specifier: ^4.4.3
         version: 4.4.3(vue@3.4.38(typescript@5.5.4))
       vue-simple-props:
-        specifier: ^0.5.1
-        version: 0.5.1(vue@3.4.38(typescript@5.5.4))
+        specifier: ^0.5.3
+        version: 0.5.3(vue@3.4.38(typescript@5.5.4))
       vue3-oop:
-        specifier: ^1.0.6
-        version: 1.0.6(injection-js@2.4.0)(vue@3.4.38(typescript@5.5.4))
+        specifier: ^1.0.10
+        version: 1.0.10(injection-js@2.4.0)(vue@3.4.38(typescript@5.5.4))
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.4.1
@@ -4210,6 +4213,9 @@ packages:
       '@swc/wasm':
         optional: true
 
+  ts-pattern@5.3.1:
+    resolution: {integrity: sha512-1RUMKa8jYQdNfmnK4jyzBK3/PS/tnjcZ1CW0v1vWDeYe5RBklc/nquw03MEoB66hVBm4BnlCfmOqDVxHyT1DpA==}
+
   tsconfck@3.1.1:
     resolution: {integrity: sha512-00eoI6WY57SvZEVjm13stEVE90VkEdJAFGgpFLTsZbJyW/LwFQ7uQxJHWpZ2hzSWgCPKc9AnBnNP+0X7o3hAmQ==}
     engines: {node: ^18 || >=20}
@@ -4488,13 +4494,13 @@ packages:
     peerDependencies:
       vue: ^3.2.0
 
-  vue-simple-props@0.5.1:
-    resolution: {integrity: sha512-1RWBGIGxG0d/qemjcZW9hMCRXZfFFtI6W2gdqwJxHy9xPKS+QH5eK9xP+FPzDxcPzJgZMYxmvIR1yOCIS+7/3w==}
+  vue-simple-props@0.5.3:
+    resolution: {integrity: sha512-1f/sWRNeCs5TGtw0MabYNB90A6D9jtYZDBcIIROYongvqbxJHqntcuPeY+yYBGmaN311LhdoSLs/o4jauq/49A==}
     peerDependencies:
       vue: ^3.0.0
 
-  vue3-oop@1.0.6:
-    resolution: {integrity: sha512-jDgl2uq9KcfA+1yF5YKr6JhUyjvMHnivIdXBRPVcZ25LPQWVRXrtzozZSFZ51kjM7LlrG+e2lAbzTKtLzOfaVQ==}
+  vue3-oop@1.0.10:
+    resolution: {integrity: sha512-Dvn8F5dql9QSFr/zsxaaSHSoMWbsVdKE3JARcF2JTS29LdRdfSmmVqTkqUMf5ozlRW4EgfwYLmF9eaNXxJxXtw==}
     peerDependencies:
       injection-js: '*'
       vue: '3'
@@ -8986,6 +8992,8 @@ snapshots:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
+  ts-pattern@5.3.1: {}
+
   tsconfck@3.1.1(typescript@5.5.4):
     optionalDependencies:
       typescript: 5.5.4
@@ -9280,11 +9288,11 @@ snapshots:
       '@vue/devtools-api': 6.6.3
       vue: 3.4.38(typescript@5.5.4)
 
-  vue-simple-props@0.5.1(vue@3.4.38(typescript@5.5.4)):
+  vue-simple-props@0.5.3(vue@3.4.38(typescript@5.5.4)):
     dependencies:
       vue: 3.4.38(typescript@5.5.4)
 
-  vue3-oop@1.0.6(injection-js@2.4.0)(vue@3.4.38(typescript@5.5.4)):
+  vue3-oop@1.0.10(injection-js@2.4.0)(vue@3.4.38(typescript@5.5.4)):
     dependencies:
       injection-js: 2.4.0
       vue: 3.4.38(typescript@5.5.4)

@@ -58,5 +58,8 @@ export default defineConfig(({ command, mode }) => {
         // },
       },
     },
+    optimizeDeps: {
+      exclude: ['vue-simple-props'],
+    },
   }
 })

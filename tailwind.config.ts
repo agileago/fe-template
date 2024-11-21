@@ -2,7 +2,7 @@ import rem2px from 'tailwindcss-rem2px-preset'
 import type { Config } from 'tailwindcss'
 
 export default {
-  content: ['./src/**/*.{tsx,ts,vue}'],
+  content: ['./src/**/*.{tsx,ts}'],
   theme: {
     extend: {},
   },

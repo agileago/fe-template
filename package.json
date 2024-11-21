@@ -22,11 +22,12 @@
     "injection-js": "^2.4.0",
     "path-to-regexp": "^7.1.0",
     "ts-essentials": "^10.0.2",
+    "ts-pattern": "^5.3.1",
     "tslib": "^2.7.0",
     "vue": "^3.4.38",
     "vue-router": "^4.4.3",
-    "vue-simple-props": "^0.5.1",
-    "vue3-oop": "^1.0.6"
+    "vue-simple-props": "^0.5.3",
+    "vue3-oop": "^1.0.10"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.4.1",

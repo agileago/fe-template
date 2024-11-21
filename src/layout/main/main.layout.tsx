@@ -1,6 +1,7 @@
 import { VueComponent } from 'vue3-oop'
 import { RouterView } from 'vue-router'
 import { defineComponent } from '@/utils/dfc'
+import { ref } from 'vue'
 
 export default class MainLayout extends VueComponent {
   render() {
@@ -15,5 +16,12 @@ export default class MainLayout extends VueComponent {
 }
 
 const Abc = defineComponent((props: { name: string }) => {
-  return <div>Abc{props.name}</div>
+  const count = ref(1)
+
+  return () => (
+    <div>
+      Abc{props.name}
+      {count.value}
+    </div>
+  )
 })

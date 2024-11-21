@@ -4,11 +4,26 @@ import { defineComponent } from '@/utils/dfc'
 
 interface IconSimpleProps {
   count: number
+  abc?: number
 }
 
-export const IconSimple = defineComponent(function IconSimple(props: IconSimpleProps) {
-  return () => <div>icon simple1111 {props.count}</div>
-})
+export const IconSimple = defineComponent(
+  function IconSimple(props: IconSimpleProps) {
+    return () => (
+      <div>
+        icon simple1111 {props.count} <p>abc: {props.abc}</p>
+      </div>
+    )
+  },
+  {
+    props: {
+      abc: {
+        type: Number,
+        default: 1,
+      },
+    },
+  },
+)
 
 export default class IconView extends VueComponent {
   @Mut() count = 1
