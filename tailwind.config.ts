@@ -1,5 +1,5 @@
-import rem2px from 'tailwindcss-rem2px-preset'
 import type { Config } from 'tailwindcss'
+import rem2px from 'tailwindcss-rem2px-preset'
 
 export default {
   content: ['./src/**/*.{tsx,ts}'],

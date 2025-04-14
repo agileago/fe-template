@@ -1,7 +1,8 @@
 .editorconfig
 .gitignore
-.prettierignore
 .idea
 node_modules
 dist
-pnpm-lock.yaml
+public
+*-lock.yaml
+.vscode

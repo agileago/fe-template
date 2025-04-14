@@ -1,18 +1,16 @@
-import { defineConfig, loadEnv, type PluginOption } from 'vite'
-import vueJsx from '@vue3-oop/plugin-vue-jsx'
-import tsconfigPaths from 'vite-tsconfig-paths'
-import checker from 'vite-plugin-checker'
-import vitePluginAliOss from 'vite-plugin-ali-oss'
 import legacy from '@vitejs/plugin-legacy'
-import svgLoader from 'vite-svg-loader'
-import VueDevTools from 'vite-plugin-vue-devtools'
 import Vue from '@vitejs/plugin-vue'
+import vueJsx from '@vue3-oop/plugin-vue-jsx'
 import browserslistToEsbuild from 'browserslist-to-esbuild'
+import { defineConfig, loadEnv, type PluginOption } from 'vite'
+import vitePluginAliOss from 'vite-plugin-ali-oss'
+import checker from 'vite-plugin-checker'
+import svgLoader from 'vite-svg-loader'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd()) as ImportMetaEnv
   const plugins: PluginOption[] = [
-    VueDevTools(),
     Vue(),
     vueJsx(),
     svgLoader({ defaultImport: 'url' }),
@@ -57,9 +55,6 @@ export default defineConfig(({ command, mode }) => {
         //   },
         // },
       },
-    },
-    optimizeDeps: {
-      exclude: ['vue-simple-props'],
     },
   }
 })

@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, type Router } from 'vue-router'
 import config from '@/config'
 import { routes } from '@/router/routes'
 
@@ -8,9 +8,11 @@ declare module 'vue-router' {
   }
 }
 
+export let router: Router
+
 export function createMainRouter() {
   const history = createWebHistory(config.BASE_ROUTE)
-  const router = createRouter({
+  router = createRouter({
     history,
     routes,
   })

@@ -3,7 +3,9 @@
     "target": "ES2021",
     "module": "esnext",
     "moduleResolution": "Bundler",
+    "moduleDetection": "force",
     "strict": true,
+    "strictNullChecks": false,
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
@@ -18,18 +20,10 @@
     "verbatimModuleSyntax": true,
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
-    "types": ["vue/jsx"],
+    "types": ["vite/client", "vue/jsx"],
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
     }
-  },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "vite.config.mts",
-    "global.d.ts"
-  ]
+  }
 }
