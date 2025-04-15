@@ -1,83 +1,39 @@
-import type { AxiosInstance, AxiosRequestConfig } from 'axios'
-import axios from 'axios'
-import * as pathToRegexp from 'path-to-regexp'
-import type { RequestParameter } from '@vue3-oop/ts-gear'
+import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
 import config from '@/config'
+import { createRequester, type RequestParameter } from '@vue3-oop/ts-gear/requester'
 
-// region 基础方法 基本不需要动
+// region 基础方法 需要对返回类型做转换
 
 type ReturnEntityType<T> = T
 
 export type { AxiosRequestConfig }
-/**
- * 解析url中的参数  /abc/:id 替换id
- * @param url
- * @param option
- */
-export const parseUrl = (url: string, option?: RequestParameter): string => {
-  if (option) {
-    if (option.path) {
-      Object.getOwnPropertyNames(option.path).forEach(k => {
-        option.path[k] = encodeURIComponent(String(option.path[k]))
-      })
-      url = pathToRegexp.compile(url)(option.path)
-    }
-  }
-  return url
+// 重写返回类型
+interface RequesterWrapper {
+  <T>(url: string, param?: RequestParameter, config?: AxiosRequestConfig): Promise<ReturnEntityType<T>>
 }
-/**
- * 转换成axios里面的配置
- * @param url
- * @param option
- */
-export function interceptRequest(
-  url: string,
-  option?: RequestParameter,
-): [string, AxiosRequestConfig] {
-  try {
-    url = parseUrl(url, option)
-  } catch (e: any) {
-    throw new Error(e.message)
-  }
-  option = option || {}
-  const requestOption: AxiosRequestConfig = {
-    method: option.method || 'get',
-  }
-  if (option.header) {
-    requestOption.headers = option.header
-  }
-  if (option.body) {
-    requestOption.data = option.body
-  }
-  if (option.formData) {
-    const formData = new FormData()
-    Object.keys(option.formData).forEach(k => {
-      formData.append(k, option?.formData[k])
-    })
-    requestOption.data = formData
-  }
-  if (option.query) {
-    requestOption.params = option.query
-  }
-  return [url, requestOption]
+
+// 处理响应
+function handleResponseSuccess(res: AxiosResponse) {
+  return res.data
 }
-/**
- * 创建请求方法
- * @param ax
- */
-export const createRequester = (ax: AxiosInstance) => {
-  return <T>(apiUrl: string, param: RequestParameter, config: AxiosRequestConfig = {}) => {
-    // eslint-disable-next-line prefer-const
-    let [url, option] = interceptRequest(apiUrl, param)
-    option = { url, ...option, ...config }
-    return ax.request<T>(option) as unknown as Promise<ReturnEntityType<T>>
+// 处理错误
+function handleResponseError(error: AxiosError<any>) {
+  // 后端返回401直接到登录
+  if (error?.response?.status === 401) {
+    // location.href = config.BASE_ROUTE + 'login'
   }
+  if (error?.response) {
+    throw new Error(error.response.data)
+  }
+  return Promise.reject(error)
 }
+
 // endregion
 
-// 创建request 对request进行拦截各种操作
-export const abcRequest = axios.create({
+export const [petRequest, petRequester] = createRequester({
   baseURL: config.API,
-})
+}) as [AxiosInstance, RequesterWrapper]
 
-export const abcRequester = createRequester(abcRequest)
+// 请求拦截
+petRequest.interceptors.response.use(handleResponseSuccess)
+petRequest.interceptors.response.use(undefined, handleResponseError)

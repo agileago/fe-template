@@ -1,4 +1,4 @@
-@import 'preflight.css';
+@import '@unocss/reset/tailwind-compat.css';
 
 @tailwind base;
 @tailwind components;

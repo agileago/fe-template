@@ -12,15 +12,15 @@
     "esModuleInterop": true,
     "lib": ["esnext", "dom", "DOM.Iterable", "ScriptHost"],
     "allowSyntheticDefaultImports": true,
-    "strictPropertyInitialization": true,
     "importHelpers": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "useDefineForClassFields": false,
     "verbatimModuleSyntax": true,
+    "isolatedModules": true,
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
-    "types": ["vite/client", "vue/jsx"],
+    "types": ["vue/jsx"],
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]

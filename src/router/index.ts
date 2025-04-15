@@ -8,6 +8,7 @@ declare module 'vue-router' {
   }
 }
 
+// eslint-disable-next-line import-x/no-mutable-exports
 export let router: Router
 
 export function createMainRouter() {

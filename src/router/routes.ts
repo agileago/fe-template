@@ -1,6 +1,7 @@
 import type { RouteRecordRaw } from 'vue-router'
 import type { RouteModule } from './type'
 
+// eslint-disable-next-line import-x/no-mutable-exports
 let routes: RouteRecordRaw[] = []
 
 // 自动收集子模块的路由
