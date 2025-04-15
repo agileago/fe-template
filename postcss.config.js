@@ -11,6 +11,11 @@ export default {
   //     375: 2,
   //   },
   // },
+
+  // 开启转换vw
+  // 'postcss-px-to-viewport-8-plugin': {
+  //   viewportWidth: 375,
+  // },
 }
 
 // 开启rem请将以下js代码拷贝到入口 html
