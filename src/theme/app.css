@@ -1,4 +1,4 @@
-@import '@unocss/reset/tailwind-compat.css';
+@import '@vue3-oop/tailwind-preset/preflight.css';
 
 @tailwind base;
 @tailwind components;
@@ -7,9 +7,19 @@
 body {
   font-size: 16px;
   touch-action: manipulation;
-  font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont,
-    'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'miui',
-    'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+  font-family:
+    'PingFang SC',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Helvetica Neue',
+    Helvetica,
+    Segoe UI,
+    Arial,
+    Roboto,
+    'miui',
+    'Hiragino Sans GB',
+    'Microsoft Yahei',
+    sans-serif;
 }
 
 svg {

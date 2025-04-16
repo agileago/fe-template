@@ -1,15 +1,6 @@
 import type { Config } from 'tailwindcss'
-import rem2px from 'tailwindcss-rem2px-preset'
+import { preset } from '@vue3-oop/tailwind-preset'
 
 export default {
-  content: ['./src/**/*.{tsx,ts}'],
-  theme: {
-    extend: {},
-  },
-  corePlugins: {
-    // 解决button背景色为透明色的问题
-    preflight: false,
-  },
-  plugins: [],
-  presets: [rem2px],
+  presets: [preset({})],
 } satisfies Partial<Config>

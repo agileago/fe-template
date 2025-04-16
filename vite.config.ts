@@ -4,7 +4,6 @@ import vueJsx from '@vue3-oop/plugin-vue-jsx'
 import browserslistToEsbuild from 'browserslist-to-esbuild'
 import { defineConfig, loadEnv, type PluginOption } from 'vite'
 import vitePluginAliOss from 'vite-plugin-ali-oss'
-// import checker from 'vite-plugin-checker'
 import svgLoader from 'vite-svg-loader'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
@@ -15,7 +14,6 @@ export default defineConfig(({ command, mode }) => {
     vueJsx(),
     svgLoader({ defaultImport: 'url' }),
     tsconfigPaths({ loose: true }),
-    // checker({ typescript: true }),
     legacy({ modernPolyfills: true, renderLegacyChunks: false }),
     // 上传阿里云cdn
     command === 'build' &&

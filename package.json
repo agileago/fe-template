@@ -2,24 +2,40 @@
   "name": "starter",
   "version": "0.0.0",
   "description": "vite项目模板",
-  "packageManager": "pnpm@9.15.6",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "dev:uat": "vite --mode uat",
+    "api": "tsg",
     "build": "vite build",
     "build:uat": "vite build --mode uat",
-    "preview": "vite preview",
-    "type:check": "tsc --noEmit",
-    "lint": "eslint --fix .",
-    "format": "prettier --write '**/*.{ts,tsx,js,vue,css,scss,html,json}'",
     "chrome": "open -n /Applications/Google\\ Chrome.app/ --args --disable-web-security  --user-data-dir=$HOME/MyChromeDevUserData/",
-    "api": "tsg",
-    "prepare": "simple-git-hooks"
+    "dev": "vite",
+    "dev:uat": "vite --mode uat",
+    "format": "prettier --write '**/*.{ts,tsx,js,vue,css,scss,html,json}'",
+    "lint": "eslint --fix .",
+    "prepare": "simple-git-hooks",
+    "preview": "vite preview",
+    "type:check": "tsc --noEmit"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged",
+    "commit-msg": "pnpm exec commitlint -e $1"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{js,css,scss,html,json}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@abraham/reflection": "^0.13.0",
-    "@unocss/reset": "66.1.0-beta.11",
     "@vueuse/core": "^12.7.0",
     "axios": "^1.8.4",
     "dayjs": "^1.11.8",
@@ -43,6 +59,7 @@
     "@vitejs/plugin-legacy": "^6.0.2",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue3-oop/plugin-vue-jsx": "^1.5.0",
+    "@vue3-oop/tailwind-preset": "^2.0.0",
     "@vue3-oop/ts-gear": "^5.0.4",
     "browserslist-to-esbuild": "^2.1.1",
     "eslint": "^9.24.0",
@@ -54,30 +71,13 @@
     "sass": "^1.86.3",
     "simple-git-hooks": "^2.12.1",
     "tailwindcss": "^3.4.17",
-    "tailwindcss-rem2px-preset": "^1.0.3",
     "typescript": "^5.8.3",
     "vite": "^6.2.6",
     "vite-plugin-ali-oss": "^2.1.0",
     "vite-plugin-checker": "^0.9.1",
+    "vite-plugin-magical-svg": "^1.6.0",
     "vite-svg-loader": "^5.1.0",
     "vite-tsconfig-paths": "^5.1.4"
   },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm exec lint-staged",
-    "commit-msg": "pnpm exec commitlint -e $1"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{js,css,scss,html,json}": [
-      "prettier --write"
-    ]
-  }
+  "packageManager": "pnpm@9.15.6"
 }
