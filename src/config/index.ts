@@ -1,11 +1,19 @@
-import Config from './config.default'
+import DefaultConfig from './config.default'
+import UatConfig from '@/config/config.uat'
 
-const modules = import.meta.glob('./config.*.ts', {
-  import: 'default',
-  eager: true,
-})
+let TargetConf: typeof DefaultConfig
 
-const TargetConf: typeof Config = (modules[`./config.${import.meta.env.MODE}.ts`] as any) || Config
+// 目的为了在build时去除掉无用其他配置 避免造成泄露信息
+switch (import.meta.env.MODE) {
+  case 'dev':
+    TargetConf = DefaultConfig
+    break
+  case 'uat':
+    TargetConf = UatConfig
+    break
+  default:
+    TargetConf = DefaultConfig
+}
 
 const config = new TargetConf()
 

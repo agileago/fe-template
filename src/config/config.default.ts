@@ -1,5 +1,5 @@
 /* 默认开发环境配置 */
-export default class Config {
+export default class DefaultConfig {
   env = import.meta.env.MODE
   // 基础路由 /app/
   BASE_ROUTE = import.meta.env.VITE_BASE_ROUTE

@@ -40,6 +40,7 @@
     "axios": "^1.8.4",
     "dayjs": "^1.11.8",
     "es-toolkit": "^1.34.1",
+    "go-try": "^3.0.2",
     "injection-js": "^2.4.0",
     "path-to-regexp": "^8.2.0",
     "pinia": "^2.1.3",
