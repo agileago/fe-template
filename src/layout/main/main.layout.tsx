@@ -1,6 +1,5 @@
-import { VueComponent } from 'vue3-oop'
+import { VueComponent, defineComponent } from 'vue3-oop'
 import { RouterView } from 'vue-router'
-import { defineComponent } from '@/utils/dfc'
 import { ref } from 'vue'
 
 export default class MainLayout extends VueComponent {
