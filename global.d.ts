@@ -1,6 +1,4 @@
 /// <reference types="vite/client" />
-/// <reference types="vite-svg-loader" />
-
 // 环境变量定义
 interface ImportMetaEnv extends Readonly<Record<string, string | boolean | undefined>> {
   // 项目版本号
