@@ -34,7 +34,7 @@ const IcomView = defineComponent(() => {
         <i class={'icon-group'}></i>
         <i class={'icon-right text-yellow-200'}></i>
       </div>
-      <div>
+      <div class={'bg-[url(/favicon.ico)]'}>
         <button class={'bg-red-500 p-2'} onClick={() => count.value++}>
           + {count.value}
         </button>
