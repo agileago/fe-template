@@ -1,8 +1,4 @@
 import { RouterView } from 'vue-router'
-import { VueComponent } from 'vue3-oop'
+import { defineComponent } from 'vue-better-props'
 
-export class App extends VueComponent {
-  render() {
-    return <RouterView />
-  }
-}
+export const App = defineComponent(() => () => <RouterView />)

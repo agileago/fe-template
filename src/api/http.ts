@@ -1,5 +1,5 @@
 import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
-import config from '@/config'
+import envConfig from '@/conf'
 import { createRequester, type RequestParameter } from '@vue3-oop/ts-gear/requester'
 
 // region 基础方法 需要对返回类型做转换
@@ -31,7 +31,7 @@ function handleResponseError(error: AxiosError<any>) {
 // endregion
 
 export const [petRequest, petRequester] = createRequester({
-  baseURL: config.API,
+  baseURL: envConfig.API,
 }) as [AxiosInstance, RequesterWrapper]
 
 // 请求拦截

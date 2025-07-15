@@ -1,0 +1,20 @@
+<svg width="1em" height="1em" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <path d="M9.0753788,3.0753788 L11.9246212,3.0753788 C15.2383297,3.0753788 17.9246212,5.7616703 17.9246212,9.0753788 L17.9246212,11.9246212 C17.9246212,15.2383297 15.2383297,17.9246212 11.9246212,17.9246212 L9.0753788,17.9246212 C5.7616703,17.9246212 3.0753788,15.2383297 3.0753788,11.9246212 L3.0753788,9.0753788 C3.0753788,5.7616703 5.7616703,3.0753788 9.0753788,3.0753788 Z" id="path-1"></path>
+  </defs>
+  <g id="终稿" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g transform="translate(-20.000000, -1448.000000)">
+      <g id="编组-42" transform="translate(10.000000, 1332.000000)">
+        <g id="编组-68" transform="translate(0.000000, 101.000000)">
+          <g id="椭圆形" transform="translate(10.000000, 15.000000)">
+            <mask id="mask-2" fill="white">
+              <use xlink:href="#path-1" transform="translate(10.500000, 10.500000) rotate(-45.000000) translate(-10.500000, -10.500000) "></use>
+            </mask>
+            <use id="蒙版" fill="currentColor" transform="translate(10.500000, 10.500000) rotate(-45.000000) translate(-10.500000, -10.500000) " xlink:href="#path-1"></use>
+            <circle fill-opacity="0.451141144" fill="#FFFFFF" mask="url(#mask-2)" cx="14.9547727" cy="14.9547727" r="4.94974747"></circle>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

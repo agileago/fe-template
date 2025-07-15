@@ -1,5 +1,5 @@
-import { Mut, VueComponent, defineComponent } from 'vue3-oop'
-import RightIcon from './right.svg?component'
+import { defineComponent } from 'vue-better-props'
+import { ref } from 'vue'
 
 interface IconSimpleProps {
   count: number
@@ -24,24 +24,26 @@ export const IconSimple = defineComponent(
   },
 )
 
-export default class IconView extends VueComponent {
-  @Mut() count = 1
-
-  render() {
-    return (
-      <div class={'bg-blue-500 text-center'}>
-        <h2>我是子路由</h2>
-        <div>
-          <h3>我是图标</h3>
-          <RightIcon class={'text-yellow-400'}></RightIcon>
-        </div>
-        <div>
-          <button class={'bg-red-500 p-2'} onClick={() => this.count++}>
-            + {this.count}
-          </button>
-        </div>
-        <IconSimple count={this.count}></IconSimple>
+const IcomView = defineComponent(() => {
+  const count = ref(1)
+  return () => (
+    <div class={'text-center'}>
+      <h2>我是子路由</h2>
+      <div>
+        <h3>我是图标</h3>
+        <i class={'icon-group'}></i>
+        <i class={'icon-right text-yellow-200'}></i>
       </div>
-    )
-  }
-}
+      <div>
+        <button class={'bg-red-500 p-2'} onClick={() => count.value++}>
+          + {count.value}
+        </button>
+      </div>
+      <IconSimple count={count.value}>
+        <div>111</div>
+      </IconSimple>
+    </div>
+  )
+})
+
+export default IcomView

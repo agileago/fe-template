@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, type Router } from 'vue-router'
-import config from '@/config'
-import { routes } from '@/router/routes'
+import { routes } from './routes'
+import envConfig from '@/conf'
 
 declare module 'vue-router' {
   interface RouteMeta {
@@ -12,7 +12,7 @@ declare module 'vue-router' {
 export let router: Router
 
 export function createMainRouter() {
-  const history = createWebHistory(config.BASE_ROUTE)
+  const history = createWebHistory(envConfig.BASE_ROUTE)
   router = createRouter({
     history,
     routes,
