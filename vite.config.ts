@@ -1,13 +1,27 @@
 import legacy from '@vitejs/plugin-legacy'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import browserslistToEsbuild from 'browserslist-to-esbuild'
 import { defineConfig, loadEnv, type PluginOption } from 'vite'
 import { join } from 'node:path'
 import { fileURLToPath, URL } from 'node:url'
+import babel from 'vite-plugin-babel'
 
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd()) as ImportMetaEnv
-  const plugins: PluginOption[] = [vueJsx(), legacy({ modernPolyfills: true, renderLegacyChunks: false })]
+  const plugins: PluginOption[] = [
+    vueJsx(),
+    // 由于某些机器不支持正则表达式的某些特性，所以需要babel进行转换
+    // https://mothereff.in/regexpu#input=var+regex+%3D+/%5Cp%7BScript_Extensions%3DGreek%7D/u%3B&unicodePropertyEscape=1
+    babel({
+      apply: 'build',
+      enforce: 'post',
+      babelConfig: {
+        babelrc: false,
+        configFile: false,
+        plugins: ['@babel/plugin-transform-unicode-property-regex'],
+      },
+    }),
+    legacy({ modernPolyfills: true, renderLegacyChunks: false }),
+  ]
   return {
     base: env.VITE_BASE_URL,
     resolve: {
@@ -33,9 +47,6 @@ export default defineConfig(({ command, mode }) => {
         localsConvention: 'camelCaseOnly',
         generateScopedName: '[local]--[hash:base64:5]',
       },
-    },
-    build: {
-      target: browserslistToEsbuild(),
     },
     server: {
       host: true,

@@ -14,3 +14,5 @@ async function createMainApp() {
 }
 
 createMainApp()
+
+console.log(import.meta.env.VITE_VERSION)
