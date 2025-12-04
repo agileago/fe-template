@@ -20,9 +20,8 @@
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "types": ["vue/jsx"],
-    "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     }
   }
 }

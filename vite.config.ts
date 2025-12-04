@@ -1,9 +1,9 @@
+/// <reference types="vitest/config" />
 import legacy from '@vitejs/plugin-legacy'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { defineConfig, loadEnv, type PluginOption } from 'vite'
 import { join } from 'node:path'
-import { fileURLToPath, URL } from 'node:url'
-import babel from 'vite-plugin-babel'
+// import babel from 'vite-plugin-babel'
 
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd()) as ImportMetaEnv
@@ -11,28 +11,25 @@ export default defineConfig(({ command, mode }) => {
     vueJsx(),
     // 由于某些机器不支持正则表达式的某些特性，所以需要babel进行转换
     // https://mothereff.in/regexpu#input=var+regex+%3D+/%5Cp%7BScript_Extensions%3DGreek%7D/u%3B&unicodePropertyEscape=1
-    babel({
-      apply: 'build',
-      enforce: 'post',
-      babelConfig: {
-        babelrc: false,
-        configFile: false,
-        plugins: ['@babel/plugin-transform-unicode-property-regex'],
-      },
-    }),
+    // babel({
+    //   apply: 'build',
+    //   enforce: 'post',
+    //   babelConfig: {
+    //     babelrc: false,
+    //     configFile: false,
+    //     plugins: ['@babel/plugin-transform-unicode-property-regex'],
+    //   },
+    // }),
     legacy({ modernPolyfills: true, renderLegacyChunks: false }),
   ]
   return {
     base: env.VITE_BASE_URL,
     resolve: {
+      tsconfigPaths: true,
       alias: [
         {
           find: /~(.+)/,
           replacement: join(process.cwd(), 'node_modules/$1'),
-        },
-        {
-          find: '@',
-          replacement: fileURLToPath(new URL('./src', import.meta.url)),
         },
       ],
     },
@@ -59,6 +56,9 @@ export default defineConfig(({ command, mode }) => {
         //   },
         // },
       },
+    },
+    test: {
+      environment: 'happy-dom',
     },
   }
 })

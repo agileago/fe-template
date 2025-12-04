@@ -1,0 +1,13 @@
+link-workspace-packages: true
+
+node-linker: hoisted
+
+publicHoistPattern:
+  - "*prettier*"
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - core-js
+  - esbuild
+  - simple-git-hooks
+  - unrs-resolver
