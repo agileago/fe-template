@@ -42,8 +42,8 @@ importers:
         specifier: ^3.5.25
         version: 3.5.25(typescript@5.9.3)
       vue-better-props:
-        specifier: ^0.0.4
-        version: 0.0.4(vue@3.5.25(typescript@5.9.3))
+        specifier: ^0.0.5
+        version: 0.0.5(vue@3.5.25(typescript@5.9.3))
       vue-router:
         specifier: ^4.6.3
         version: 4.6.3(vue@3.5.25(typescript@5.9.3))
@@ -68,10 +68,10 @@ importers:
         version: 7.0.0-dev.20251204.1
       '@vitejs/plugin-legacy':
         specifier: ^7.0.0
-        version: 7.2.1(terser@5.44.1)(vite@8.0.0-beta.0(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2))
+        version: 7.2.1(terser@5.44.1)(vite@8.0.0-beta.1(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2))
       '@vitejs/plugin-vue-jsx':
         specifier: ^5.1.2
-        version: 5.1.2(vite@8.0.0-beta.0(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2))(vue@3.5.25(typescript@5.9.3))
+        version: 5.1.2(vite@8.0.0-beta.1(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2))(vue@3.5.25(typescript@5.9.3))
       '@vue3-oop/tailwind-preset':
         specifier: ^2.0.1
         version: 2.0.1(tailwindcss@3.4.18(yaml@2.8.2))
@@ -115,11 +115,11 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
       vite:
-        specifier: ^8.0.0-beta.0
-        version: 8.0.0-beta.0(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2)
+        specifier: ^8.0.0-beta.1
+        version: 8.0.0-beta.1(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2)
       vite-plugin-babel:
         specifier: ^1.3.2
-        version: 1.3.2(@babel/core@7.28.5)(vite@8.0.0-beta.0(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2))
+        version: 1.3.2(@babel/core@7.28.5)(vite@8.0.0-beta.1(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2))
       vitest:
         specifier: ^4.0.15
         version: 4.0.15(@types/node@24.10.1)(happy-dom@20.0.11)(jiti@1.21.7)(less@4.4.2)(lightningcss@1.30.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2)
@@ -4438,8 +4438,8 @@ packages:
       yaml:
         optional: true
 
-  vite@8.0.0-beta.0:
-    resolution: {integrity: sha512-bXHWmtg5hUxn/MB5zJ8qhBLphnsNmO1EYOFmBO/fVCBJekTdWDuqJ/GmUMLgrC0QUCCrxhw3JLgteWdiyqaVSQ==}
+  vite@8.0.0-beta.1:
+    resolution: {integrity: sha512-wWdn95sweG8/AEklHTAwZ9rwxZn77jQ72Flj2004oWpFBao9sTRXAntWEKKyp1qZXXLxNFRhr5Mp5tQIeR0SXA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -4512,8 +4512,8 @@ packages:
       jsdom:
         optional: true
 
-  vue-better-props@0.0.4:
-    resolution: {integrity: sha512-/ps/BL//hu8D9lRWeJIu8sC2NLGi35iqGtRjBhCxXigoGfNFTEk8yugvxb5HLbWZEM6ug545Znsi2ZfKR2oKyg==}
+  vue-better-props@0.0.5:
+    resolution: {integrity: sha512-NYFpfTkV09lxEekCXABAz9hMfGvFw2euohsaA7rMSq3GMl1+E75z+o+aMR3XX+e6/s2QFXnRCXlRIXGnAE1E5w==}
     peerDependencies:
       vue: '>=3'
 
@@ -6473,7 +6473,7 @@ snapshots:
   '@unrs/resolver-binding-win32-x64-msvc@1.11.1':
     optional: true
 
-  '@vitejs/plugin-legacy@7.2.1(terser@5.44.1)(vite@8.0.0-beta.0(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2))':
+  '@vitejs/plugin-legacy@7.2.1(terser@5.44.1)(vite@8.0.0-beta.1(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2))':
     dependencies:
       '@babel/core': 7.28.5
       '@babel/plugin-transform-dynamic-import': 7.27.1(@babel/core@7.28.5)
@@ -6488,18 +6488,18 @@ snapshots:
       regenerator-runtime: 0.14.1
       systemjs: 6.15.1
       terser: 5.44.1
-      vite: 8.0.0-beta.0(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2)
+      vite: 8.0.0-beta.1(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2)
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-vue-jsx@5.1.2(vite@8.0.0-beta.0(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2))(vue@3.5.25(typescript@5.9.3))':
+  '@vitejs/plugin-vue-jsx@5.1.2(vite@8.0.0-beta.1(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2))(vue@3.5.25(typescript@5.9.3))':
     dependencies:
       '@babel/core': 7.28.5
       '@babel/plugin-syntax-typescript': 7.27.1(@babel/core@7.28.5)
       '@babel/plugin-transform-typescript': 7.28.5(@babel/core@7.28.5)
       '@rolldown/pluginutils': 1.0.0-beta.53
       '@vue/babel-plugin-jsx': 2.0.1(@babel/core@7.28.5)
-      vite: 8.0.0-beta.0(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2)
+      vite: 8.0.0-beta.1(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2)
       vue: 3.5.25(typescript@5.9.3)
     transitivePeerDependencies:
       - supports-color
@@ -9235,10 +9235,10 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  vite-plugin-babel@1.3.2(@babel/core@7.28.5)(vite@8.0.0-beta.0(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2)):
+  vite-plugin-babel@1.3.2(@babel/core@7.28.5)(vite@8.0.0-beta.1(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2)):
     dependencies:
       '@babel/core': 7.28.5
-      vite: 8.0.0-beta.0(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2)
+      vite: 8.0.0-beta.1(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2)
 
   vite@7.2.6(@types/node@24.10.1)(jiti@1.21.7)(less@4.4.2)(lightningcss@1.30.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2):
     dependencies:
@@ -9258,7 +9258,7 @@ snapshots:
       terser: 5.44.1
       yaml: 2.8.2
 
-  vite@8.0.0-beta.0(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2):
+  vite@8.0.0-beta.1(@types/node@24.10.1)(esbuild@0.25.12)(jiti@1.21.7)(less@4.4.2)(sass@1.94.2)(terser@5.44.1)(yaml@2.8.2):
     dependencies:
       '@oxc-project/runtime': 0.101.0
       fdir: 6.5.0(picomatch@4.0.3)
@@ -9315,7 +9315,7 @@ snapshots:
       - tsx
       - yaml
 
-  vue-better-props@0.0.4(vue@3.5.25(typescript@5.9.3)):
+  vue-better-props@0.0.5(vue@3.5.25(typescript@5.9.3)):
     dependencies:
       vue: 3.5.25(typescript@5.9.3)
 

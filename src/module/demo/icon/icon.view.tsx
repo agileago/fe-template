@@ -6,6 +6,7 @@ import group from '@/module/demo/icon/group.svg'
 interface IconSimpleProps {
   count: number
   abc?: number
+  onClick?: () => void
 }
 
 export const IconSimple = defineComponent(
@@ -13,11 +14,19 @@ export const IconSimple = defineComponent(
     const abc = injectService(Abc)
     const title = injectService(useTitle)
     setTimeout(() => (title.value = Math.random().toString()), 3000)
-    return () => (
-      <div onClick={() => abc.count.value++}>
-        icon simple1111 {props.count} {abc.count.value} <p>abc: {props.abc}</p>
-      </div>
-    )
+    return () => {
+      console.log('refresh')
+      return (
+        <div
+          onClick={() => {
+            abc.count.value++
+            props.onClick?.()
+          }}
+        >
+          icon simple1111 {props.count} {abc.count.value} <p>abc: {props.abc}</p>
+        </div>
+      )
+    }
   },
   {
     props: {
@@ -51,9 +60,7 @@ const IcomView = defineComponent(() => {
           + {count.value}
         </button>
       </div>
-      <IconSimple count={count.value}>
-        <div>111</div>
-      </IconSimple>
+      <IconSimple count={111} onClick={() => console.log('nothing')}></IconSimple>
       <img src={group} alt="" />
     </div>
   )
