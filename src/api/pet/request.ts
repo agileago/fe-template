@@ -2,7 +2,7 @@
 /* tslint:disable */
 /** Do not modify manually.
 content is generated automatically by `ts-gear`. */
-import { petRequester as requester, type AxiosRequestConfig } from '../http'
+import { petRequester as requester, type AxiosRequestConfig, type DeepPartial } from '../http'
 import type { GetPetFindByStatusItems, ApiResponse, Pet, Order, User } from './definition'
 
 /** @description request parameter type for apiPetPostPetPetIdUploadImage */
@@ -57,7 +57,7 @@ type ApiPetPostPetPetIdUploadImageResponseSuccess = ApiPetPostPetPetIdUploadImag
  * @consumes multipart/form-data
  */
 export const apiPetPostPetPetIdUploadImage = (
-  option: ApiPetPostPetPetIdUploadImageOption,
+  option: DeepPartial<ApiPetPostPetPetIdUploadImageOption>,
   config?: AxiosRequestConfig,
 ) =>
   requester<ApiPetPostPetPetIdUploadImageResponseSuccess>(
@@ -95,7 +95,7 @@ type ApiPetPutPetResponseSuccess = any
  * @produces application/json,application/xml
  * @consumes application/json,application/xml
  */
-export const apiPetPutPet = (option?: ApiPetPutPetOption, config?: AxiosRequestConfig) =>
+export const apiPetPutPet = (option?: DeepPartial<ApiPetPutPetOption>, config?: AxiosRequestConfig) =>
   requester<ApiPetPutPetResponseSuccess>('/pet', { method: 'put', body: option }, config)
 
 type ApiPetPostPetOption = Pet
@@ -117,7 +117,7 @@ type ApiPetPostPetResponseSuccess = any
  * @produces application/json,application/xml
  * @consumes application/json,application/xml
  */
-export const apiPetPostPet = (option?: ApiPetPostPetOption, config?: AxiosRequestConfig) =>
+export const apiPetPostPet = (option?: DeepPartial<ApiPetPostPetOption>, config?: AxiosRequestConfig) =>
   requester<ApiPetPostPetResponseSuccess>('/pet', { method: 'post', body: option }, config)
 
 type ApiPetGetPetFindByStatusOption = {
@@ -149,8 +149,10 @@ type ApiPetGetPetFindByStatusResponseSuccess = ApiPetGetPetFindByStatusResponse[
  * @tags pet
  * @produces application/json,application/xml
  */
-export const apiPetGetPetFindByStatus = (option?: ApiPetGetPetFindByStatusOption, config?: AxiosRequestConfig) =>
-  requester<ApiPetGetPetFindByStatusResponseSuccess>('/pet/findByStatus', { method: 'get', query: option }, config)
+export const apiPetGetPetFindByStatus = (
+  option?: DeepPartial<ApiPetGetPetFindByStatusOption>,
+  config?: AxiosRequestConfig,
+) => requester<ApiPetGetPetFindByStatusResponseSuccess>('/pet/findByStatus', { method: 'get', query: option }, config)
 
 type ApiPetGetPetPetIdOption = {
   /**
@@ -187,7 +189,7 @@ type ApiPetGetPetPetIdResponseSuccess = ApiPetGetPetPetIdResponse[200]
  * @tags pet
  * @produces application/json,application/xml
  */
-export const apiPetGetPetPetId = (option?: ApiPetGetPetPetIdOption, config?: AxiosRequestConfig) =>
+export const apiPetGetPetPetId = (option?: DeepPartial<ApiPetGetPetPetIdOption>, config?: AxiosRequestConfig) =>
   requester<ApiPetGetPetPetIdResponseSuccess>('/pet/:petId', { method: 'get', path: option }, config)
 
 /** @description request parameter type for apiPetPostPetPetId */
@@ -241,7 +243,7 @@ type ApiPetPostPetPetIdResponseSuccess = any
  * @produces application/json,application/xml
  * @consumes application/x-www-form-urlencoded
  */
-export const apiPetPostPetPetId = (option: ApiPetPostPetPetIdOption, config?: AxiosRequestConfig) =>
+export const apiPetPostPetPetId = (option: DeepPartial<ApiPetPostPetPetIdOption>, config?: AxiosRequestConfig) =>
   requester<ApiPetPostPetPetIdResponseSuccess>('/pet/:petId', { method: 'post', ...option }, config)
 
 /** @description request parameter type for apiPetDeletePetPetId */
@@ -288,7 +290,7 @@ type ApiPetDeletePetPetIdResponseSuccess = any
  * @tags pet
  * @produces application/json,application/xml
  */
-export const apiPetDeletePetPetId = (option: ApiPetDeletePetPetIdOption, config?: AxiosRequestConfig) =>
+export const apiPetDeletePetPetId = (option: DeepPartial<ApiPetDeletePetPetIdOption>, config?: AxiosRequestConfig) =>
   requester<ApiPetDeletePetPetIdResponseSuccess>('/pet/:petId', { method: 'delete', ...option }, config)
 
 /** @description response type for apiPetGetStoreInventory */
@@ -337,7 +339,7 @@ type ApiPetPostStoreOrderResponseSuccess = ApiPetPostStoreOrderResponse[200]
  * @produces application/json,application/xml
  * @consumes application/json
  */
-export const apiPetPostStoreOrder = (option?: ApiPetPostStoreOrderOption, config?: AxiosRequestConfig) =>
+export const apiPetPostStoreOrder = (option?: DeepPartial<ApiPetPostStoreOrderOption>, config?: AxiosRequestConfig) =>
   requester<ApiPetPostStoreOrderResponseSuccess>('/store/order', { method: 'post', body: option }, config)
 
 type ApiPetGetStoreOrderOrderIdOption = {
@@ -375,7 +377,10 @@ type ApiPetGetStoreOrderOrderIdResponseSuccess = ApiPetGetStoreOrderOrderIdRespo
  * @tags store
  * @produces application/json,application/xml
  */
-export const apiPetGetStoreOrderOrderId = (option?: ApiPetGetStoreOrderOrderIdOption, config?: AxiosRequestConfig) =>
+export const apiPetGetStoreOrderOrderId = (
+  option?: DeepPartial<ApiPetGetStoreOrderOrderIdOption>,
+  config?: AxiosRequestConfig,
+) =>
   requester<ApiPetGetStoreOrderOrderIdResponseSuccess>('/store/order/:orderId', { method: 'get', path: option }, config)
 
 type ApiPetDeleteStoreOrderOrderIdOption = {
@@ -409,7 +414,7 @@ type ApiPetDeleteStoreOrderOrderIdResponseSuccess = any
  * @produces application/json,application/xml
  */
 export const apiPetDeleteStoreOrderOrderId = (
-  option?: ApiPetDeleteStoreOrderOrderIdOption,
+  option?: DeepPartial<ApiPetDeleteStoreOrderOrderIdOption>,
   config?: AxiosRequestConfig,
 ) =>
   requester<ApiPetDeleteStoreOrderOrderIdResponseSuccess>(
@@ -438,7 +443,7 @@ type ApiPetPostUserCreateWithListResponseSuccess = ApiPetPostUserCreateWithListR
  * @consumes application/json
  */
 export const apiPetPostUserCreateWithList = (
-  option?: ApiPetPostUserCreateWithListOption,
+  option?: DeepPartial<ApiPetPostUserCreateWithListOption>,
   config?: AxiosRequestConfig,
 ) =>
   requester<ApiPetPostUserCreateWithListResponseSuccess>(
@@ -480,7 +485,7 @@ type ApiPetGetUserUsernameResponseSuccess = ApiPetGetUserUsernameResponse[200]
  * @tags user
  * @produces application/json,application/xml
  */
-export const apiPetGetUserUsername = (option?: ApiPetGetUserUsernameOption, config?: AxiosRequestConfig) =>
+export const apiPetGetUserUsername = (option?: DeepPartial<ApiPetGetUserUsernameOption>, config?: AxiosRequestConfig) =>
   requester<ApiPetGetUserUsernameResponseSuccess>('/user/:username', { method: 'get', path: option }, config)
 
 /** @description request parameter type for apiPetPutUserUsername */
@@ -529,7 +534,7 @@ type ApiPetPutUserUsernameResponseSuccess = any
  * @produces application/json,application/xml
  * @consumes application/json
  */
-export const apiPetPutUserUsername = (option: ApiPetPutUserUsernameOption, config?: AxiosRequestConfig) =>
+export const apiPetPutUserUsername = (option: DeepPartial<ApiPetPutUserUsernameOption>, config?: AxiosRequestConfig) =>
   requester<ApiPetPutUserUsernameResponseSuccess>('/user/:username', { method: 'put', ...option }, config)
 
 type ApiPetDeleteUserUsernameOption = {
@@ -561,8 +566,10 @@ type ApiPetDeleteUserUsernameResponseSuccess = any
  * @tags user
  * @produces application/json,application/xml
  */
-export const apiPetDeleteUserUsername = (option?: ApiPetDeleteUserUsernameOption, config?: AxiosRequestConfig) =>
-  requester<ApiPetDeleteUserUsernameResponseSuccess>('/user/:username', { method: 'delete', path: option }, config)
+export const apiPetDeleteUserUsername = (
+  option?: DeepPartial<ApiPetDeleteUserUsernameOption>,
+  config?: AxiosRequestConfig,
+) => requester<ApiPetDeleteUserUsernameResponseSuccess>('/user/:username', { method: 'delete', path: option }, config)
 
 type ApiPetGetUserLoginOption = {
   /**
@@ -596,7 +603,7 @@ type ApiPetGetUserLoginResponseSuccess = ApiPetGetUserLoginResponse[200]
  * @tags user
  * @produces application/json,application/xml
  */
-export const apiPetGetUserLogin = (option?: ApiPetGetUserLoginOption, config?: AxiosRequestConfig) =>
+export const apiPetGetUserLogin = (option?: DeepPartial<ApiPetGetUserLoginOption>, config?: AxiosRequestConfig) =>
   requester<ApiPetGetUserLoginResponseSuccess>('/user/login', { method: 'get', query: option }, config)
 
 /** @description response type for apiPetGetUserLogout */
@@ -638,7 +645,7 @@ type ApiPetPostUserCreateWithArrayResponseSuccess = ApiPetPostUserCreateWithArra
  * @consumes application/json
  */
 export const apiPetPostUserCreateWithArray = (
-  option?: ApiPetPostUserCreateWithArrayOption,
+  option?: DeepPartial<ApiPetPostUserCreateWithArrayOption>,
   config?: AxiosRequestConfig,
 ) =>
   requester<ApiPetPostUserCreateWithArrayResponseSuccess>(
@@ -667,5 +674,5 @@ type ApiPetPostUserResponseSuccess = ApiPetPostUserResponse['default']
  * @produces application/json,application/xml
  * @consumes application/json
  */
-export const apiPetPostUser = (option?: ApiPetPostUserOption, config?: AxiosRequestConfig) =>
+export const apiPetPostUser = (option?: DeepPartial<ApiPetPostUserOption>, config?: AxiosRequestConfig) =>
   requester<ApiPetPostUserResponseSuccess>('/user', { method: 'post', body: option }, config)

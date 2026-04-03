@@ -1,5 +1,5 @@
 import { defineComponent, injectService, provideService } from 'vue-better-props'
-import { ref } from 'vue'
+import { getCurrentInstance, h, ref } from 'vue'
 import { useTitle } from '@vueuse/core'
 import group from '@/module/demo/icon/group.svg'
 
@@ -14,6 +14,8 @@ export const IconSimple = defineComponent(
     const abc = injectService(Abc)
     const title = injectService(useTitle)
     setTimeout(() => (title.value = Math.random().toString()), 3000)
+    const slots = getCurrentInstance().slots
+    console.log('IconSimple', slots)
     return () => {
       console.log('refresh')
       return (
@@ -24,6 +26,7 @@ export const IconSimple = defineComponent(
           }}
         >
           icon simple1111 {props.count} {abc.count.value} <p>abc: {props.abc}</p>
+          {h('div', null, slots)}
         </div>
       )
     }
@@ -60,7 +63,9 @@ const IcomView = defineComponent(() => {
           + {count.value}
         </button>
       </div>
-      <IconSimple count={111} onClick={() => console.log('nothing')}></IconSimple>
+      <IconSimple count={111} onClick={() => console.log('nothing')}>
+        <div>1111112222233333</div>
+      </IconSimple>
       <img src={group} alt="" />
     </div>
   )

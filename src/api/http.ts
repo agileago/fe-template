@@ -1,12 +1,13 @@
 import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
 import envConfig from '@/conf'
 import { createRequester, type RequestParameter } from '@vue3-oop/ts-gear/requester'
+import type { DeepPartial } from 'ts-essentials'
+export type { AxiosRequestConfig, DeepPartial }
 
 // region 基础方法 需要对返回类型做转换
 
 type ReturnEntityType<T> = T
 
-export type { AxiosRequestConfig }
 // 重写返回类型
 interface RequesterWrapper {
   <T>(url: string, param?: RequestParameter, config?: AxiosRequestConfig): Promise<ReturnEntityType<T>>
