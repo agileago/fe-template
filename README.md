@@ -33,10 +33,8 @@ pnpm install
 - svg图标都在 `icons` 文件夹下
 - 配置请在 `conf` 文件中添加
 
-
 ### 命名规范
 
 1. 使用小写加 `-` 作为文件命名，比如文件夹 `search-form` 尽量避免文件及文件夹出现大写及汉字情况
 2. js命名采用小驼峰 `searchForm`, 类采用大驼峰 `SearchForm`
 3. 文件使用后缀标识功能 `home.view.tsx` 表示此文件作为页面，`home.service.ts` 作为服务等等
-
